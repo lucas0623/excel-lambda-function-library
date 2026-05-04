@@ -1,0 +1,7 @@
+{
+  "name": "OffsetPoint",
+  "formula": "=LAMBDA(xi,yi,xj,yj,rLen,oLen,LET(desc, \"This is an Offset Function\", dist_ij, SQRT((xj - xi) ^ 2 + (yj - yi) ^ 2), xp, xi + rLen / dist_ij * (xj - xi), yp, yi + rLen / dist_ij * (yj - yi), mij, IFERROR((yj - yi) / (xj - xi), TAN(PI() / 2)), mpq, IFERROR(-1 / mij, TAN(PI() / 2)), c, yp - mpq * xp, xq, ROUND(xp + oLen * COS(ATAN(mpq)), 12), yq, ROUND(yp + oLen * SIN(ATAN(mpq)), 12), HSTACK(xq, yq)))",
+  "comment": "This function offset a point from a line. Input: 2 pts, rLen from pt i, offset length. Output: new point",
+  "children": [],
+  "allChildren": []
+}

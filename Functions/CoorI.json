@@ -1,0 +1,7 @@
+{
+  "name": "CoorI",
+  "formula": "=LAMBDA(h,b,tf,tw,[isRepeatFirstPoint],LET(isRepeat, IF(ISOMITTED(isRepeatFirstPoint), FALSE, TRUE), xa, b / 2, ya, h / 2, xb, b / 2, yb, h / 2 - tf, xc, tw / 2, yc, h / 2 - tf, xd, tw / 2, yd, -yc, xe, b / 2, ye, -yb, xf, b / 2, yf, -ya, rowA, HSTACK(xa, ya), rowB, HSTACK(xb, yb), rowC, HSTACK(xc, yc), rowD, HSTACK(xd, yd), rowE, HSTACK(xe, ye), rowF, HSTACK(xf, yf), rowG, HSTACK(-xf, yf), rowH, HSTACK(-xe, ye), rowI, HSTACK(-xd, yd), rowJ, HSTACK(-xd, yd), rowK, HSTACK(-xc, yc), rowL, HSTACK(-xb, yb), rowM, HSTACK(-xa, ya), output, IF(isRepeat, VSTACK(rowM, rowL, rowK, rowJ, rowI, rowH, rowG, rowF, rowE, rowD, rowC, rowB, rowA, rowM), VSTACK(rowM, rowL, rowK, rowJ, rowI, rowH, rowG, rowF, rowE, rowD, rowC, rowB, rowA)), output))",
+  "comment": "Create coordinates of vertices for a I Section. isRepeatFirstPoint = FALSE by default. Last Update at 2024-07-02.",
+  "children": [],
+  "allChildren": []
+}

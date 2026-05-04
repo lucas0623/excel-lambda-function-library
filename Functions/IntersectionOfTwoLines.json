@@ -1,0 +1,7 @@
+{
+  "name": "IntersectionOfTwoLines",
+  "formula": "=LAMBDA(xi,yi,xj,yj,m,C,LET(m_seg, IF(xi = xj, 0, (yj - yi) / (xj - xi)), C_seg, IF(xi = xj, 0, yi - m_seg * xi), x_int, IF(xi = xj, xi, (C_seg - C) / (m - m_seg)), y_int, IF(xi = xj, m * xi + C, m * x_int + C), IF(xi = xj, IF(AND(y_int >= MIN(yi, yj), y_int <= MAX(yi, yj)), xi & \",\" & y_int, NA()), IF(AND(x_int >= MIN(xi, xj), x_int <= MAX(xi, xj), y_int >= MIN(yi, yj), y_int <= MAX(yi, yj)), x_int & \",\" & y_int, NA()))))",
+  "comment": "",
+  "children": [],
+  "allChildren": []
+}

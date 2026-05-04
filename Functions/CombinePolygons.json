@@ -1,0 +1,34 @@
+{
+  "name": "CombinePolygons",
+  "formula": "=LAMBDA(verticesArrText,[count],LET(i, IF(ISOMITTED(count), 1, count), n, ROWS(verticesArrText), cVerticesText, INDEX(verticesArrText, i, 1), otherVertices, {ref}RemoveRow(verticesArrText, i), verticesArrText_updated, {ref}Loop_CombinePolygons(cVerticesText, otherVertices), isCombined, ROWS(verticesArrText_updated) < n, output, IF(OR(i = n, ROWS(verticesArrText_updated) = 1), verticesArrText_updated, IF(isCombined, CombinePolygons(verticesArrText_updated, 1), CombinePolygons(verticesArrText, i + 1))), output))",
+  "comment": "To combine multiple polygons. Last update at 2024-07-06.",
+  "children": [
+    "Loop_CombinePolygons",
+    "RemoveRow"
+  ],
+  "allChildren": [
+    "Loop_CombinePolygons",
+    "RemoveRow",
+    "CombinePolygons",
+    "CombineTwoPolygons",
+    "RemoveRow",
+    "TextToArray",
+    "CleanUpContinuousIntersections",
+    "GetVerticesBetweenIntersections",
+    "InsertPolysIntersection",
+    "IsAllPointsInPoly",
+    "isClockwise",
+    "IsPointInPoly",
+    "IsPolysIntersect",
+    "ReverseVerticesDirection",
+    "IsAnyEdgeIntersect",
+    "IsAnyPointInPoly",
+    "IsPolyAndLineIntersect",
+    "PolyAndLineIntersection",
+    "TwoLinesIntersection",
+    "IsPointOnPolyEdge",
+    "isPointOnLine",
+    "InsertPolyAndLineIntersection",
+    "Loop_CombinePolygons"
+  ]
+}

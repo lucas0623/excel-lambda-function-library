@@ -1,0 +1,11 @@
+{
+  "name": "CreateBoltCoor_8Bolts_3x3",
+  "formula": "=LAMBDA(spacingX,spacingY,[CenterX],[CenterY],LET(Cx, IF(ISOMITTED(CenterX), 0, CenterX), Cy, IF(ISOMITTED(CenterY), 0, CenterY), bolt_1, HSTACK(-spacingX, spacingY), bolt_2, HSTACK(0, spacingY), bolt_3, HSTACK(spacingX, spacingY), bolt_4, HSTACK(-spacingX, 0), bolt_5, HSTACK(spacingX, 0), bolt_6, HSTACK(-spacingX, -spacingY), bolt_7, HSTACK(0, -spacingY), bolt_8, HSTACK(spacingX, -spacingY), {ref}TranslateCoor(VSTACK(bolt_1, bolt_2, bolt_3, bolt_4, bolt_5, bolt_6, bolt_7, bolt_8), Cx, Cy)))",
+  "comment": "To create bolt coordinates (3x3 arrangement). Last Update at 2024-07-13.",
+  "children": [
+    "TranslateCoor"
+  ],
+  "allChildren": [
+    "TranslateCoor"
+  ]
+}

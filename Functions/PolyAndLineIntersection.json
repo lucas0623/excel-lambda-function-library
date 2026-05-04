@@ -1,0 +1,11 @@
+{
+  "name": "PolyAndLineIntersection",
+  "formula": "=LAMBDA(vertices,xp,yp,xq,yq,LET(n, ROWS(vertices), iterations, SEQUENCE(n, 1, 1, 1), intersections, DROP(REDUCE(0, iterations, LAMBDA(a,i, LET(xi, INDEX(vertices, i, 1), yi, INDEX(vertices, i, 2), xj, INDEX(vertices, IF(i = n, 1, i + 1), 1), yj, INDEX(vertices, IF(i = n, 1, i + 1), 2), intersection, {ref}TwoLinesIntersection(xi, yi, xj, yj, xp, yp, xq, yq), IF(NOT(ISNA(intersection)), IF(AND(xi = INDEX(intersection, 1, 1), yi = INDEX(intersection, 1, 2)), a, VSTACK(a, intersection)), a)))), 1), sortedIntersectPts, SORTBY(intersections, CHOOSECOLS(intersections, 1), 1, CHOOSECOLS(intersections, 2), 1), sortedIntersectPts))",
+  "comment": "Return the intersection points of an polygon and a line. Last update at 2024-06-23.",
+  "children": [
+    "TwoLinesIntersection"
+  ],
+  "allChildren": [
+    "TwoLinesIntersection"
+  ]
+}

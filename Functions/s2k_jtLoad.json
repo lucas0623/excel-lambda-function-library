@@ -1,0 +1,7 @@
+{
+  "name": "s2k_jtLoad",
+  "formula": "=LAMBDA(jtName,loadPat,isGlobal,Fx,Fy,Fz,Mx,My,Mz,TEXTJOIN(\"   \", FALSE, \"Joint=\" & jtName, \"LoadPat=\" & loadPat, IF(isGlobal, \"CoordSys=GLOBAL\", \"CoordSys=LOCAL\"), \"F1=\" & Fx, \"F2=\" & Fy, \"F3=\" & Fz, \"M1=\" & Mx, \"M2=\" & My, \"M3=\" & Mz, ))",
+  "comment": "Create text regarding joint load data in SAP2000 $2k format. Last Update at 2024-07-11.",
+  "children": [],
+  "allChildren": []
+}

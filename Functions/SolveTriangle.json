@@ -1,0 +1,7 @@
+{
+  "name": "SolveTriangle",
+  "formula": "=LAMBDA(a,b,angleC,output,LET(RadC,RADIANS(angleC),c,SQRT(a^2+b^2-2*a*b*COS(RadC)),angleA,ASIN(a*SIN(RadC)/c),angleB,ASIN(b*SIN(RadC)/c),IFS(output=\"a\",a,output=\"b\",b,output=\"c\",c,output=\"AngleA\",DEGREES(angleA),output=\"AngleB\",DEGREES(angleB),output=\"AngleC\",angleC,TRUE,\"Cannot Identify '\"&output & \"' output.\")))",
+  "comment": "Solve Triangle, Input = length a,b and angle C (angle between a & b). ret shall be = either \"a\"/\"b\"/\"c\"/\"AngleA\"/\"AngleB\"/\"AngleC\".",
+  "children": [],
+  "allChildren": []
+}

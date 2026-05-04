@@ -1,0 +1,11 @@
+{
+  "name": "GetMHInfoFromPipeSch",
+  "formula": "=LAMBDA(CMH,USMH,DSMH,USIL,DSIL,PipeDia,PipeMat,LET(InletInfo,HSTACK(DSMH,DSIL,PipeDia,PipeMat,USMH),InletOutput,IFERROR(FILTER(InletInfo,CHOOSECOLS(InletInfo,1)=CMH),EXPAND(\"-\",1,COLUMNS(InletInfo),\"-\")),OutletInfo,HSTACK(USMH,USIL,PipeDia,PipeMat,DSMH),OutletOutput,IFERROR(FILTER(OutletInfo,CHOOSECOLS(OutletInfo,1)=CMH),EXPAND(\"-\",1,COLUMNS(InletInfo),\"-\")),tempArr,'Useful Excel Formula 20240620.xlsm'!{ref}ReplaceErrInRange(HSTACK(DROP(InletOutput,,1),DROP(OutletOutput,,1)),\"-\"),'Useful Excel Formula 20240620.xlsm'!{ref}ReplaceErrInRange(HSTACK(CMH,tempArr))))",
+  "comment": "Extract a Manhole Information from pipe schedule. ",
+  "children": [
+    "ReplaceErrInRange"
+  ],
+  "allChildren": [
+    "ReplaceErrInRange"
+  ]
+}

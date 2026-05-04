@@ -1,0 +1,7 @@
+{
+  "name": "ReverseVerticesDirection",
+  "formula": "=LAMBDA(vertices,LET(n, ROWS(vertices), DROP(REDUCE(0, SEQUENCE(n), LAMBDA(acc,i, VSTACK(acc, CHOOSEROWS(vertices, n - i + 1)))), 1)))",
+  "comment": "To reverse the direction of vertices (clockwise/ anticlockwise). Last update at 2024-07-05.",
+  "children": [],
+  "allChildren": []
+}

@@ -1,0 +1,7 @@
+{
+  "name": "CleanUpContinuousIntersections",
+  "formula": "=LAMBDA(verticesWithIntersections,LET(n, ROWS(verticesWithIntersections), isIntersectionArray, CHOOSECOLS(verticesWithIntersections, 3), isIntersectionArray_RepeatBothEnds, VSTACK(CHOOSEROWS(isIntersectionArray, -1), isIntersectionArray, CHOOSEROWS(isIntersectionArray, 1)), modifiedArray, MAP(SEQUENCE(n, 1, 2), LAMBDA(i, IF(AND(INDEX(isIntersectionArray_RepeatBothEnds, i - 1), INDEX(isIntersectionArray_RepeatBothEnds, i), INDEX(isIntersectionArray_RepeatBothEnds, i + 1)), FALSE, INDEX(isIntersectionArray_RepeatBothEnds, i)))), HSTACK(TAKE(verticesWithIntersections, , 2), modifiedArray, DROP(verticesWithIntersections, , 3))))",
+  "comment": "A helper function to clean up the intersections in a poly when there are 3 or more consecutive vertices are set as 'TRUE' = intersection. Only the start and the end 'TRUE' will be kept. Last Update at 2024-07-06. ",
+  "children": [],
+  "allChildren": []
+}

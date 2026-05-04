@@ -1,0 +1,7 @@
+{
+  "name": "VRepeatArray",
+  "formula": "=LAMBDA(arr,NumOfRepeat,IFERROR(REDUCE(arr, SEQUENCE(NumOfRepeat - 1), LAMBDA(a,i, VSTACK(a, arr))), arr))",
+  "comment": "VStack an input array for n number of times. Last Update at 2024-03-08.",
+  "children": [],
+  "allChildren": []
+}

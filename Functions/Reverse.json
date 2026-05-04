@@ -1,0 +1,7 @@
+{
+  "name": "Reverse",
+  "formula": "=LAMBDA(array, LET(author, \"Kinen Ma\", version_date,\"v1, 2023-08-24\", res, REDUCE(, array, LAMBDA(a,x, VSTACK(x, a))), res))",
+  "comment": "Reverse range of array. REVERSE(array[any])",
+  "children": [],
+  "allChildren": []
+}

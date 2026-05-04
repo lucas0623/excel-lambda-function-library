@@ -1,0 +1,12 @@
+{
+  "name": "IsPointInPoly",
+  "formula": "=LAMBDA(vertices,point,[isEdgeInclusive],LET(n, ROWS(vertices), x, INDEX(point, 1), y, INDEX(point, 2), isIncludeEdge, IF(ISOMITTED(isEdgeInclusive), TRUE, FALSE), result, REDUCE(0, SEQUENCE(n), LAMBDA(acc,i, LET(j, IF(i = n, 1, i + 1), xi, INDEX(vertices, i, 1), yi, INDEX(vertices, i, 2), xj, INDEX(vertices, j, 1), yj, INDEX(vertices, j, 2), yt, IF(OR(y = yi, y = yj), y + ABS(y * 0.0001), y), isHorizontal, yi = yj, isYInbetween, AND(yt > MIN(yi, yj), yt < MAX(yi, yj)), intersect, IF(AND(NOT(isHorizontal), isYInbetween), x <= (xi + (yt - yi) * (xj - xi) / (yj - yi)), FALSE), IF(intersect, acc + 1, acc)))), isOnEdge, {ref}IsPointOnPolyEdge(vertices, point), isInclude_onEdge, AND(isOnEdge, isIncludeEdge), isInclude_rayCast, IF(MOD(result, 2) = 1, TRUE(), FALSE()), IF(isOnEdge, isIncludeEdge, isInclude_rayCast)))",
+  "comment": "To check if a point lies inside a polygon. Last update at 2024-06-27.",
+  "children": [
+    "IsPointOnPolyEdge"
+  ],
+  "allChildren": [
+    "IsPointOnPolyEdge",
+    "isPointOnLine"
+  ]
+}

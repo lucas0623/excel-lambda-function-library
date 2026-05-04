@@ -1,0 +1,7 @@
+{
+  "name": "InterpolateXY",
+  "formula": "=LAMBDA(xi,yi,xj,yj,x,LET(ratio,(x-xi)/(xj-xi),y,yi+ratio*(yj-yi),y))",
+  "comment": "Interpolate value for straight line. Input: x1,y1,x2,y2,x. Output: y.",
+  "children": [],
+  "allChildren": []
+}

@@ -1,0 +1,7 @@
+{
+  "name": "SetGraphLimit",
+  "formula": "=LAMBDA(arrX,arrY,adjConst,LET(minX,MIN(arrX)-adjConst,maxX,MAX(arrX)+adjConst,minY,MIN(arrY)-adjConst,maxY,MAX(arrY)+adjConst,extentX,(maxX-minX),extentY,(maxY-minY),extentDiff,ABS(extentX-extentY),AdjMinX,minX-extentDiff/2,AdjMaxX,maxX+extentDiff/2,AdjMinY,minY-extentDiff/2,AdjMaxY,maxY+extentDiff/2,IF(extentX>extentY,VSTACK(HSTACK(minX,AdjMinY),HSTACK(maxX,AdjMaxY)),VSTACK(HSTACK(AdjMinX,minY),HSTACK(AdjMaxX,maxY)))))",
+  "comment": "This function calculate the maximum and minimum limit for graph to ensure the x and y limit will always be a square. These limits are represented by coordinates of 2 points (=output). Plot these 2 points in your graph. Input = (xCoorArr,yCoorArr,a constan",
+  "children": [],
+  "allChildren": []
+}

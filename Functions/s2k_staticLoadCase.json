@@ -1,0 +1,7 @@
+{
+  "name": "s2k_staticLoadCase",
+  "formula": "=LAMBDA(name,TEXTJOIN(\"   \", FALSE, \"Case=\" & name, \"LoadType=\" & CHAR(34) & \"Load pattern\" & CHAR(34), \"LoadName=\" & name, \"LoadSF=1\"))",
+  "comment": "Create text regarding static load case assignment definition data in SAP2000 $2k format. Assume there is a load case name the same as the load pattern name. Last Update at 2024-07-11.",
+  "children": [],
+  "allChildren": []
+}

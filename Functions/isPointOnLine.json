@@ -1,0 +1,7 @@
+{
+  "name": "isPointOnLine",
+  "formula": "=LAMBDA(xi,yi,xj,yj,x,y,LET(epsilon, 0.0000000001, dx, xj - xi, dy, yj - yi, isVertical, xi = xj, isHorizontal, ABS(dy) < epsilon, onVertical, AND(isVertical, ABS(x - xi) < epsilon, y >= MIN(yi, yj), y <= MAX(yi, yj)), onHorizontal, AND(isHorizontal, ABS(y - yi) < epsilon, x >= MIN(xi, xj), x <= MAX(xi, xj)), onLine, IF(OR(isVertical, isHorizontal), FALSE, LET(slope, IF(isVertical, NA(), dy / dx), intercept, yi - slope * xi, AND(ABS(y - (slope * x + intercept)) < epsilon, x >= MIN(xi, xj) - epsilon, x <= MAX(xi, xj) + epsilon, y >= MIN(yi, yj) - epsilon, y <= MAX(yi, yj) + epsilon))), OR(onHorizontal, onLine, onVertical)))",
+  "comment": "",
+  "children": [],
+  "allChildren": []
+}

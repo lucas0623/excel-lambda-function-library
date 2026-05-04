@@ -1,0 +1,7 @@
+{
+  "name": "ReplaceErrInRange",
+  "formula": "=LAMBDA(arr,[FillStr],MAP(arr,LAMBDA(a,IF(ISERROR(a),IF(ISOMITTED(FillStr),\"\",FillStr),a))))",
+  "comment": "To Replace all the Error '#N/A' in a range by input string. Default string = \"\"",
+  "children": [],
+  "allChildren": []
+}

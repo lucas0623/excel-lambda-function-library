@@ -1,0 +1,11 @@
+{
+  "name": "MultipleTextToArray",
+  "formula": "=LAMBDA(textArr,[isRepeatFirstRow],[numOfColumns],LET(isRepeat, IF(ISOMITTED(isRepeatFirstRow), FALSE, TRUE), numCols, IF(ISOMITTED(numOfColumns), COLUMNS({ref}TextToArray(INDEX(textArr, 1, 1))), numOfColumns), ExpandedArr, REDUCE(HSTACK(0, 0), textArr, LAMBDA(acc,text, LET(cArr, TAKE({ref}TextToArray(text), , numCols), spacerRow, MAKEARRAY(1, numCols, LAMBDA(r,c, NA())), IF(isRepeat, VSTACK(acc, cArr, CHOOSEROWS(cArr, 1), spacerRow), VSTACK(acc, cArr, spacerRow))))), DROP(DROP(ExpandedArr, 1), -1)))",
+  "comment": "Convert the text stored in an array formed by the excel 'ArrayToText' Function (format: strict) to array. (array of text, each item = an array --> an array separated by 'spacer'. Default spacer = \"\" is adopted to separate the arrays. 'isRepeatFirstRow' ma",
+  "children": [
+    "TextToArray"
+  ],
+  "allChildren": [
+    "TextToArray"
+  ]
+}

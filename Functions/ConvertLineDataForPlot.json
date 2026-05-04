@@ -1,0 +1,7 @@
+{
+  "name": "ConvertLineDataForPlot",
+  "formula": "=LAMBDA(lineData,LET(arr, lineData, emptyRow, MAKEARRAY(1, 2, LAMBDA(r,c, NA())), numRows, ROWS(arr), DROP(REDUCE(0, SEQUENCE(numRows), LAMBDA(a,i, VSTACK(a, LET(cRow, CHOOSEROWS(arr, i), VSTACK(WRAPROWS(cRow, 2), emptyRow))))), 1)))",
+  "comment": "Converts a table of line segments (one per row in format [x1,y1,x2,y2]) into a stacked 2-column array of points [x,y] suitable for plotting multiple disjoint lines as a single Excel chart series. Inserts NA rows between segments to prevent unwanted connec",
+  "children": [],
+  "allChildren": []
+}

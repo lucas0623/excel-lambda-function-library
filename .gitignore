@@ -1,0 +1,14 @@
+# Ignore System folder
+.trash/
+.obsidian/
+.copilot/
+copilot/
+
+# Ignore Smart Environment folder
+.smart-env
+
+# Ignore Personal Folder
+working/
+Working/
+personal/
+Personal/

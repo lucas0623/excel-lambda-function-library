@@ -1,0 +1,11 @@
+{
+  "name": "InsertPolyAndLineIntersection",
+  "formula": "=LAMBDA(vertices,xp,yp,xq,yq,LET(n, ROWS(vertices), intersections, SEQUENCE(n, 1, 1, 1), column3, EXPAND(FALSE, n, 1, FALSE), column4, CHOOSECOLS(vertices, 1) & CHOOSECOLS(vertices, 2), verticesArr, IF(ISERROR(INDEX(vertices, 1, 3)), HSTACK(vertices, column3, column4), vertices), results, REDUCE(0, intersections, LAMBDA(a,i, LET(xi, INDEX(verticesArr, i, 1), yi, INDEX(verticesArr, i, 2), xj, INDEX(verticesArr, IF(i = n, 1, i + 1), 1), yj, INDEX(verticesArr, IF(i = n, 1, i + 1), 2), cRow, CHOOSEROWS(verticesArr, i), intersectionPt, {ref}TwoLinesIntersection(xi, yi, xj, yj, xp, yp, xq, yq), x, INDEX(intersectionPt, 1, 1), y, INDEX(intersectionPt, 1, 2), intersection, HSTACK(intersectionPt, TRUE(), x & y), IF(ISNA(intersection), VSTACK(a, cRow), IFS(AND(xi = INDEX(intersection, 1, 1), yi = INDEX(intersection, 1, 2)), VSTACK(a, intersection), AND(xj = INDEX(intersection, 1, 1), yj = INDEX(intersection, 1, 2)), VSTACK(a, cRow), TRUE, VSTACK(a, cRow, intersection)))))), output, DROP(results, 1), output))",
+  "comment": "A helper function for SplitPolyByLine. Add intersection points of a line and a polygon to the vertices. Return the vertices with intersection points. Last Update at 2024-06-23. ",
+  "children": [
+    "TwoLinesIntersection"
+  ],
+  "allChildren": [
+    "TwoLinesIntersection"
+  ]
+}

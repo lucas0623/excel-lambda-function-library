@@ -1,0 +1,7 @@
+{
+  "name": "GetVerticesBetweenIntersections",
+  "formula": "=LAMBDA(vertices,verticeName1,verticeName2,LET(verticeNames, CHOOSECOLS(vertices, 4), n, ROWS(vertices), matchedRow1, XMATCH(verticeName1, verticeNames, 0), matchedRow2, XMATCH(verticeName2, verticeNames, 0), startRow, IF(matchedRow1 = n, 1, matchedRow1 + 1), lastRow, IF(matchedRow2 = 1, 1, matchedRow2 - 1), IFS(startRow = matchedRow2, NA(), lastRow >= startRow, CHOOSEROWS(vertices, SEQUENCE(lastRow - startRow + 1, , startRow)), lastRow < startRow, VSTACK(DROP(vertices, startRow - 1), TAKE(vertices, lastRow)))))",
+  "comment": "A helper function. To get the vertices (x,y) from the vertices_intersection array (x,y,isIntersect,x&y), The 4th column (x&y) is considered as the name of vertice. Last Update at 2024-06-27.",
+  "children": [],
+  "allChildren": []
+}

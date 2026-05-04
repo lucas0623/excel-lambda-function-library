@@ -1,0 +1,7 @@
+{
+  "name": "CoorAngle",
+  "formula": "=LAMBDA(h,b,tf,tw,[isRepeatFirstPoint],LET(isRepeat, IF(ISOMITTED(isRepeatFirstPoint), FALSE, TRUE), xa, b, ya, h, xb, b, yb, h - tf, xc, tw, yc, h - tf, xd, tw, yd, 0, xe, 0, ye, 0, xf, 0, yf, h, rowA, HSTACK(xa, ya), rowB, HSTACK(xb, yb), rowC, HSTACK(xc, yc), rowD, HSTACK(xd, yd), rowE, HSTACK(xe, ye), rowF, HSTACK(xf, yf), output, IF(isRepeat, VSTACK(rowF, rowE, rowD, rowC, rowB, rowA, rowF), VSTACK(rowF, rowE, rowD, rowC, rowB, rowA)), output))",
+  "comment": "Create coordinates of vertices for a I Section. isRepeatFirstPoint = FALSE by default. Last Update at 2024-07-02.",
+  "children": [],
+  "allChildren": []
+}

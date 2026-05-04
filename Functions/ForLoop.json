@@ -1,0 +1,7 @@
+{
+  "name": "ForLoop",
+  "formula": "=LAMBDA(start,end,func,[step],LET(step, IF(ISOMITTED(step), 1, step), output, DROP(REDUCE(0, SEQUENCE((end - start) / step + 1, 1, start, step), LAMBDA(acc,i, VSTACK(acc, func(i)))), 1), output))",
+  "comment": "For loop. 'func' shall be a lambda function LAMBDA(i,output) to describe the actions to be taken in the for loop. Last Update 2025-08-01.",
+  "children": [],
+  "allChildren": []
+}

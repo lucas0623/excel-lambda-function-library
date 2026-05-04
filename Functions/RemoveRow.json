@@ -1,0 +1,7 @@
+{
+  "name": "RemoveRow",
+  "formula": "=LAMBDA(arr,row,IF(row = 1, DROP(arr, 1), IF(row = ROWS(arr), DROP(arr, -1), VSTACK(TAKE(arr, row - 1), DROP(arr, row)))))",
+  "comment": "To remove a row in an array. Last Update at 2024-07-06.",
+  "children": [],
+  "allChildren": []
+}

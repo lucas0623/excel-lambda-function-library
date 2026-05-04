@@ -1,0 +1,23 @@
+{
+  "name": "Prop_PlasticCentroidCpx",
+  "formula": "=LAMBDA(vertices,totalArea,maxX,minX,maxY,minY,LET(cNA, (maxX + minX) / 2, shapesArr, {ref}SplitPolyByLine(vertices, cNA, minY, cNA, maxY), rightArea, REDUCE(0, shapesArr, LAMBDA(acc,shapeText, LET(shape, VALUE(DROP({ref}TextToArray(shapeText), , -1)), Cx, {ref}Prop_Cx(shape), IF(Cx > cNA, acc + {ref}Prop_Area(shape), acc)))), areaDiff, rightArea - totalArea / 2, IF(ABS(areaDiff / (totalArea / 2)) < 0.0001, cNA, IF(areaDiff < 0, Prop_PlasticCentroidCpx(vertices, totalArea, cNA, minX, maxY, minY), Prop_PlasticCentroidCpx(vertices, totalArea, maxX, cNA, maxY, minY)))))",
+  "comment": "Find the x-coordinate of plastic centroid of a polygon bending about y axis (axial force = 0). Last update at 2024-07-02.",
+  "children": [
+    "Prop_Area",
+    "Prop_Cx",
+    "SplitPolyByLine",
+    "TextToArray"
+  ],
+  "allChildren": [
+    "Prop_Area",
+    "Prop_Cx",
+    "SplitPolyByLine",
+    "TextToArray",
+    "PolyAndLineIntersection",
+    "SplitPolyIntoTwoPolys",
+    "SplitPolysIteration",
+    "TextToArray",
+    "InsertPolyAndLineIntersection",
+    "TwoLinesIntersection"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "ForEachRow",
+  "formula": "=LAMBDA(arr,func,LET(n, ROWS(arr), DROP(REDUCE(0, SEQUENCE(n), LAMBDA(a,i, LET(cRow, CHOOSEROWS(arr, i), output, func(cRow), VSTACK(a, output)))), 1)))",
+  "comment": "This loop for each row in an array, which the logic is the same as excel default BYROW function. But this can output as 2D array (which BYROW cannot). Last Update at 2025-08-01.",
+  "children": [],
+  "allChildren": []
+}

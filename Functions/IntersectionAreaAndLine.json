@@ -1,0 +1,11 @@
+{
+  "name": "IntersectionAreaAndLine",
+  "formula": "=LAMBDA(points,m,c,LET(n, ROWS(points), intersections, SEQUENCE(n, 1, 1, 1), results, MAP(intersections, LAMBDA(i, LET(xi, INDEX(points, i, 1), yi, INDEX(points, i, 2), xj, INDEX(points, IF(i = n, 1, i + 1), 1), yj, INDEX(points, IF(i = n, 1, i + 1), 2), intersection, {ref}IntersectionOfTwoLines(xi, yi, xj, yj, m, c), intersection))), FILTER(results, NOT(ISERROR((results))))))",
+  "comment": "",
+  "children": [
+    "IntersectionOfTwoLines"
+  ],
+  "allChildren": [
+    "IntersectionOfTwoLines"
+  ]
+}

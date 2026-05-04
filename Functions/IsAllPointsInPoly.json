@@ -1,0 +1,13 @@
+{
+  "name": "IsAllPointsInPoly",
+  "formula": "=LAMBDA(vertices,points,LET(n, ROWS(points), result, REDUCE(0, SEQUENCE(n), LAMBDA(acc,i, LET(point, HSTACK(INDEX(points, i, 1), INDEX(points, i, 2)), inside, {ref}IsPointInPoly(vertices, point), IF(inside, acc + 1, acc)))), result = n))",
+  "comment": "To determine if all points are in a polygon. Last update at 2024-06-27.",
+  "children": [
+    "IsPointInPoly"
+  ],
+  "allChildren": [
+    "IsPointInPoly",
+    "IsPointOnPolyEdge",
+    "isPointOnLine"
+  ]
+}

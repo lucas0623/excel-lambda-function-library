@@ -1,0 +1,12 @@
+{
+  "name": "IsPolyAndLineIntersect",
+  "formula": "=LAMBDA(vertices,xi,yi,xj,yj,IF(ISERR(INDEX({ref}PolyAndLineIntersection(vertices, xi, yi, xj, yj), 1, 1)), FALSE, TRUE))",
+  "comment": "To determine if a line intersect a polygon. Last Update at 2024-06-27.",
+  "children": [
+    "PolyAndLineIntersection"
+  ],
+  "allChildren": [
+    "PolyAndLineIntersection",
+    "TwoLinesIntersection"
+  ]
+}

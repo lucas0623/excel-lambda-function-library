@@ -1,0 +1,19 @@
+{
+  "name": "IsPolysIntersect",
+  "formula": "=LAMBDA(verticesA,verticesB,LET(nA, ROWS(verticesA), nB, ROWS(verticesB), edgeIntersect, {ref}IsAnyEdgeIntersect(verticesA, verticesB), vertexInside, {ref}IsAnyPointInPoly(verticesA, verticesB), vertexInsideReverse, {ref}IsAnyPointInPoly(verticesB, verticesA), OR(edgeIntersect, vertexInside, vertexInsideReverse)))",
+  "comment": "To determine if 2 polygons intersect each other. A polygon fully within another polygon is considered as TRUE. Last update at 2024-06-27.",
+  "children": [
+    "IsAnyEdgeIntersect",
+    "IsAnyPointInPoly"
+  ],
+  "allChildren": [
+    "IsAnyEdgeIntersect",
+    "IsAnyPointInPoly",
+    "IsPointInPoly",
+    "IsPointOnPolyEdge",
+    "isPointOnLine",
+    "IsPolyAndLineIntersect",
+    "PolyAndLineIntersection",
+    "TwoLinesIntersection"
+  ]
+}

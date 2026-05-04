@@ -1,0 +1,7 @@
+{
+  "name": "DishChannelWetPerimeter",
+  "formula": "=LAMBDA(Width,Height,LET(W, Width, H, -Height, a, -4 * H / W ^ 2, b, 4 * H / W, u_b, 0.5 * LN(b + SQRT(1 + b ^ 2)) + 0.5 * b * SQRT(1 + b ^ 2), upper, 2 * a * W + b, u_W, 0.5 * LN(upper + SQRT(1 + upper ^ 2)) + 0.5 * upper * SQRT(1 + upper ^ 2), arcLength, (1 / (2 * a)) * (u_W - u_b), arcLength))",
+  "comment": "This formula returns the wetted perimeter of a dish-channel, which is the arc length of a three points arc defined by coordinates (0,0), (B/2,-H) and (B,0).\nLast Update 2024-04-22.",
+  "children": [],
+  "allChildren": []
+}

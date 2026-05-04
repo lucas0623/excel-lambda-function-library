@@ -1,0 +1,17 @@
+{
+  "name": "RotateShape",
+  "formula": "=LAMBDA(shapeArr,deg,[center],LET(center, IF(ISOMITTED(center), 'Useful Excel Formula 20240620.xlsm'!{ref}Prop_Centroid(shapeArr), center), output, {ref}ForEachRow(shapeArr, LAMBDA(point, {ref}RotatePoint(VALUE(point), deg, INDEX(center, 1, 1), INDEX(center, 1, 2)))), output))",
+  "comment": "To Rotate a 2D shape about certain point. Default rotate about the centroid of the shape. Last Update at 2025-09-05. ",
+  "children": [
+    "Prop_Centroid",
+    "ForEachRow",
+    "RotatePoint",
+    "Prop"
+  ],
+  "allChildren": [
+    "Prop_Centroid",
+    "ForEachRow",
+    "RotatePoint",
+    "Prop"
+  ]
+}

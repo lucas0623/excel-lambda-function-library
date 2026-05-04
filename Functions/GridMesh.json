@@ -1,0 +1,38 @@
+{
+  "name": "GridMesh",
+  "formula": "=LAMBDA(vertices,spacingX,spacingY,[customSequenceX],[customSequenceY],LET(xCoor, CHOOSECOLS(vertices, 1), yCoor, CHOOSECOLS(vertices, 2), xMax, MAX(xCoor), xMin, MIN(xCoor), yMax, MAX(yCoor), yMin, MIN(yCoor), numX, IF(ISOMITTED(customSequenceX), INT((xMax - xMin) / spacingX) + 1, ROWS(customSequenceX)), actualSpacingX, IF(ISOMITTED(customSequenceX), (xMax - xMin) / (numX - 1), 1), sequenceX, IF(ISOMITTED(customSequenceX), SEQUENCE(numX, 1, xMin, actualSpacingX), customSequenceX), numY, IF(ISOMITTED(customSequenceY), INT((yMax - yMin) / spacingY) + 1, ROWS(customSequenceY)), actualSpacingY, IF(ISOMITTED(customSequenceY), (yMax - yMin) / (numY - 1), 1), sequenceY, IF(ISOMITTED(customSequenceY), SEQUENCE(numY, 1, yMin, actualSpacingY), customSequenceY), quadsArr, DROP(REDUCE(0, SEQUENCE(numX - 1), LAMBDA(acc,i, VSTACK(acc, MAP(SEQUENCE(numY - 1), LAMBDA(j, LET(xp, INDEX(sequenceX, i), xq, INDEX(sequenceX, i + 1), yp, INDEX(sequenceY, j), yq, INDEX(sequenceY, j + 1), ptA, HSTACK(xp, yp), ptB, HSTACK(xq, yp), ptC, HSTACK(xq, yq), ptD, HSTACK(xp, yq), quad, VSTACK(ptA, ptB, ptC, ptD), ARRAYTOTEXT(quad, 1))))))), 1), quadsArrFiltered, DROP(REDUCE(0, quadsArr, LAMBDA(acc,quadText, LET(quad, VALUE({ref}TextToArray(quadText)), IF({ref}IsPolysIntersect(quad, vertices), IF({ref}isPolyAInPolyB(quad, vertices), VSTACK(acc, quadText), LET(overlappedText, {ref}OverlappedPolygons(quad, vertices), overlappedPoly, VALUE({ref}TextToArray(overlappedText)), refinedOverlappedPoly, IF(ROWS(overlappedPoly) > 4, {ref}SplitPolyByLine(overlappedPoly, INDEX(overlappedPoly, 1, 1), INDEX(overlappedPoly, 1, 2), INDEX(overlappedPoly, 4, 1), INDEX(overlappedPoly, 4, 2)), overlappedText), IF(ISNA(overlappedText), acc, VSTACK(acc, refinedOverlappedPoly)))), acc)))), 1), quadsArrFiltered))",
+  "comment": "To grid mesh a polygon. customSequence are optional input (array) to control the exact coordinates of grid to be generate. By default, the grid coordinates are generated based on the vertices and the spacing input. Last update at 2024-07-05.",
+  "children": [
+    "isPolyAInPolyB",
+    "IsPolysIntersect",
+    "OverlappedPolygons",
+    "SplitPolyByLine",
+    "TextToArray"
+  ],
+  "allChildren": [
+    "isPolyAInPolyB",
+    "IsPolysIntersect",
+    "OverlappedPolygons",
+    "SplitPolyByLine",
+    "TextToArray",
+    "PolyAndLineIntersection",
+    "SplitPolyIntoTwoPolys",
+    "SplitPolysIteration",
+    "TextToArray",
+    "InsertPolyAndLineIntersection",
+    "TwoLinesIntersection",
+    "CleanUpContinuousIntersections",
+    "GetVerticesBetweenIntersections",
+    "InsertPolysIntersection",
+    "IsAllPointsInPoly",
+    "isClockwise",
+    "IsPointInPoly",
+    "IsPolysIntersect",
+    "ReverseVerticesDirection",
+    "IsAnyEdgeIntersect",
+    "IsAnyPointInPoly",
+    "IsPolyAndLineIntersect",
+    "IsPointOnPolyEdge",
+    "isPointOnLine"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "FindNearestPoint",
+  "formula": "=LAMBDA(queryX,queryY,xCoords,yCoords,pointNames,LET(distArr, MAP(xCoords, yCoords, LAMBDA(x,y, {ref}Dist(queryX, queryY, x, y))), minDist, MIN(distArr), CHOOSEROWS(pointNames, XMATCH(minDist, distArr, 0))))",
+  "comment": "Returns the name of the point (from `pointNames`) closest to `(queryX, queryY)` among points defined by `xCoords` and `yCoords`, using Euclidean distance via [[Dist]]. Handles empty/mismatched arrays with NA(). ",
+  "children": [
+    "Dist"
+  ],
+  "allChildren": [
+    "Dist"
+  ]
+}

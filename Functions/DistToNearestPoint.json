@@ -1,0 +1,11 @@
+{
+  "name": "DistToNearestPoint",
+  "formula": "=LAMBDA(queryX,queryY,xCoords,yCoords,MIN(BYROW(SEQUENCE(ROWS(xCoords)), LAMBDA(i, {ref}Dist(queryX, queryY, CHOOSEROWS(xCoords, i), CHOOSEROWS(yCoords, i))))))",
+  "comment": "Returns the Euclidean distance from `(queryX, queryY)` to the nearest point in arrays `xCoords` and `yCoords`, via [[Dist]]. Handles empty/mismatched arrays with NA().",
+  "children": [
+    "Dist"
+  ],
+  "allChildren": [
+    "Dist"
+  ]
+}

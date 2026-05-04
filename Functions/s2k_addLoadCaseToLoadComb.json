@@ -1,0 +1,7 @@
+{
+  "name": "s2k_addLoadCaseToLoadComb",
+  "formula": "=LAMBDA(loadCombName,caseName,scaleFactor,TEXTJOIN(\"   \", FALSE, \"ComboName=\" & CHAR(34) & loadCombName & CHAR(34), \"CaseName=\" & CHAR(34) & caseName & CHAR(34), \"ScaleFactor=\" & scaleFactor))",
+  "comment": "Create text regarding load combination data (add a load case/ load combination to a load combination) in SAP2000 $2k format. Last Update at 2024-07-11.",
+  "children": [],
+  "allChildren": []
+}

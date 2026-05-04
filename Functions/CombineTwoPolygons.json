@@ -1,0 +1,34 @@
+{
+  "name": "CombineTwoPolygons",
+  "formula": "=LAMBDA(verticesA,verticesB,LET(isIntersect, {ref}IsPolysIntersect(verticesA, verticesB), isAInB, {ref}IsAllPointsInPoly(verticesB, verticesA), isBInA, {ref}IsAllPointsInPoly(verticesA, verticesB), polyA, IF({ref}isClockwise(verticesA), {ref}ReverseVerticesDirection(verticesA), verticesA), polyB, IF({ref}isClockwise(verticesB), {ref}ReverseVerticesDirection(verticesB), verticesB), result, IFS(AND(NOT(isIntersect)), VSTACK(ARRAYTOTEXT(polyA, 1), ARRAYTOTEXT(polyB, 1)), AND(isIntersect, isAInB), ARRAYTOTEXT(polyB, 1), AND(isIntersect, isBInA), ARRAYTOTEXT(polyA, 1), TRUE, LET(verticesA_withIntersection, {ref}CleanUpContinuousIntersections({ref}InsertPolysIntersection(polyA, polyB)), verticesB_withIntersection, {ref}CleanUpContinuousIntersections({ref}InsertPolysIntersection(polyB, polyA)), intersections, FILTER(verticesA_withIntersection, CHOOSECOLS(verticesA_withIntersection, 3)), n, ROWS(intersections), IF(n = 1, VSTACK(ARRAYTOTEXT(polyA, 1), ARRAYTOTEXT(polyB, 1)), ARRAYTOTEXT(DROP(REDUCE(0, SEQUENCE(n), LAMBDA(acc,i, LET(j, IF(i = n, 1, i + 1), name1, INDEX(intersections, i, 4), name2, INDEX(intersections, j, 4), intersect1, CHOOSEROWS(intersections, i), VA, {ref}GetVerticesBetweenIntersections(verticesA_withIntersection, name1, name2), VB, {ref}GetVerticesBetweenIntersections(verticesB_withIntersection, name1, name2), IsEmptyA, ISNA(INDEX(VA, 1, 1)), IsEmptyB, ISNA(INDEX(VB, 1, 1)), IFS(AND(IsEmptyA, IsEmptyB), ARRAYTOTEXT(VSTACK(acc, intersect1), 1), AND(NOT(IsEmptyA), NOT(IsEmptyB)), IF({ref}IsPointInPoly(polyB, HSTACK(INDEX(VA, 1, 1), INDEX(VA, 1, 2))), VSTACK(acc, intersect1, VB), VSTACK(acc, intersect1, VA)), NOT(IsEmptyB), IF({ref}IsPointInPoly(polyA, HSTACK(INDEX(VB, 1, 1), INDEX(VB, 1, 2))), VSTACK(acc, intersect1), VSTACK(acc, intersect1, VB)), NOT(IsEmptyA), IF({ref}IsPointInPoly(polyB, HSTACK(INDEX(VA, 1, 1), INDEX(VA, 1, 2))), VSTACK(acc, intersect1), VSTACK(acc, intersect1, VA)))))), 1, -2), 1)))), result))",
+  "comment": "Return the vertices of the combined polygon. If the 2 polygons does not intersect, return the vertices of the 2 polygons, in which the vertices of each poly should be stringify with the function ArrayToText(arr,1).",
+  "children": [
+    "CleanUpContinuousIntersections",
+    "GetVerticesBetweenIntersections",
+    "InsertPolysIntersection",
+    "IsAllPointsInPoly",
+    "isClockwise",
+    "IsPointInPoly",
+    "IsPolysIntersect",
+    "ReverseVerticesDirection"
+  ],
+  "allChildren": [
+    "CleanUpContinuousIntersections",
+    "GetVerticesBetweenIntersections",
+    "InsertPolysIntersection",
+    "IsAllPointsInPoly",
+    "isClockwise",
+    "IsPointInPoly",
+    "IsPolysIntersect",
+    "ReverseVerticesDirection",
+    "IsAnyEdgeIntersect",
+    "IsAnyPointInPoly",
+    "IsPointInPoly",
+    "IsPointOnPolyEdge",
+    "isPointOnLine",
+    "IsPolyAndLineIntersect",
+    "PolyAndLineIntersection",
+    "TwoLinesIntersection",
+    "InsertPolyAndLineIntersection"
+  ]
+}

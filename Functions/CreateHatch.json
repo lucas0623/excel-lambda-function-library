@@ -1,0 +1,15 @@
+{
+  "name": "CreateHatch",
+  "formula": "=LAMBDA(vertices,[numberOfLines],[angleInDegree],LET(numLines, IF(ISOMITTED(numberOfLines), 10, numberOfLines), angle, IF(ISOMITTED(angleInDegree), RADIANS(45), RADIANS(angleInDegree)), m_90, 999999999, m_temp, TAN(angle), m, IF(OR(ISERROR(m_temp), m_temp > m_90), m_90, m_temp), n, ROWS(vertices), Cs, MAP(SEQUENCE(n), LAMBDA(i, LET(x, INDEX(vertices, i, 1), y, INDEX(vertices, i, 2), y - m * x))), minC, MIN(Cs), maxC, MAX(Cs), spacingC, (maxC - minC) / (numLines + 1), sequenceC, SEQUENCE(numLines, 1, minC + spacingC, spacingC), intersections, DROP(REDUCE(0, sequenceC, LAMBDA(acc,C, LET(cIntersections, {ref}PolyAndLineIntersection2(vertices, m, C), IF(ROWS(cIntersections) = 1, acc, VSTACK(acc, cIntersections))))), 1), numIntersections, ROWS(intersections) / 2, intersectionsForPlot, DROP(REDUCE(0, SEQUENCE(numIntersections, 1, 1, 2), LAMBDA(acc,i, LET(rows, CHOOSEROWS(intersections, i, i + 1), emptyRow, MAKEARRAY(1, 2, LAMBDA(r,c, NA())), VSTACK(acc, rows, emptyRow)))), 1), intersectionsForPlot))",
+  "comment": "Create hatch pattern for graph plot. Last Update at 2024-07-05.",
+  "children": [
+    "PolyAndLineIntersection",
+    "PolyAndLineIntersection2"
+  ],
+  "allChildren": [
+    "PolyAndLineIntersection",
+    "PolyAndLineIntersection2",
+    "TwoLinesIntersection",
+    "TwoLinesIntersection2"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "isPolyAInPolyB",
+  "formula": "=LAMBDA(verticesA,verticesB,AND(NOT({ref}IsAnyEdgeIntersect(verticesA, verticesB)), {ref}IsAllPointsInPoly(verticesB, verticesA)))",
+  "comment": "",
+  "children": [
+    "IsAllPointsInPoly",
+    "IsAnyEdgeIntersect"
+  ],
+  "allChildren": [
+    "IsAllPointsInPoly",
+    "IsAnyEdgeIntersect",
+    "IsPolyAndLineIntersect",
+    "PolyAndLineIntersection",
+    "TwoLinesIntersection",
+    "IsPointInPoly",
+    "IsPointOnPolyEdge",
+    "isPointOnLine"
+  ]
+}

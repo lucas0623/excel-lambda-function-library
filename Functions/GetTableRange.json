@@ -1,0 +1,7 @@
+{
+  "name": "GetTableRange",
+  "formula": "=LAMBDA(refCell,[maxRows],[fixedRows],[valueIfError],LET(maxRow, IF(ISOMITTED(maxRows), 1048576, ROW(refCell) + maxRows - 1), col, OFFSET(refCell, 0, 0, maxRow - ROW(refCell) + 1, 1), numRows, IF(ISOMITTED(fixedRows), IFERROR(MATCH(TRUE, ISBLANK(col), 0) - 1, maxRows), fixedRows), numCol, COLUMNS(refCell), returnRng, OFFSET(refCell, 0, 0, numRows, numCol), errorVal, IF(ISOMITTED(valueIfError), \"\", valueIfError), output, IFERROR(returnRng, errorVal), output))",
+  "comment": "Returns the table range starting from refCell (top row), expanding down to the last non-blank row in its first column (or fixedRows if provided), capped by maxRows. Preserves width of refCell. Returns valueIfError (default '') on errors (e.g., no blanks f",
+  "children": [],
+  "allChildren": []
+}

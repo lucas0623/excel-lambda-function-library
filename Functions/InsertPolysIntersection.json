@@ -1,0 +1,14 @@
+{
+  "name": "InsertPolysIntersection",
+  "formula": "=LAMBDA(verticesA,verticesB,LET(n, ROWS(verticesB), intersections, SEQUENCE(n, 1, 1, 1), results, REDUCE(verticesA, SEQUENCE(n), LAMBDA(a,i, LET(xi, INDEX(verticesB, i, 1), yi, INDEX(verticesB, i, 2), xj, INDEX(verticesB, IF(i = n, 1, i + 1), 1), yj, INDEX(verticesB, IF(i = n, 1, i + 1), 2), {ref}InsertPolyAndLineIntersection(a, xi, yi, xj, yj)))), results))",
+  "comment": "A helper function. Add all intersection points of 2 polygons to the polygon A. Return the vertices A with intersection points. Last Update at 2024-06-23. ",
+  "children": [
+    "InsertPolyAndLineIntersection",
+    "PolyAndLineIntersection"
+  ],
+  "allChildren": [
+    "InsertPolyAndLineIntersection",
+    "PolyAndLineIntersection",
+    "TwoLinesIntersection"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "SolveLevels",
+  "formula": "=LAMBDA(length,[fall],[upstreamLevel],[downstreamLevel],LET(isInputFall, IF(OR(ISOMITTED(fall), fall = \"\", fall = 0, fall = \"-\"), FALSE, TRUE), isInputUpLevel, IF(OR(ISOMITTED(upstreamLevel), upstreamLevel = \"\", upstreamLevel = \"-\"), FALSE, TRUE), isInputDownLevel, IF(OR(ISOMITTED(downstreamLevel), downstreamLevel = \"\", downstreamLevel = \"-\"), FALSE, TRUE), numOfInput, SUM(isInputFall, isInputDownLevel, isInputUpLevel), CalFall, IFERROR(length / (upstreamLevel - downstreamLevel), \"-\"), CalUpstream, downstreamLevel + length / fall, CalDownstream, upstreamLevel - length / fall, IFS(numOfInput = 2, HSTACK(IF(isInputFall, fall, CalFall), IF(isInputUpLevel, upstreamLevel, CalUpstream), IF(isInputDownLevel, downstreamLevel, CalDownstream)), numOfInput = 3, EXPAND(\"Please Input 2 out of 3 Items\", 1, 3, \"\"), TRUE, HSTACK(fall, upstreamLevel, downstreamLevel))))",
+  "comment": "'Input: Length in m. Fall (1:xxx). Upstream Level in mPD. Downstream Level in mPD. Fall, Upstream and Downstream --> Input 2 out of 3. Last Update at 2024-02-05",
+  "children": [],
+  "allChildren": []
+}

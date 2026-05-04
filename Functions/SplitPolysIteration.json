@@ -1,0 +1,16 @@
+{
+  "name": "SplitPolysIteration",
+  "formula": "=LAMBDA(vertices,intersections,LET(numOfIterations, ROWS(intersections / 2), iterations, SEQUENCE(numOfIterations), initShapeText, ARRAYTOTEXT(vertices, 1), REDUCE(initShapeText, iterations, LAMBDA(shapes,i, LET(xp, INDEX(intersections, 2 * i - 1, 1), yp, INDEX(intersections, 2 * i - 1, 2), xq, INDEX(intersections, 2 * i, 1), yq, INDEX(intersections, 2 * i, 2), DROP(REDUCE(0, shapes, LAMBDA(a,shape, LET(shapeArr, VALUE({ref}TextToArray(shape)), splited, {ref}SplitPolyIntoTwoPolys(shapeArr, xp, yp, xq, yq), IF(ISERROR(INDEX(splited, 1, 1)), VSTACK(a, shape), VSTACK(a, splited))))), 1))))))",
+  "comment": "A helper function for SplitPolyByLine. Last Update at 2024-06-23.",
+  "children": [
+    "SplitPolyIntoTwoPolys",
+    "TextToArray"
+  ],
+  "allChildren": [
+    "SplitPolyIntoTwoPolys",
+    "TextToArray",
+    "InsertPolyAndLineIntersection",
+    "PolyAndLineIntersection",
+    "TwoLinesIntersection"
+  ]
+}

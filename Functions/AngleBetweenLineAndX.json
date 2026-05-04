@@ -1,0 +1,7 @@
+{
+  "name": "AngleBetweenLineAndX",
+  "formula": "=LAMBDA(xi,yi,xj,yj,IFERROR(LET(m,(yj-yi)/(xj-xi),theta,DEGREES(ATAN(m)),theta),90))",
+  "comment": "Get the angle between a line and x axis. Return between -90 to 90 DEGREES.",
+  "children": [],
+  "allChildren": []
+}

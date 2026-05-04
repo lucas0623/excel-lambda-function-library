@@ -1,0 +1,13 @@
+{
+  "name": "PolyAndLineIntersection2",
+  "formula": "=LAMBDA(vertices,m,C,LET(n, ROWS(vertices), intersections, DROP(REDUCE(0, SEQUENCE(n), LAMBDA(a,i, LET(xi, INDEX(vertices, i, 1), yi, INDEX(vertices, i, 2), xj, INDEX(vertices, IF(i = n, 1, i + 1), 1), yj, INDEX(vertices, IF(i = n, 1, i + 1), 2), intersection, {ref}TwoLinesIntersection2(xi, yi, xj, yj, m, C), IF(INDEX(intersection, 1, 1), IF(AND(xi = INDEX(intersection, 1, 1), yi = INDEX(intersection, 1, 2)), a, VSTACK(a, intersection)), a)))), 1), sortedIntersectPts, SORTBY(intersections, CHOOSECOLS(intersections, 1), 1, CHOOSECOLS(intersections, 2), 1), sortedIntersectPts))",
+  "comment": "",
+  "children": [
+    "TwoLinesIntersection",
+    "TwoLinesIntersection2"
+  ],
+  "allChildren": [
+    "TwoLinesIntersection",
+    "TwoLinesIntersection2"
+  ]
+}

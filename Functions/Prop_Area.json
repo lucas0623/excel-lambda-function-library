@@ -1,0 +1,7 @@
+{
+  "name": "Prop_Area",
+  "formula": "=LAMBDA(vertices,LET(shapeArr, vertices, x, CHOOSECOLS(shapeArr, 1), y, CHOOSECOLS(shapeArr, 2), xShift, VSTACK(DROP(x, 1), TAKE(x, 1)), yShift, VSTACK(DROP(y, 1), TAKE(y, 1)), area, ABS(SUM(x * yShift - y * xShift)) / 2, area))",
+  "comment": "",
+  "children": [],
+  "allChildren": []
+}

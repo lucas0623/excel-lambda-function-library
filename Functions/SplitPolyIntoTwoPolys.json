@@ -1,0 +1,14 @@
+{
+  "name": "SplitPolyIntoTwoPolys",
+  "formula": "=LAMBDA(vertices,xp,yp,xq,yq,LET(n, ROWS(vertices), x, CHOOSECOLS(vertices, 1), y, CHOOSECOLS(vertices, 2), intersections, SEQUENCE(n, 1, 1, 1), pointsWithIntersections, {ref}InsertPolyAndLineIntersection(vertices, xp, yp, xq, yq), isIntersection, CHOOSECOLS(pointsWithIntersections, 3), start_index, XMATCH(TRUE, isIntersection, 0, 1), end_index, XMATCH(TRUE, isIntersection, 0, -1), shape1, UNIQUE(DROP(CHOOSEROWS(pointsWithIntersections, SEQUENCE(end_index - start_index + 1, , start_index)), , -1)), shape2, UNIQUE(DROP(VSTACK(TAKE(pointsWithIntersections, start_index), DROP(pointsWithIntersections, end_index - 1)), , -1)), isShape1, IF(ROWS(shape1) > 2, TRUE, FALSE), isShape2, IF(ROWS(shape2) > 2, TRUE, FALSE), shape1_text, ARRAYTOTEXT(shape1, 1), shape2_text, ARRAYTOTEXT(shape2, 1), result, IFS(AND(isShape1, isShape2), VSTACK(shape1_text, shape2_text), isShape1, shape1_text, isShape2, shape2_text), result))",
+  "comment": "A helper function for SplitPolyByLine. point(xp,yp) and (xq,yq) shall be on the edge of the polygon.Last Update at 2024-06-23.",
+  "children": [
+    "InsertPolyAndLineIntersection",
+    "PolyAndLineIntersection"
+  ],
+  "allChildren": [
+    "InsertPolyAndLineIntersection",
+    "PolyAndLineIntersection",
+    "TwoLinesIntersection"
+  ]
+}

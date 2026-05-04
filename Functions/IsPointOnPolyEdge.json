@@ -1,0 +1,11 @@
+{
+  "name": "IsPointOnPolyEdge",
+  "formula": "=LAMBDA(Vertices,Point,[count],LET(n, ROWS(Vertices), i, IF(ISOMITTED(count), 1, count), x, INDEX(Point, 1), y, INDEX(Point, 2), j, IF(i = n, 1, i + 1), xi, INDEX(Vertices, i, 1), yi, INDEX(Vertices, i, 2), xj, INDEX(Vertices, j, 1), yj, INDEX(Vertices, j, 2), isOnLine, {ref}isPointOnLine(xi, yi, xj, yj, x, y), IF(isOnLine, TRUE, IF(i < n, IsPointOnPolyEdge(Vertices, Point, i + 1), FALSE))))",
+  "comment": "To check if a point lies on an edge of a polygon. Last update at 2024-06-27.",
+  "children": [
+    "isPointOnLine"
+  ],
+  "allChildren": [
+    "isPointOnLine"
+  ]
+}

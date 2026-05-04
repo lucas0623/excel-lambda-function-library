@@ -1,0 +1,7 @@
+{
+  "name": "InterpolateXYTable",
+  "formula": "=LAMBDA(x_value,x,y, LET(author, \"Kinen Ma\",version_date,\"v3, 2023-09-21\", z, HSTACK(x,y), order, IF(INDEX(x,1)<INDEX(x, ROWS(x)),2, -2), bot, XLOOKUP(x_value, x, z, ,-1,order), top, XLOOKUP(x_value, x, z, ,1,order), x1_, INDEX(bot,1), x2_, INDEX(top,1), y1_,INDEX(bot,2),y2_,INDEX(top,2), p, (x_value-x1_)/(x2_-x1_),res,p*y2_+(1-p)*y1_,match_check,IF(x_value=x1_,TRUE,FALSE),output_within,IF(match_check=TRUE,y1_,res),case,IF(ISNA(x1_),\"smaller\", IF(ISNA(x2_),\"larger\",\"within\")),lenarray,ROWS(x),xa1_,IF(order=2,INDEX(x,1),INDEX(x,lenarray)),ya1_,IF(order=2,INDEX(y,1),INDEX(y,lenarray)),xa2_,IF(order=2,INDEX(x,2),INDEX(x,lenarray-1)),ya2_,IF(order=2,INDEX(y,2),INDEX(y,lenarray-1)),xar2_,IF(order=-2,INDEX(x,1),INDEX(x,lenarray)),yar2_,IF(order=-2,INDEX(y,1),INDEX(y,lenarray)),xar1_,IF(order=-2,INDEX(x,2),INDEX(x,lenarray-1)),yar1_,IF(order=-2,INDEX(y,2),INDEX(y,lenarray-1)),m,IF(case=\"smaller\", (ya2_-ya1_)/(xa2_-xa1_), (yar2_-yar1_)/(xar2_-xar1_)),c,IF(case=\"smaller\",ya1_-m*xa1_,yar1_-m*xar1_),y_res_outter, m*x_value+c,output,IF(case=\"within\",output_within,y_res_outter),output))",
+  "comment": "Interpolate x value within x array and corresponding y array (i.e. lookup + interpolate). The array must be already sorted in accending or decending order. INTERPOLATE(float, array[float], array[float])",
+  "children": [],
+  "allChildren": []
+}

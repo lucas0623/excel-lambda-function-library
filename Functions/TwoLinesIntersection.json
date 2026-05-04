@@ -1,0 +1,7 @@
+{
+  "name": "TwoLinesIntersection",
+  "formula": "=LAMBDA(xi,yi,xj,yj,xp,yp,xq,yq,LET(a_ij, yj - yi, b_ij, xi - xj, c_ij, a_ij * xi + b_ij * yi, a_pq, yq - yp, b_pq, xp - xq, c_pq, a_pq * xp + b_pq * yp, determinant, a_ij * b_pq - a_pq * b_ij, IF(determinant = 0, NA(), LET(x, (b_pq * c_ij - b_ij * c_pq) / determinant, y, (a_ij * c_pq - a_pq * c_ij) / determinant, IF(AND(MIN(xi, xj) <= x, x <= MAX(xi, xj), MIN(yi, yj) <= y, y <= MAX(yi, yj), MIN(xp, xq) <= x, x <= MAX(xp, xq), MIN(yp, yq) <= y, y <= MAX(yp, yq)), HSTACK(x, y), NA())))))",
+  "comment": "Find the intersection point of 2 lines. Last update at 2024-06-23.",
+  "children": [],
+  "allChildren": []
+}

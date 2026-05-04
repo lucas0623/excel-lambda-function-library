@@ -1,0 +1,20 @@
+{
+  "name": "SplitPolyByLine",
+  "formula": "=LAMBDA(vertices,xp,yp,xq,yq,LET(originShapeArr, vertices, Intersects, {ref}PolyAndLineIntersection(originShapeArr, xp, yp, xq, yq), numOfIntersections, ROWS(Intersects), iterations, SEQUENCE(numOfIntersections / 2), output, IF(numOfIntersections = 2, {ref}SplitPolyIntoTwoPolys(originShapeArr, xp, yp, xq, yq), {ref}SplitPolysIteration(originShapeArr, Intersects)), output))",
+  "comment": "Split a shape (defined by array of points) by a line. Last Update at 2024-06-23. Return an array of the shapes, each entity in the array contains the points of that shape.",
+  "children": [
+    "PolyAndLineIntersection",
+    "SplitPolyIntoTwoPolys",
+    "SplitPolysIteration"
+  ],
+  "allChildren": [
+    "PolyAndLineIntersection",
+    "SplitPolyIntoTwoPolys",
+    "SplitPolysIteration",
+    "SplitPolyIntoTwoPolys",
+    "TextToArray",
+    "InsertPolyAndLineIntersection",
+    "PolyAndLineIntersection",
+    "TwoLinesIntersection"
+  ]
+}

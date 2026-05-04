@@ -1,0 +1,7 @@
+{
+  "name": "Prop_Cy",
+  "formula": "=LAMBDA(vertices,LET(shapeArr, vertices, x, CHOOSECOLS(shapeArr, 1), y, CHOOSECOLS(shapeArr, 2), xShift, VSTACK(DROP(x, 1), TAKE(x, 1)), yShift, VSTACK(DROP(y, 1), TAKE(y, 1)), area, SUM(x * yShift - y * xShift) / 2, Cx, SUM((x + xShift) * (x * yShift - y * xShift)) / (6 * area), Cy, SUM((y + yShift) * (x * yShift - y * xShift)) / (6 * area), Cy))",
+  "comment": "",
+  "children": [],
+  "allChildren": []
+}

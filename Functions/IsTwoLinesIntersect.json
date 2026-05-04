@@ -1,0 +1,11 @@
+{
+  "name": "IsTwoLinesIntersect",
+  "formula": "=LAMBDA(xi,yi,xj,yj,xp,yp,xq,yq,IF(ISERR(INDEX({ref}TwoLinesIntersection(xi, yi, xj, yj, xp, yp, xq, yq), 1, 1)), FALSE, TRUE))",
+  "comment": "To determine if 2 lines intersecting each others. Last Update at 2024-06-27.",
+  "children": [
+    "TwoLinesIntersection"
+  ],
+  "allChildren": [
+    "TwoLinesIntersection"
+  ]
+}

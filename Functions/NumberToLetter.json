@@ -1,0 +1,7 @@
+{
+  "name": "NumberToLetter",
+  "formula": "=LAMBDA(n,IFS(n<1,\"INVALID INPUT\",n<27,CHAR(n+64),n<703,CHAR(INT((n-1)/26)+64)&CHAR(MOD(n-1,26)+65),n<18279,CHAR(INT((n-703)/676)+65)&CHAR(MOD(INT((n-703)/26),26)+65)&CHAR(MOD(n-703,26)+65),TRUE,\"Exceeds limit\"))",
+  "comment": "Convert Number to Letter",
+  "children": [],
+  "allChildren": []
+}

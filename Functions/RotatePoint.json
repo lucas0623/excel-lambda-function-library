@@ -1,0 +1,7 @@
+{
+  "name": "RotatePoint",
+  "formula": "=LAMBDA(point,deg,x_center,y_center,TOROW(LET(author, \"Kinen Ma & Lucas Leung\", version_date, \"v2, 2025-09-05\", x, INDEX(point, 1, 1), y, INDEX(point, 1, 2), rad, RADIANS(deg), rotation_matric, VSTACK(HSTACK(COS(rad), -SIN(rad)), HSTACK(SIN(rad), COS(rad))), x0, x - x_center, y0, y - y_center, coor_matrix, VSTACK(x0, y0), res_matrix2, MMULT(rotation_matric, coor_matrix), res_matrix, res_matrix2 + VSTACK(x_center, y_center), output, res_matrix, output)))",
+  "comment": "Rotate a point through another point by some degrees. ROTATEPOINT(float, float, float, float, float, optional string:{\"x\", \"y\"})",
+  "children": [],
+  "allChildren": []
+}

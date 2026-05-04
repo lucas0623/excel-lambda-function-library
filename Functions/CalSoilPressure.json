@@ -1,0 +1,7 @@
+{
+  "name": "CalSoilPressure",
+  "formula": "=LAMBDA(soilH,waterH,K,[Length],[SoilDensity],[WaterDensity],LET(Len,IF(ISOMITTED(Length),1,Length),DenSoil,IF(ISOMITTED(SoilDensity),19,SoilDensity),DenWater,IF(ISOMITTED(WaterDensity),10,WaterDensity),revisedWaterH,IFS(waterH>soilH,soilH,waterH<0,0,TRUE,waterH),soilStress1,IF(soilH>revisedWaterH,DenSoil*(soilH-revisedWaterH),0),soilStress2,soilStress1+(DenSoil-DenWater)*waterH,soilForce1,soilStress1*(soilH-revisedWaterH)/2*Len,soilForce2,(soilStress1+soilStress2)*revisedWaterH/2*Len,TotalSoilForce,soilForce1+soilForce2,OutputDesc,VSTACK(\"Soil Stress at Water Table = \", \"Soil Stress at Bottom = \", \"Soil Force Above Water Table = \",\"Soil Force Below Water Table = \",\" Total Soil Force = \"), outputVal,VSTACK(soilStress1,soilStress2,soilForce1,soilForce2,TotalSoilForce),output,HSTACK(OutputDesc,outputVal),output))",
+  "comment": "SoilH = Height of Soil Profile in m. WaterH = Height of Water Table in m (from Bottom), K = K Value. Default Length = 1m, Default Density of Soil = 19kN/m3, Default Density of Water = 10kN/m3.",
+  "children": [],
+  "allChildren": []
+}

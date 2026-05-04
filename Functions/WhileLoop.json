@@ -1,0 +1,7 @@
+{
+  "name": "WhileLoop",
+  "formula": "=LAMBDA(currentParams,conditionFunc,nextValFunc,IF(conditionFunc(currentParams), currentParams, LET(nextParams, nextValFunc(currentParams), WhileLoop(nextParams, conditionFunc, nextValFunc))))",
+  "comment": "While Loop. Logic: While 'conditionFunc(currentValue) = true, return currentValue; Else, run 'nextValFunc(currentValue,nextValFuncParams)' to get the update value until the condition is satisfied. Last Update at 2025-08-01.",
+  "children": [],
+  "allChildren": []
+}

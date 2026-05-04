@@ -1,0 +1,7 @@
+{
+  "name": "ForEachColumn",
+  "formula": "=LAMBDA(arr,func,LET(n, COLUMNS(arr), DROP(REDUCE(0, SEQUENCE(n), LAMBDA(a,i, LET(cCol, CHOOSECOLS(arr, i), output, func(cCol), HSTACK(a, output)))), , 1)))",
+  "comment": "This loop for each column in an array, which the logic is the same as excel default BYCOL function. But this can output as 2D array (which BYROW cannot). Last Update at 2025-08-01.",
+  "children": [],
+  "allChildren": []
+}

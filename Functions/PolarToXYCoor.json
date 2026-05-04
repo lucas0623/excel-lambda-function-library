@@ -1,0 +1,7 @@
+{
+  "name": "PolarToXYCoor",
+  "formula": "=LAMBDA(r,theta_deg,LET(theta,RADIANS(theta_deg),x,r*COS(theta),y,r*SIN(theta),HSTACK(x,y)))",
+  "comment": "This function converts polar coor to xy coor. Input: r, theta(deg). Output: x,y",
+  "children": [],
+  "allChildren": []
+}

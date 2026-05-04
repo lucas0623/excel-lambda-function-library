@@ -1,0 +1,7 @@
+{
+  "name": "TextToArray",
+  "formula": "=LAMBDA(text,LET(Length, LEN(text) - 2, modifiedText, LEFT(REPLACE(text, 1, 1, \"\"), Length), TEXTSPLIT(modifiedText, \",\", \";\")))",
+  "comment": "Convert the Text formed by the excel 'ArrayToText' Function (format: strict) to array.",
+  "children": [],
+  "allChildren": []
+}

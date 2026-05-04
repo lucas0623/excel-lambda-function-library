@@ -1,0 +1,7 @@
+{
+  "name": "CreateStepRange",
+  "formula": "=LAMBDA(start,end,numOfStep_optional,LET(author, \"Kinen Ma\", version_date,\"v1, 2023-08-21\", omitted,ISOMITTED(numOfStep_optional),step,IF(omitted=FALSE,numOfStep_optional,end-start+1),step_2, FLOOR.MATH(step),increment,(end-start)/(step_2-1),arr,MAKEARRAY(step_2,1,LAMBDA(x,y, start+(x-1)*increment)),arr))",
+  "comment": "Make range of array by specifing start, end, and optional step. RANGE(float, float, optional_int)",
+  "children": [],
+  "allChildren": []
+}

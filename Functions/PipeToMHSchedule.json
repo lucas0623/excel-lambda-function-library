@@ -1,0 +1,12 @@
+{
+  "name": "PipeToMHSchedule",
+  "formula": "=LAMBDA(CMH,USMH,DSMH,USIL,DSIL,PipeDia,PipeMat,REDUCE(HSTACK(\"MH\",\"Inlet I.L.\",\"Inlet Pipe Dia\",\"Inlet Pipe Material\",\"Inlet From MH\",\"Outlet DSIL\",\"Outlet Pipe Dia\",\"Outlet Pipe Material\",\"Outlet To MH\"),CMH,LAMBDA(a,b,VSTACK(a,'Useful Excel Formula 20240620.xlsm'!{ref}GetMHInfoFromPipeSch(b,USMH,DSMH,USIL,DSIL,PipeDia,PipeMat)))))",
+  "comment": "To Convert Pipe Schedule to Manhole Schedule",
+  "children": [
+    "GetMHInfoFromPipeSch"
+  ],
+  "allChildren": [
+    "GetMHInfoFromPipeSch",
+    "ReplaceErrInRange"
+  ]
+}

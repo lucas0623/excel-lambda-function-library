@@ -1,0 +1,7 @@
+{
+  "name": "DishChannelArea",
+  "formula": "=LAMBDA(Width,Height,LET(W, Width, H, -Height, a, -4 * H / W ^ 2, b, 4 * H / W, area, a * W ^ 3 / 3 + b * W ^ 2 / 2, ABS(area)))",
+  "comment": "This formula returns the cross section area of arc shape dish-channel, which is a three points arc defined by coordinates (0,0), (B/2,-H) and (B,0).\nLast Update 2024-04-22.",
+  "children": [],
+  "allChildren": []
+}

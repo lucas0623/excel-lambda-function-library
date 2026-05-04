@@ -1,0 +1,38 @@
+{
+  "name": "Loop_CombinePolygons",
+  "formula": "=LAMBDA(verticesText,verticesArrText,[count],LET(i, IF(ISOMITTED(count), 1, count), n, ROWS(verticesArrText), verticesA, VALUE({ref}TextToArray(verticesText)), verticesB, VALUE({ref}TextToArray(INDEX(verticesArrText, i, 1))), combinedPolys, {ref}CombineTwoPolygons(verticesA, verticesB), isCombined, ROWS(combinedPolys) = 1, returnVerticesArrText, IF(isCombined, IF(n = 1, combinedPolys, VSTACK(combinedPolys, {ref}RemoveRow(verticesArrText, i))), VSTACK(verticesArrText, verticesText)), out, IF(OR(i = n, isCombined), returnVerticesArrText, Loop_CombinePolygons(verticesText, verticesArrText, i + 1)), out))",
+  "comment": "A helper function of CombinedPolygons",
+  "children": [
+    "CombinePolygons",
+    "CombineTwoPolygons",
+    "RemoveRow",
+    "TextToArray"
+  ],
+  "allChildren": [
+    "CombinePolygons",
+    "CombineTwoPolygons",
+    "RemoveRow",
+    "TextToArray",
+    "CleanUpContinuousIntersections",
+    "GetVerticesBetweenIntersections",
+    "InsertPolysIntersection",
+    "IsAllPointsInPoly",
+    "isClockwise",
+    "IsPointInPoly",
+    "IsPolysIntersect",
+    "ReverseVerticesDirection",
+    "IsAnyEdgeIntersect",
+    "IsAnyPointInPoly",
+    "IsPolyAndLineIntersect",
+    "PolyAndLineIntersection",
+    "TwoLinesIntersection",
+    "IsPointOnPolyEdge",
+    "isPointOnLine",
+    "InsertPolyAndLineIntersection",
+    "Loop_CombinePolygons",
+    "RemoveRow",
+    "CombinePolygons",
+    "CombineTwoPolygons",
+    "TextToArray"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "AngleBetween3Points",
+  "formula": "=LAMBDA(xi,yi,xj,yj,xk,yk,LET(a, (xi, yi, xj, yj), b, (xj, yj, xk, yk), c, (xk, yk, xi, yi), ret, DEGREES(ACOS((a ^ 2 + b ^ 2 - c ^ 2) / (2 * a * b))), ret))",
+  "comment": "Calculates the angle in degrees (0°–180°) at the vertex (middle point J) formed by three points I, J, K in a 2D plane, using the law of cosines.",
+  "children": [],
+  "allChildren": []
+}

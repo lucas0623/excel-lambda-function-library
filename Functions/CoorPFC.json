@@ -1,0 +1,7 @@
+{
+  "name": "CoorPFC",
+  "formula": "=LAMBDA(h,b,tf,tw,[isRepeatFirstPoint],LET(isRepeat, IF(ISOMITTED(isRepeatFirstPoint), FALSE, TRUE), xa, b, ya, h / 2, xb, b, yb, h / 2 - tf, xc, tw, yc, h / 2 - tf, xd, tw, yd, -yc, xe, b, ye, -yb, xf, b, yf, -ya, xg, 0, yg, -h / 2, rowA, HSTACK(xa, ya), rowB, HSTACK(xb, yb), rowC, HSTACK(xc, yc), rowD, HSTACK(xd, yd), rowE, HSTACK(xe, ye), rowF, HSTACK(xf, yf), rowG, HSTACK(xg, yg), rowH, HSTACK(xg, -yg), output, IF(isRepeat, VSTACK(rowH, rowG, rowF, rowE, rowD, rowC, rowB, rowA, rowH), VSTACK(rowH, rowG, rowF, rowE, rowD, rowC, rowB, rowA)), output))",
+  "comment": "Create coordinates of vertices for a I Section. isRepeatFirstPoint = FALSE by default. Last Update at 2024-07-02.",
+  "children": [],
+  "allChildren": []
+}

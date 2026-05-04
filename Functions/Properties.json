@@ -1,0 +1,33 @@
+{
+  "name": "Properties",
+  "formula": "=LAMBDA(vertices,[unit],LET(shapeArr, vertices, strUnit, IF(ISOMITTED(unit), \"mm\", unit), PropTitles, VSTACK(\"Area\", \"Elastic Centroid X Coor, Cex\", \"Elastic Centroid Y Coor, Cey\", \"Plastic Centroid X Coor, Cpx\", \"Plastic Centroid Y Coor, Cpy\", \"Distance between Top Fibre to Centroid, yt,\", \"Distance between Bottom Fibre to Centroid, yb,\", \"Distance between Left Fibre to Centroid, xl,\", \"Distance between Right Fibre to Centroid, xr,\", \"2nd Moment of Area about x-axis Ixx\", \"2nd Moment of Area about y-axis Iyy\", \"Polar Moment of Area Ixy\", \"2nd Moment of Area about principal u-axis Iuu\", \"2nd Moment of Area about principal v-axis Ivv\", \"Angle between prinipal u-axis and x-axis\", \"Radius of Gyration about x-axis, rx\", \"Radius of Gyration about x-axis, ry\", \"Radius of Gyration about principal u-axis, ru\", \"Radius of Gyration about principal v-axis, rv\", \"Elastic Section Modulus about x-axis at Top Fibre, Zxt\", \"Elastic Section Modulus about x-axis at Bottom Fibre, Zxb\", \"Elastic Section Modulus about y-axis at Left Fibre, Zyl\", \"Elastic Section Modulus about y-axis at Right Fibre, Zyr\", \"Elastic Section Modulus about x-axis, Zxx\", \"Elastic Section Modulus about x-axis, Zyy\", \"Plastic Section Modulus about x-axis, Sxx\", \"Plastic Section Modulus about y-axis, Syy\"), Units, VSTACK(strUnit & \"2\", strUnit, strUnit, strUnit, strUnit, strUnit, strUnit, strUnit, strUnit, strUnit & \"4\", strUnit & \"4\", strUnit & \"4\", strUnit & \"4\", strUnit & \"4\", \"°\", strUnit, strUnit, strUnit, strUnit, strUnit & \"3\", strUnit & \"3\", strUnit & \"3\", strUnit & \"3\", strUnit & \"3\", strUnit & \"3\", strUnit & \"3\", strUnit & \"3\"), x, CHOOSECOLS(shapeArr, 1), y, CHOOSECOLS(shapeArr, 2), xShift, VSTACK(DROP(x, 1), TAKE(x, 1)), yShift, VSTACK(DROP(y, 1), TAKE(y, 1)), area, SUM(x * yShift - y * xShift) / 2, Cx, SUM((x + xShift) * (x * yShift - y * xShift)) / (6 * area), Cy, SUM((y + yShift) * (x * yShift - y * xShift)) / (6 * area), xMin, MIN(x), xMax, MAX(x), yMin, MIN(y), yMax, MAX(y), yt, yMax - Cy, yb, Cy - yMin, xl, Cx - xMin, xr, xMax - Cx, Ixx, ABS(SUM((x * yShift - xShift * y) * (y ^ 2 + y * yShift + yShift ^ 2)) / 12) + area * Cy ^ 2, Iyy, ABS(SUM((x * yShift - xShift * y) * (x ^ 2 + x * xShift + xShift ^ 2)) / 12) + area * Cx ^ 2, Ixy, SUM((x * yShift - xShift * y) * (x * yShift + 2 * x * y + 2 * xShift * yShift + xShift * y)) / 24 - area * Cx * Cy, principalAxisAngle, IF(Ixx = Iyy, PI() / 4, ATAN(2 * Ixy / (Ixx - Iyy)) / 2), Iuu, ABS((Ixx + Iyy) / 2 + (Ixx - Iyy) / 2 * COS(2 * principalAxisAngle) - Ixy * SIN(2 * principalAxisAngle)), Ivv, ABS((Ixx + Iyy) / 2 - (Ixx - Iyy) / 2 * COS(2 * principalAxisAngle) + Ixy * SIN(2 * principalAxisAngle)), rx, SQRT(Ixx / ABS(area)), ry, SQRT(Iyy / ABS(area)), ru, SQRT(Iuu / ABS(area)), rv, SQRT(Ivv / ABS(area)), Zxt, Ixx / yt, Zxb, Ixx / yb, Zyl, Iyy / xl, Zyr, Iyy / xr, Zxx, MIN(Zxt, Zxb), Zyy, MIN(Zyl, Zyr), Cpx, {ref}Prop_PlasticCentroidCpx(shapeArr, ABS(area), xMax, xMin, yMax, yMin), Cpy, {ref}Prop_PlasticCentroidCpy(shapeArr, ABS(area), xMax, xMin, yMax, yMin), SxxShapes, {ref}SplitPolyByLine(vertices, xMin, Cpy, xMax, Cpy), SyyShapes, {ref}SplitPolyByLine(vertices, Cpx, yMin, Cpx, yMax), Sxx, REDUCE(0, SxxShapes, LAMBDA(a,b, LET(shapeArr, VALUE({ref}TextToArray(b)), a + {ref}Prop_Area(shapeArr) * ABS(({ref}Prop_Cy(shapeArr) - Cpy))))), Syy, REDUCE(0, SyyShapes, LAMBDA(a,b, LET(shapeArr, VALUE({ref}TextToArray(b)), a + {ref}Prop_Area(shapeArr) * ABS(({ref}Prop_Cx(shapeArr) - Cpx))))), Props, VSTACK(ABS(area), Cx, Cy, Cpx, Cpy, yt, yb, xl, xr, Ixx, Iyy, Ixy, MAX(Iuu, Ivv), MIN(Iuu, Ivv), IF(Iuu >= Ivv, DEGREES(principalAxisAngle), DEGREES(principalAxisAngle) + 90), rx, ry, ru, rv, Zxt, Zxb, Zyl, Zyr, Zxx, Zyy, Sxx, Syy), output, HSTACK(PropTitles, Props, Units), output))",
+  "comment": "To calculate section properties of a polygon. Last update at 2024-07-06.",
+  "children": [
+    "Prop_Area",
+    "Prop_Cx",
+    "Prop_Cy",
+    "Prop_PlasticCentroidCpx",
+    "Prop_PlasticCentroidCpy",
+    "SplitPolyByLine",
+    "TextToArray"
+  ],
+  "allChildren": [
+    "Prop_Area",
+    "Prop_Cx",
+    "Prop_Cy",
+    "Prop_PlasticCentroidCpx",
+    "Prop_PlasticCentroidCpy",
+    "SplitPolyByLine",
+    "TextToArray",
+    "PolyAndLineIntersection",
+    "SplitPolyIntoTwoPolys",
+    "SplitPolysIteration",
+    "TextToArray",
+    "InsertPolyAndLineIntersection",
+    "TwoLinesIntersection",
+    "Prop_Area",
+    "Prop_Cy",
+    "SplitPolyByLine",
+    "Prop_Cx"
+  ]
+}

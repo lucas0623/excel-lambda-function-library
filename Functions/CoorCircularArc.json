@@ -1,0 +1,11 @@
+{
+  "name": "CoorCircularArc",
+  "formula": "=LAMBDA(x0,y0,r,startAngle,endAngle,n,LET(angle1, startAngle, angle2, IF(endAngle < startAngle, endAngle + (INT((startAngle - endAngle) / 360) + 1) * 360, endAngle), angles, SEQUENCE(n, 1, angle1, (angle2 - angle1) / (n - 1)), coorsToCenter, {ref}PolarToXYCoor(r, angles), coors, HSTACK(x0 + VALUE(CHOOSECOLS(coorsToCenter, 1)), y0 + VALUE(CHOOSECOLS(coorsToCenter, 2))), coors))",
+  "comment": "To create coordinates of circular arc from specified angles. Input startAngle and endAngle in Anti-Clockwise Direction. Last Update at 2026-04-21.",
+  "children": [
+    "PolarToXYCoor"
+  ],
+  "allChildren": [
+    "PolarToXYCoor"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "AdjustPolarAngle",
+  "formula": "=LAMBDA(deg,LET(adjFac, INT(deg / 360), deg - 360 * adjFac))",
+  "comment": "To adjust angle to 0 to 360 degrees.",
+  "children": [],
+  "allChildren": []
+}

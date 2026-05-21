@@ -1,0 +1,16 @@
+{
+  "name": "PointObjToBoltEleForPlot",
+  "formula": "=LAMBDA(xCoorArr,yCoorArr,dia,length,NutNum_Top,NutNum_Bot,NutWidth,NutThick,[Deg],VALUE(DROP(REDUCE(0, SEQUENCE(ROWS(xCoorArr)), LAMBDA(a,i, LET(x, CHOOSEROWS(xCoorArr, i), y, CHOOSEROWS(yCoorArr, i), BoltCoor, {ref}CoorBoltEle(dia, length, NutNum_Top, NutNum_Bot, NutWidth, NutThick, x, y), BoltCoor_Rotated, IF(NOT(Deg = 0), {ref}RotateCoor(BoltCoor, x, y, Deg), BoltCoor), VSTACK(a, BoltCoor_Rotated)))), 1)))",
+  "comment": "",
+  "children": [
+    "CoorBoltEle",
+    "RotateCoor"
+  ],
+  "allChildren": [
+    "CoorBoltEle",
+    "RotateCoor",
+    "CoorRect",
+    "CoorNut",
+    "TranslateCoor"
+  ]
+}

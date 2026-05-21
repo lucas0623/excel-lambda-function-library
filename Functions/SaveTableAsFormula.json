@@ -1,0 +1,7 @@
+{
+  "name": "SaveTableAsFormula",
+  "formula": "=LAMBDA(array,\"=VSTACK(\" & TEXTJOIN(\",\", TRUE, BYROW(array, LAMBDA(row, LET(rowWithSemiColon, BYCOL(row, LAMBDA(col, IF(ISNUMBER(col), col, CHAR(34) & col & CHAR(34)))), \"HSTACK(\" & TEXTJOIN(\",\", TRUE, rowWithSemiColon) & \")\")))) & \")\")",
+  "comment": "To store a data table as a lambda function. output a formula for the lambda function.",
+  "children": [],
+  "allChildren": []
+}

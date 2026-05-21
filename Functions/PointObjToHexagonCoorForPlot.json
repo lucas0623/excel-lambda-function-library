@@ -1,0 +1,11 @@
+{
+  "name": "PointObjToHexagonCoorForPlot",
+  "formula": "=LAMBDA(xCoorArr,yCoorArr,diaArr,VALUE(DROP(REDUCE(0, SEQUENCE(ROWS(xCoorArr)), LAMBDA(a,i, LET(x, CHOOSEROWS(xCoorArr, i), y, CHOOSEROWS(yCoorArr, i), Dia, CHOOSEROWS(diaArr, i), circleCoor, {ref}CoorHexagon(Dia, x, y), VSTACK(a, circleCoor, TAKE(circleCoor, 1), \"\")))), 1)))",
+  "comment": "",
+  "children": [
+    "CoorHexagon"
+  ],
+  "allChildren": [
+    "CoorHexagon"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "CoorOfCircle",
+  "formula": "=LAMBDA(r,x0,y0,n,LET(angle,360/n,xCoor,x0+r*COS(RADIANS(angle*SEQUENCE(n))),yCoor,y0+r*SIN(RADIANS(angle*SEQUENCE(n))),HSTACK(xCoor,yCoor)))",
+  "comment": "Creates the coordinates of circle.",
+  "children": [],
+  "allChildren": []
+}

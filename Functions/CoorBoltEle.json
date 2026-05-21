@@ -1,0 +1,15 @@
+{
+  "name": "CoorBoltEle",
+  "formula": "=LAMBDA(Dia,Length,NutNum_Top,NutNum_Bot,NutWidth,NutThick,[x],[y],LET(boltCoor, {ref}CoorRect(Length, Dia, TRUE), nutBasicCoor, {ref}CoorNut(NutWidth, NutThick, TRUE), emptyRow, MAKEARRAY(1, 2, LAMBDA(r,c, NA())), topNut_1st, {ref}TranslateCoor(nutBasicCoor, 0, Length / 2 - NutThick / 2), topNut_2nd, {ref}TranslateCoor(nutBasicCoor, 0, Length / 2 - 3 * NutThick / 2), botNut_1st, {ref}TranslateCoor(nutBasicCoor, 0, -Length / 2 + NutThick / 2), botNut_2nd, {ref}TranslateCoor(nutBasicCoor, 0, -Length / 2 + 3 * NutThick / 2), topNutsCoor, SWITCH(NutNum_Top, 2, VSTACK(topNut_1st, emptyRow, topNut_2nd), 1, topNut_1st, emptyRow), botNutsCoor, SWITCH(NutNum_Bot, 2, VSTACK(botNut_1st, emptyRow, botNut_2nd), 1, botNut_1st, emptyRow), Output, VSTACK(boltCoor, emptyRow, topNutsCoor, emptyRow, botNutsCoor, emptyRow), IF(AND(ISOMITTED(x), ISOMITTED(y)), Output, {ref}TranslateCoor(Output, x, y))))",
+  "comment": "",
+  "children": [
+    "CoorRect",
+    "CoorNut",
+    "TranslateCoor"
+  ],
+  "allChildren": [
+    "CoorRect",
+    "CoorNut",
+    "TranslateCoor"
+  ]
+}

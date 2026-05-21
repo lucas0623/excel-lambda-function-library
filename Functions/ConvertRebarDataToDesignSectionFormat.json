@@ -1,0 +1,11 @@
+{
+  "name": "ConvertRebarDataToDesignSectionFormat",
+  "formula": "=LAMBDA(layerArr,rebarArr,startArr,endArr,LET(locationArr, DROP(SORT(UNIQUE(VSTACK(startArr, endArr))), 1), comment1, \"Filter rebar of certain lo\", output, IN_StripRebar!{ref}ForLoop(1, ROWS(locationArr), LAMBDA(i, LET(cLoc, INDEX(locationArr, i, 1), filterBoolTop, REGEXTEST(layerArr, \"T\") * (cLoc > startArr) * (cLoc <= endArr), filterBoolBot, REGEXTEST(layerArr, \"B\") * (cLoc > startArr) * (cLoc <= endArr), filterBoolLink, REGEXTEST(layerArr, \"link\") * (cLoc > startArr) * (cLoc <= endArr), topRebar, TEXTJOIN(\"+\", TRUE, FILTER(rebarArr, filterBoolTop, \"-\")), topLayers, TEXTJOIN(\",\", TRUE, FILTER(layerArr, filterBoolTop, \"-\")), botRebar, TEXTJOIN(\"+\", TRUE, FILTER(rebarArr, filterBoolBot, \"-\")), botLayers, TEXTJOIN(\"+\", TRUE, FILTER(layerArr, filterBoolBot, \"-\")), links, TEXTJOIN(\"+\", TRUE, FILTER(rebarArr, filterBoolLink, \"-\")), HSTACK(topLayers, topRebar, botLayers, botRebar, links)))), HSTACK(locationArr, output)))",
+  "comment": "",
+  "children": [
+    "ForLoop"
+  ],
+  "allChildren": [
+    "ForLoop"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Inner",
+  "formula": "=LAMBDA(list1,list2,FILTER(list1, ISNUMBER(XMATCH(list1, list2))))",
+  "comment": "To find the common values from 2 lists.",
+  "children": [],
+  "allChildren": []
+}

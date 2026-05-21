@@ -1,0 +1,11 @@
+{
+  "name": "PointObjToCircleCoorForPlot",
+  "formula": "=LAMBDA(xCoorArr,yCoorArr,diaArr,numOfPointsPerCircle,VALUE(DROP(REDUCE(0,SEQUENCE(ROWS(xCoorArr)),LAMBDA(a,i,LET(x,CHOOSEROWS(xCoorArr,i),y,CHOOSEROWS(yCoorArr,i),Dia,CHOOSEROWS(diaArr,i),circleCoor,{ref}CoorOfCircle(Dia/2,x,y,numOfPointsPerCircle),VSTACK(a,circleCoor,TAKE(circleCoor,1),\"\")))),1)))",
+  "comment": "",
+  "children": [
+    "CoorOfCircle"
+  ],
+  "allChildren": [
+    "CoorOfCircle"
+  ]
+}

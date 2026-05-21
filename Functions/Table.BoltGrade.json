@@ -1,0 +1,7 @@
+{
+  "name": "Table.BoltGrade",
+  "formula": "=LAMBDA(VSTACK(HSTACK(\"Code\", \"Bolt grade\", \"Design shear strength ps (N/mm²)\", \"Design bearing strength, pub (N/mm²)\", \"Design tensile strength pt (N/mm²)\", \"Min. Tensile Strength, Ub\", \"Min. yield strength, Yb\"), HSTACK(\"ISO\", \"4.6\", 160, 460, 240, 400, \"\"), HSTACK(\"ISO\", \"8.8\", 375, 1000, 560, 800, \"\"), HSTACK(\"ISO\", \"10.9\", 400, 1300, 700, 1000, \"\"), HSTACK(\"ISO3506-1\", \"A2-50\", 200, 497, 210, 500, 210), HSTACK(\"ISO3506-1\", \"A2-70\", 280, 805, 450, 700, 450), HSTACK(\"ISO3506-1\", \"A4-70\", 280, 805, 450, 700, 450), HSTACK(\"ISO3506-1\", \"A4-80\", 320, 980, 560, 800, 600), HSTACK(\"CS2:2012\", \"500B\", 216, 728, 378, 540, 500), HSTACK(\"CS2:2012\", \"500C\", 230, 752.5, 402.5, 575, 500), HSTACK(\"ASTM\", \"A307\", 124, 400, 310, \"\", \"\"), HSTACK(\"ASTM\", \"A325\", 248, 450, 620, \"\", \"\"), HSTACK(\"ASTM\", \"A490\", 311, 485, 780, \"\", \"\"), HSTACK(\"GB50017\", \"8.8\", 250, 720, 400, \"\", \"\"), HSTACK(\"GB50017\", \"10.9\", 310, 930, 500, \"\", \"\")))",
+  "comment": "Bolt grade and strength table as per table 9.5, 9.6 and 9.8 of HKSUoS 2011.",
+  "children": [],
+  "allChildren": []
+}

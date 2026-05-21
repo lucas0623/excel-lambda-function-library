@@ -1,7 +1,7 @@
 {
   "name": "TranslateCoor",
   "formula": "=LAMBDA(pointsArr,deltaX,deltaY,LET(x, CHOOSECOLS(pointsArr, 1), y, CHOOSECOLS(pointsArr, 2), HSTACK(x + deltaX, y + deltaY)))",
-  "comment": "Translate the coordinates of points by specified x and y. Last Update at 2024-07-13.",
+  "comment": "",
   "children": [],
   "allChildren": []
 }

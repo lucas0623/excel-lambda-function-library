@@ -1,0 +1,7 @@
+{
+  "name": "CoorHexagon",
+  "formula": "=LAMBDA(circumDiameter,x0,y0,LET(angle, PI() / 3, circumradius, circumDiameter / 2, MAKEARRAY(6, 2, LAMBDA(i,j, IF(j = 1, x0 + circumradius * COS((i - 1) * angle), y0 + circumradius * SIN((i - 1) * angle))))))",
+  "comment": "Create coordinates of a hexagon. Last Update at 2024-11-07.",
+  "children": [],
+  "allChildren": []
+}

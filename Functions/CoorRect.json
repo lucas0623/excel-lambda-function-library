@@ -1,7 +1,7 @@
 {
   "name": "CoorRect",
-  "formula": "=LAMBDA(h,b,[isRepeatFirstPoint],LET(isRepeat, IF(ISOMITTED(isRepeatFirstPoint), FALSE, TRUE), xa, -b / 2, ya, h / 2, xb, b / 2, yb, h / 2, xc, b / 2, yc, -h / 2, xd, -b / 2, yd, -h / 2, rowA, HSTACK(xa, ya), rowB, HSTACK(xb, yb), rowC, HSTACK(xc, yc), rowD, HSTACK(xd, yd), output, IF(isRepeat, VSTACK(rowD, rowC, rowB, rowA, rowD), VSTACK(rowD, rowC, rowB, rowA)), output))",
-  "comment": "Create coordinates of vertices for a rectangle. isRepeatFirstPoint = FALSE by default. Last Update at 2024-07-02.",
+  "formula": "=LAMBDA(h,b,[isRepeatFirstPoint],LET(isRepeat, IF(ISOMITTED(isRepeatFirstPoint), FALSE, isRepeatFirstPoint), xa, -b / 2, ya, h / 2, xb, b / 2, yb, h / 2, xc, b / 2, yc, -h / 2, xd, -b / 2, yd, -h / 2, rowA, HSTACK(xa, ya), rowB, HSTACK(xb, yb), rowC, HSTACK(xc, yc), rowD, HSTACK(xd, yd), output, IF(isRepeat, VSTACK(rowD, rowC, rowB, rowA, rowD), VSTACK(rowD, rowC, rowB, rowA)), output))",
+  "comment": "",
   "children": [],
   "allChildren": []
 }

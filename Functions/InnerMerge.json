@@ -1,0 +1,11 @@
+{
+  "name": "InnerMerge",
+  "formula": "=LAMBDA(leftDF,rightDF,keyName,LET(leftHeader, TAKE(leftDF, 1), leftData, DROP(leftDF, 1), leftKeyCol, XMATCH(keyName, leftHeader), leftDataWithoutKey, IFS(leftKeyCol = 1, DROP(leftData, , leftKeyCol), leftKeyCol = COLUMNS(leftData), DROP(leftData, , -1), TRUE, HSTACK(TAKE(leftData, , leftKeyCol - 1), DROP(leftData, , leftKeyCol))), leftKeys, CHOOSECOLS(leftData, leftKeyCol), leftHeaderWithoutKey, IFS(leftKeyCol = 1, DROP(leftHeader, , leftKeyCol), leftKeyCol = COLUMNS(leftHeader), DROP(leftHeader, , -1), TRUE, HSTACK(TAKE(leftHeader, , leftKeyCol - 1), DROP(leftHeader, , leftKeyCol))), rightHeader, TAKE(rightDF, 1), rightData, DROP(rightDF, 1), rightKeyCol, XMATCH(keyName, rightHeader), rightDataWithoutKey, IFS(rightKeyCol = 1, DROP(rightData, , leftKeyCol), rightKeyCol = COLUMNS(rightData), DROP(rightData, , -1), TRUE, HSTACK(TAKE(rightData, , rightKeyCol - 1), DROP(rightData, , rightKeyCol))), rightHeaderWithoutKey, IFS(rightKeyCol = 1, DROP(rightHeader, , leftKeyCol), rightKeyCol = COLUMNS(rightData), DROP(rightHeader, , -1), TRUE, HSTACK(TAKE(rightHeader, , rightKeyCol - 1), DROP(rightHeader, , rightKeyCol))), rightKeys, CHOOSECOLS(rightData, rightKeyCol), commonKeys, {ref}Inner(leftKeys, rightKeys), leftDataRows, BYROW(commonKeys, LAMBDA(row, XMATCH(row, leftKeys))), leftCommonData, CHOOSEROWS(leftDataWithoutKey, leftDataRows), rightDataRows, BYROW(commonKeys, LAMBDA(row, XMATCH(row, rightKeys))), rightCommonData, CHOOSEROWS(rightDataWithoutKey, rightDataRows), output, VSTACK(HSTACK(keyName, leftHeaderWithoutKey, rightHeaderWithoutKey), HSTACK(commonKeys, leftCommonData, rightCommonData)), output))",
+  "comment": "Inner merge 2 tables. Assume the key at the first column. ",
+  "children": [
+    "Inner"
+  ],
+  "allChildren": [
+    "Inner"
+  ]
+}

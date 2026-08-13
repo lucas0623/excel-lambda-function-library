@@ -1,0 +1,7 @@
+{
+  "name": "MaxChar",
+  "formula": "=LAMBDA(cell_range, CHAR(MAX(MAP(cell_range, LAMBDA(x, IFERROR(UNICODE(x), 0))))))",
+  "comment": "Return the largest Char",
+  "children": [],
+  "allChildren": []
+}

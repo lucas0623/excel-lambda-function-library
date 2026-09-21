@@ -1,6 +1,6 @@
 {
   "name": "DistToNearestPoint",
-  "formula": "=LAMBDA(queryX,queryY,xCoords,yCoords,MIN(BYROW(SEQUENCE(ROWS(xCoords)), LAMBDA(i, {ref}Dist(queryX, queryY, CHOOSEROWS(xCoords, i), CHOOSEROWS(yCoords, i))))))",
+  "formula": "=LAMBDA(queryX,queryY,xCoords,yCoords,LET(arr, BYROW(SEQUENCE(ROWS(xCoords)), LAMBDA(i, 'Soil Spring input.xlsx'!{ref}Dist(queryX, queryY, CHOOSEROWS(xCoords, i), CHOOSEROWS(yCoords, i)))), MIN(FILTER(arr, arr > 0))))",
   "comment": "Returns the Euclidean distance from `(queryX, queryY)` to the nearest point in arrays `xCoords` and `yCoords`, via [[Dist]]. Handles empty/mismatched arrays with NA().",
   "children": [
     "Dist"

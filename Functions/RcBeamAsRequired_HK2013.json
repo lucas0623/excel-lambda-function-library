@@ -1,0 +1,7 @@
+{
+  "name": "RcBeamAsRequired_HK2013",
+  "formula": "=LAMBDA(Moment,width,eff_depth,eff_depth_to_comp,fcu,fy,[isOutputHeader],LET(M, Moment, b, width, d, eff_depth, d_prime, eff_depth_to_comp, isOutputHeader, IF(ISOMITTED(isOutputHeader), TRUE, isOutputHeader), K, M / (b * d ^ 2 * fcu) * 1000 ^ 2, K_prime, IFS(fcu <= 45, 0.156, fcu <= 70, 0.12, TRUE, 0.094), z_max, 0.95 * d, z_notAdjusted, IF(K < K_prime, d * (0.5 + SQRT(0.25 - K / 0.9)), d * (0.5 + SQRT(0.25 - K_prime / 0.9))), z, MIN(z_max, z_notAdjusted), x, IFS(fcu <= 45, (d - z) / 0.45, fcu <= 70, (d - z) / 0.4, TRUE, (d - z) / 0.36), As_prime, IF(K < K_prime, 0, (K - K_prime) * fcu * b * d ^ 2 / (0.87 * fy * (d - d_prime))), As, IF(K < K_prime, M / (0.87 * fy * z) * 1000 ^ 2, K_prime * fcu * b * d ^ 2 / (0.87 * fy * z) + As_prime), output_val, HSTACK(K_prime, K, K < K_prime, z, x, As_prime, As), output_header, HSTACK(\"K'\", \"K\", \"is K<K'\", \"z (mm)\", \"x (mm)\", \"As' (mm2)\", \"As (mm2)\"), IF(isOutputHeader, VSTACK(output_header, output_val), output_val)))",
+  "comment": "Calculate the Required As for RC Beam according to HK Concrete Code 2013. Moment in kNm. Dimension in mm. Strength in MPa.",
+  "children": [],
+  "allChildren": []
+}

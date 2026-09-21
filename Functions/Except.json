@@ -1,0 +1,7 @@
+{
+  "name": "Except",
+  "formula": "=LAMBDA(list1,list2,FILTER(list1, ISNA(XMATCH(list1, list2)), \"All Items in list1 exists in list2\"))",
+  "comment": "Find all items in list1 that do not exist in list2. All items are compared as text.",
+  "children": [],
+  "allChildren": []
+}

@@ -1,0 +1,7 @@
+{
+  "name": "MinChar",
+  "formula": "=LAMBDA(cell_range, CHAR(MIN(MAP(cell_range, LAMBDA(x, IFERROR(UNICODE(x), 99999))))))",
+  "comment": "Return the smallest Char",
+  "children": [],
+  "allChildren": []
+}

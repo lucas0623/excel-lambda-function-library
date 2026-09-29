@@ -1,0 +1,7 @@
+{
+  "name": "FillEmpty",
+  "formula": "=LAMBDA(arr,SCAN(\"\", arr, LAMBDA(prev,curr, IF(OR(ISBLANK(curr), TRIM(curr) = \"\"), prev, curr))))",
+  "comment": "Forward-fills blank cells (ISBLANK or TRIM=\"\") in a single column/array.\nSyntax: =FillEmpty(array) \nExample: =FillEmpty({\"A\",\"\",\"\",\"B\",\"\",\"\"}) → {\"A\",\"A\",\"A\",\"B\",\"B\",\"B\"}",
+  "children": [],
+  "allChildren": []
+}

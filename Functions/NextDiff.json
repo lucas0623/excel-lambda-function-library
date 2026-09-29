@@ -1,0 +1,7 @@
+{
+  "name": "NextDiff",
+  "formula": "=LAMBDA(arr,LET(col, TOCOL(arr), rows, SEQUENCE(ROWS(col)), nonBlankMask, (NOT(ISBLANK(col))) * (TRIM(col & \"\") <> \"\"), vals, FILTER(col, nonBlankMask), rowNums, FILTER(rows, nonBlankMask), isChange, vals <> VSTACK(\"\", DROP(vals, -1)), HSTACK(FILTER(vals, isChange), FILTER(rowNums, isChange))))",
+  "comment": "Returns sequential non-blank value changes and their original row numbers.\nSkips blank cells (ISBLANK or TRIM=\"\").\nReturns 2 columns: Value | Original Row Number\nSyntax: =NextDiff(array)\nExample: =NextDiff({\"A\",\"\",\"\",\"B\",\"\",\"\",\"A\"}) → A 1 / B 4 / A 7",
+  "children": [],
+  "allChildren": []
+}

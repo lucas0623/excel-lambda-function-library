@@ -1,0 +1,17 @@
+{
+  "name": "GroupByAddress",
+  "formula": "=LAMBDA(key_cell,length_cell,return_columns,LET(rRow, ROW(key_cell), fCol, CELL(\"col\", return_columns), lCol, fCol + COLUMNS(return_columns) - 1, n, ROWS({ref}ExpandToLastRow(length_cell)), keyArr, {ref}ExpandToLastRow(key_cell, , n), keyArrClean, IF(keyArr = 0, \"\", keyArr), changedRows, {ref}NextDiff(keyArrClean), keys, CHOOSECOLS(changedRows, 1), firstRows_arr, CHOOSECOLS(changedRows, 2), lastRows_arr, VSTACK(DROP(firstRows_arr, 1) - 1, n), firstRows_sheet, firstRows_arr + rRow - 1, lastRows_sheet, lastRows_arr + rRow - 1, fCell, ADDRESS(firstRows_sheet, fCol), lCell, ADDRESS(lastRows_sheet, lCol), sheetName, \"'\" & {ref}GetSheetName(key_cell) & \"'!\", returnAddressArr, sheetName & fCell & \":\" & lCell, HSTACK(keys, firstRows_sheet, lastRows_sheet, returnAddressArr)))",
+  "comment": "Split rows into groups by a sparse key. Non-blank in 'key_cell' starts a group; blanks continue it. Ends at first blank below 'length_cell'. Returns each key and absolute address for 'return_columns' columns. ",
+  "children": [
+    "\", returnAddressArr, sheetName & fCell & \":\" & lCell, HSTACK",
+    "ExpandToLastRow",
+    "GetSheetName",
+    "NextDiff"
+  ],
+  "allChildren": [
+    "\", returnAddressArr, sheetName & fCell & \":\" & lCell, HSTACK",
+    "ExpandToLastRow",
+    "GetSheetName",
+    "NextDiff"
+  ]
+}

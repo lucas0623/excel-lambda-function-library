@@ -1,0 +1,7 @@
+{
+  "name": "StrengthAnaylsis.RectSection.RectStressBlock",
+  "formula": "=LAMBDA(sectionH,sectionB,fcd,εcu,Ec,rebarAreaArr,rebarDepthArr,fyd,Es,λ,neutralAxisDepth,isSaggingCapacity,LET(x, neutralAxisDepth, concArea, sectionH * sectionB, concCy, sectionH / 2, rebarDepthArr, IF(isSaggingCapacity, rebarDepthArr, sectionH - rebarDepthArr), yc, (SUMPRODUCT(rebarDepthArr, rebarAreaArr) * (Es / Ec) + concArea * concCy) / (SUM(rebarAreaArr) * (Es / Ec) + concArea), εsArr, εcu * (x - rebarDepthArr) / x, εsLimit, fyd / Es, rebarStressArr, MAP(εsArr, LAMBDA(εs, IFS(εs < -εsLimit, -fyd, εs > εsLimit, fyd, TRUE, εs * Es))), FsArr, rebarStressArr * rebarAreaArr / 1000, Fs, SUM(FsArr), Fc, sectionB * MIN(λ * x, concArea) * fcd / 1000, N, Fs + Fc, M, SUM(FsArr * (yc - rebarDepthArr) / 1000) + Fc * (yc - λ * x / 2) / 1000, output, HSTACK(IF(isSaggingCapacity, M, -M), N), output))",
+  "comment": "",
+  "children": [],
+  "allChildren": []
+}

@@ -1,0 +1,7 @@
+{
+  "name": "ForLoop_Binary",
+  "formula": "=LAMBDA(start,end,func,[step],LET(s, IF(ISOMITTED(step), 1, step), num_steps, INT((end - start) / s) + 1, tree_stack, LAMBDA(me,low,high, IF(low = high, func(start + (low - 1) * s), LET(mid, INT((low + high) / 2), VSTACK(me(me, low, mid), me(me, mid + 1, high))))), tree_stack(tree_stack, 1, num_steps)))",
+  "comment": "A high-performance loop for variable-sized arrays. It uses a binary-tree divide-and-conquer structure. start/end: The boundaries of your numeric loop. func: A LAMBDA(i) that executes per iteration and can return any size array. step: Optional increment va",
+  "children": [],
+  "allChildren": []
+}

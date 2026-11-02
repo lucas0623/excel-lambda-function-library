@@ -5,13 +5,11 @@
   "children": [
     "ExpandToLastRow",
     "NextDiff",
-    "GetSheetName",
-    "\", returnAddressArr, sheetName & fCell & \":\" & lCell, HSTACK"
+    "GetSheetName"
   ],
   "allChildren": [
     "ExpandToLastRow",
     "NextDiff",
-    "GetSheetName",
-    "\", returnAddressArr, sheetName & fCell & \":\" & lCell, HSTACK"
+    "GetSheetName"
   ]
 }

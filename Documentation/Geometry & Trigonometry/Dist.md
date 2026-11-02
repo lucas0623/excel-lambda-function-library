@@ -2,45 +2,70 @@
 created: 2026-05-02
 tags:
   - coordinate-geometry
-  - distance-between-points
+  - distance
+aliases:
+  - DIST
+AI Reviewed: true
+example: "[[Geometry Family.xlsx]]"
 ---
-## Description
-Calculates the **Euclidean distance** between two points I($x_i, y_i$) and J($x_j, y_j$) in a 2D plane:
+
+# Dist function
+
+Returns the Euclidean distance between two points.
+
+Example file: [[Geometry Family.xlsx]]
+
+Use it anywhere a library function needs the length of a segment. The points are named I `(xi, yi)` and J `(xj, yj)`.
+
+## Syntax
+
+```
+=Dist(xi, yi, xj, yj)
+```
+
+The Dist function has the following arguments:
+
+| Argument | Description |
+| --- | --- |
+| `xi` | Required. X coordinate of point I. |
+| `yi` | Required. Y coordinate of point I. |
+| `xj` | Required. X coordinate of point J. |
+| `yj` | Required. Y coordinate of point J. |
+
+## Remarks
+
+- The distance is
 
 $$
-d = \sqrt{(x_j - x_i)^2 + (y_j - y_i)^2}
+\sqrt{(x_j-x_i)^2+(y_j-y_i)^2}
 $$
 
-**Assumptions & Error Handling**:
-- Returns 0 if points are coincident.
-- Non-numeric inputs result in Excel #VALUE! error.
-- No division by zero or invalid math issues.
+- The same point twice returns 0.
+- A non-numeric argument returns `#VALUE!`.
+- The name stays `Dist`.
 
-## Parameters
-| Parameter | Type   | Description                  |
-|-----------|--------|------------------------------|
-| `xi`, `yi` | Number | x/y coordinates of **point I** |
-| `xj`, `yj` | Number | x/y coordinates of **point J** |
+## Example
 
-## Returns
-- **Number**: Distance (≥ 0).
+The sample data is on the `example` sheet of [[Geometry Family.xlsx]]. Blue cells are inputs.
 
-## Dependencies
-None.
+![[Dist-20261103020343.jpeg]]
 
-## Usage Examples
+| xi | yi | xj | yj | Formula | Result |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 0 | 3 | 4 | `=Dist(A6,B6,C6,D6)` | 5 |
 
-### Example 1: Classic 3-4-5 right triangle leg
-Points: I(0,0), J(3,4)
-- `=Dist(0,0, 3,4)` → **5**
+## Tests
 
-### Example 2: Horizontal distance
-Points: I(0,0), J(5,0)
-- `=Dist(0,0, 5,0)` → **5**
+The `test` sheet checks the 3-4-5 segment, a coincident pair, and text. Excel calculated 3 Dist cases. All 3 passed.
 
-### Example 3: Coincident points
-Points: I(1,1), J(1,1)
-- `=Dist(1,1, 1,1)` → **0**
+| Case | Result |
+| --- | --- |
+| (0, 0) to (3, 4) | 5 |
+| Coincident points | 0 |
+| Text | `#VALUE!` |
 
-## Related Functions
-- [[AngleBetween3Points]] – Uses Dist to compute side lengths for angle calculation.
+## Related functions
+
+- [[AngleBetween3Points]] — interior angle at the middle point, using three calls to Dist.
+- [[OffsetPoint]] — walks a directed segment, then steps to the left.
+- [[DistToNearestPoint]] — distance to the nearest point in a list.

@@ -1,0 +1,79 @@
+name: Deploy documentation to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "Documentation/**"
+      - "Examples/**"
+      - "Z_System/Attachment/**"
+      - "docs-site/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout library
+        uses: actions/checkout@v4
+
+      - name: Checkout Quartz
+        uses: actions/checkout@v4
+        with:
+          repository: jackyzha0/quartz
+          ref: v5
+          path: .quartz-build
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Prepare documentation content
+        run: node docs-site/prepare-content.mjs .quartz-build/content
+
+      - name: Use library Quartz config
+        run: cp docs-site/quartz.config.yaml .quartz-build/quartz.config.yaml
+
+      - name: Install dependencies
+        working-directory: .quartz-build
+        run: npm ci
+
+      - name: Install Quartz plugins
+        working-directory: .quartz-build
+        run: npx quartz plugin install --from-config
+
+      - name: Install theme
+        working-directory: .quartz-build
+        run: npm install @quartz-themes/default
+
+      - name: Build Quartz
+        working-directory: .quartz-build
+        run: npx quartz build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .quartz-build/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

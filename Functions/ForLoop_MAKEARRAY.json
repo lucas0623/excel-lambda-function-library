@@ -1,0 +1,7 @@
+{
+  "name": "ForLoop_MAKEARRAY",
+  "formula": "=LAMBDA(start,end,func,[step],LET(s, IF(ISOMITTED(step), 1, step), c_count, COLUMNS(func(start)), row_count, (end - start) / s + 1, MAKEARRAY(row_count, c_count, LAMBDA(r,c, LET(i, start + (r - 1) * s, INDEX(func(i), 1, c))))))",
+  "comment": "For loop. 'func' shall be a lambda function LAMBDA(i,output) to describe the actions to be taken in the for loop. Last Update 2025-08-01.",
+  "children": [],
+  "allChildren": []
+}

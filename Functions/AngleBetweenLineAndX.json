@@ -1,7 +1,7 @@
 {
   "name": "AngleBetweenLineAndX",
-  "formula": "=LAMBDA(xi,yi,xj,yj,IFERROR(LET(m,(yj-yi)/(xj-xi),theta,DEGREES(ATAN(m)),theta),90))",
-  "comment": "Get the angle between a line and x axis. Return between -90 to 90 DEGREES.",
+  "formula": "=LAMBDA(xi,yi,xj,yj,LET(dx,xj-xi,dy,yj-yi,IF(AND(dx=0,dy=0),1/0,IF(dx=0,90,DEGREES(ATAN(dy/dx))))))",
+  "comment": "Angle in degrees between the line through I and J and the x-axis, from -90 to 90. A vertical line returns 90. A zero-length segment returns #DIV/0!. Non-numeric input returns #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

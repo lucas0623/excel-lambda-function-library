@@ -1,7 +1,7 @@
 {
   "name": "TranslateCoor",
-  "formula": "=LAMBDA(pointsArr,deltaX,deltaY,LET(x, CHOOSECOLS(pointsArr, 1), y, CHOOSECOLS(pointsArr, 2), HSTACK(x + deltaX, y + deltaY)))",
-  "comment": "",
+  "formula": "=LAMBDA(pointsArr,deltaX,deltaY,LET(x,CHOOSECOLS(pointsArr,1),y,CHOOSECOLS(pointsArr,2),HSTACK(x+deltaX,y+deltaY)))",
+  "comment": "Adds (deltaX, deltaY) to each row of an n x 2 coordinate array. Returns an n x 2 array. An array with fewer than two columns returns #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

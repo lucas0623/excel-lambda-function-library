@@ -53,7 +53,8 @@ Functions are grouped by category below.
 | Function | Description |
 |---|---|
 | `Dist` | Distance between two points (x1,y1,x2,y2) |
-| `AngleBetween3Points` | Angle formed at the middle of three points |
+| `AngleBetween3Points` | Interior angle at the middle of three points, 0 to 180 degrees |
+| `AdjustPolarAngle` | Wrap a degree angle into [0, 360) |
 | `AngleBetweenLineAndX` | Angle between a line and the X-axis |
 | `CoorAngle` | Angle of a line defined by two coordinate pairs |
 | `PolarToXYCoor` | Convert polar coordinates to Cartesian (x,y) |

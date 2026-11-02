@@ -1,7 +1,7 @@
 {
   "name": "AdjustPolarAngle",
-  "formula": "=LAMBDA(deg,LET(adjFac, INT(deg / 360), deg - 360 * adjFac))",
-  "comment": "To adjust angle to 0 to 360 degrees.",
+  "formula": "=LAMBDA(deg,MOD(deg,360))",
+  "comment": "Wraps an angle in degrees into the half-open interval [0, 360). Equivalent to MOD(deg, 360), including negative angles. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

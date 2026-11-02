@@ -1,7 +1,7 @@
 {
   "name": "SolveTriangle",
-  "formula": "=LAMBDA(a,b,angleC,output,LET(RadC,RADIANS(angleC),c,SQRT(a^2+b^2-2*a*b*COS(RadC)),angleA,ASIN(a*SIN(RadC)/c),angleB,ASIN(b*SIN(RadC)/c),IFS(output=\"a\",a,output=\"b\",b,output=\"c\",c,output=\"AngleA\",DEGREES(angleA),output=\"AngleB\",DEGREES(angleB),output=\"AngleC\",angleC,TRUE,\"Cannot Identify '\"&output & \"' output.\")))",
-  "comment": "Solve Triangle, Input = length a,b and angle C (angle between a & b). ret shall be = either \"a\"/\"b\"/\"c\"/\"AngleA\"/\"AngleB\"/\"AngleC\".",
+  "formula": "=LAMBDA(a,b,angleC,output,LET(radC,RADIANS(angleC),c,SQRT(a^2+b^2-2*a*b*COS(radC)),IF(output=\"a\",a,IF(output=\"b\",b,IF(output=\"c\",c,IF(output=\"AngleA\",DEGREES(ACOS(MAX(-1,MIN(1,(b^2+c^2-a^2)/(2*b*c))))),IF(output=\"AngleB\",DEGREES(ACOS(MAX(-1,MIN(1,(a^2+c^2-b^2)/(2*a*c))))),IF(output=\"AngleC\",angleC,\"Cannot Identify '\"&output&\"' output.\"))))))))",
+  "comment": "Solves one triangle from sides a and b and the included angle C in degrees (SAS). output is a, b, c, AngleA, AngleB, or AngleC. Angles are degrees from 0 to 180. An unknown output name returns a message. A zero side on a requested angle returns #DIV/0!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

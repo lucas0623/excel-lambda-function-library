@@ -1,7 +1,7 @@
 {
   "name": "RotateCoor",
-  "formula": "=LAMBDA(arr,rx,ry,deg,LET(theta, deg * PI() / 180, cosTheta, COS(theta), sinTheta, SIN(theta), RotatePointX, LAMBDA(point, LET(x, INDEX(point, 1, 1), y, INDEX(point, 1, 2), xPrime, rx + cosTheta * (x - rx) + sinTheta * (y - ry), xPrime)), RotatePointY, LAMBDA(point, LET(x, INDEX(point, 1, 1), y, INDEX(point, 1, 2), yPrime, ry - sinTheta * (x - rx) + cosTheta * (y - ry), yPrime)), xCoor, BYROW(arr, RotatePointX), yCoor, BYROW(arr, RotatePointY), output, HSTACK(xCoor, yCoor), output))",
-  "comment": "",
+  "formula": "=LAMBDA(arr,rx,ry,deg,LET(theta,RADIANS(deg),cosT,COS(theta),sinT,SIN(theta),xCoor,BYROW(arr,LAMBDA(point,rx+cosT*(INDEX(point,1,1)-rx)-sinT*(INDEX(point,1,2)-ry))),yCoor,BYROW(arr,LAMBDA(point,ry+sinT*(INDEX(point,1,1)-rx)+cosT*(INDEX(point,1,2)-ry))),HSTACK(xCoor,yCoor)))",
+  "comment": "Rotates each row of an n x 2 coordinate array counterclockwise by deg degrees about (rx, ry). Positive degrees match RotatePoint. A row that is not two numbers returns #REF!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

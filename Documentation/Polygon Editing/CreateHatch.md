@@ -1,4 +1,5 @@
 ---
+description: "Returns hatch segments for a closed polygon, with a blank row between segments so a scatter chart breaks the line."
 created: 2026-11-03
 tags:
   - coordinate-geometry

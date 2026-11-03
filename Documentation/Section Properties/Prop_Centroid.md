@@ -1,4 +1,5 @@
 ---
+description: "Returns the centroid as a 1×2 row (Cx, Cy)."
 created: 2026-11-03
 tags:
   - section-properties

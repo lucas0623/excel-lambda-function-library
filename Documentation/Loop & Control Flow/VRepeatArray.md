@@ -1,4 +1,5 @@
 ---
+description: "Returns arr stacked vertically NumOfRepeat times."
 created: 2026-11-03
 tags:
   - excel-lambda

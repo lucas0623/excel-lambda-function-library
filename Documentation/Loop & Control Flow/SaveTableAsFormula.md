@@ -1,4 +1,5 @@
 ---
+description: "Returns a VSTACK and HSTACK formula that rebuilds array."
 created: 2026-11-03
 tags:
   - excel-lambda

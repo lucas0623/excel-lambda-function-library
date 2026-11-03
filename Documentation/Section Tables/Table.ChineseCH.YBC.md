@@ -1,4 +1,5 @@
 ---
+description: "Returns the Chinese YB channel (YB-C) section property table stored in the formula, from YB-C5 through YB-C40."
 AI Reviewed: true
 ---
 

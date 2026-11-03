@@ -1,4 +1,5 @@
 ---
+description: "Clears intersection flags that sit in the middle of a run of three or more TRUE values."
 created: 2026-11-03
 tags:
   - coordinate-geometry

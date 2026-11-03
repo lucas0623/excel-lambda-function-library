@@ -1,4 +1,5 @@
 ---
+description: "Rotates each vertex of an n×2 shape counterclockwise by deg degrees."
 created: 2026-11-03
 tags:
   - section-properties

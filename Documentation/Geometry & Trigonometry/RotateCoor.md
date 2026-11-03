@@ -1,4 +1,5 @@
 ---
+description: "Rotates every row of a coordinate array counterclockwise about a center."
 created: 2026-11-03
 tags:
   - coordinate-geometry

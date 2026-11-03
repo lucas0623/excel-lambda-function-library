@@ -1,4 +1,5 @@
 ---
+description: "Returns items of list1 that are absent from list2, in list1 order."
 created: 2026-11-03
 tags:
   - excel-lambda

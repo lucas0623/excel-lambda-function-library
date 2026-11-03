@@ -1,4 +1,5 @@
 ---
+description: "Returns the array inside an ARRAYTOTEXT strict string."
 created: 2026-11-03
 tags:
   - excel-lambda

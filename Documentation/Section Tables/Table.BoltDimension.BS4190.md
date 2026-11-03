@@ -1,4 +1,5 @@
 ---
+description: "Returns the BS4190 2014 bolt and nut dimension table stored in the formula."
 AI Reviewed: true
 ---
 

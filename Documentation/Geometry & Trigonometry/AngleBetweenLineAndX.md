@@ -1,4 +1,5 @@
 ---
+description: "Returns the angle, in degrees, between the line through two points and the x-axis."
 created: 2026-11-03
 tags:
   - coordinate-geometry

@@ -1,4 +1,5 @@
 ---
+description: "Returns two corners of a square axis window."
 created: 2026-11-03
 tags:
   - plotting

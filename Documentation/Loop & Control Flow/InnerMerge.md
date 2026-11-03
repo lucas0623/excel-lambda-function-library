@@ -1,4 +1,5 @@
 ---
+description: "Inner-joins two tables on keyName."
 created: 2026-11-03
 tags:
   - excel-lambda

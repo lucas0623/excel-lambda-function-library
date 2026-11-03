@@ -1,4 +1,5 @@
 ---
+description: "Returns 6 vertices of a hexagon centered at (x0, y0)."
 created: 2026-11-03
 tags:
   - section-properties

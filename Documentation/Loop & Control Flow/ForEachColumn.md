@@ -1,4 +1,5 @@
 ---
+description: "Stacks func for each column of arr."
 created: 2026-11-03
 tags:
   - excel-lambda

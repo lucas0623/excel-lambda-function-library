@@ -1,4 +1,5 @@
 ---
+description: "Returns a column of evenly spaced numbers from start through end, both ends included."
 created: 2026-11-03
 tags:
   - interpolation

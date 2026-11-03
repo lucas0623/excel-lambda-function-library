@@ -1,4 +1,5 @@
 ---
+description: "Inserts the points where a line segment meets a closed polygon into the vertex list."
 created: 2026-11-03
 tags:
   - coordinate-geometry

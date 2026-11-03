@@ -1,4 +1,5 @@
 ---
+description: "Returns the Euclidean distance between two points."
 created: 2026-05-02
 tags:
   - coordinate-geometry

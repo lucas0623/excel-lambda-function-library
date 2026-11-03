@@ -1,4 +1,5 @@
 ---
+description: "Returns the character with the smallest Unicode code in cell_range."
 created: 2026-11-03
 tags:
   - excel-lambda

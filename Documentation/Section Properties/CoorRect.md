@@ -1,4 +1,5 @@
 ---
+description: "Returns the vertices of a rectangle of height h and width b, centered on the origin."
 created: 2026-11-03
 tags:
   - section-properties

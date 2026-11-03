@@ -1,4 +1,5 @@
 ---
+description: "Adds a shift to every row of a coordinate array."
 created: 2026-11-03
 tags:
   - coordinate-geometry

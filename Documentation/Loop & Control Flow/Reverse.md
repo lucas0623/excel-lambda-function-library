@@ -1,4 +1,5 @@
 ---
+description: "Returns the elements of array in reverse order as one column."
 created: 2026-11-03
 tags:
   - excel-lambda

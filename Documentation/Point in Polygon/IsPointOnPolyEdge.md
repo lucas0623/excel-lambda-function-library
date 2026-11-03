@@ -1,4 +1,5 @@
 ---
+description: "Returns TRUE when a point lies on an edge of a polygon, including a vertex."
 created: 2026-11-03
 tags:
   - coordinate-geometry

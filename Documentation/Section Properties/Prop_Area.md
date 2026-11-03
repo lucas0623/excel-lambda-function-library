@@ -1,4 +1,5 @@
 ---
+description: "Returns the positive area of a simple polygon."
 created: 2026-11-03
 tags:
   - section-properties

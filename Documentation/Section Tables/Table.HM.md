@@ -1,4 +1,5 @@
 ---
+description: "Returns the Chinese HM section property table stored in the formula, from 150x100x20.7 through 600x300x170.4."
 AI Reviewed: true
 ---
 

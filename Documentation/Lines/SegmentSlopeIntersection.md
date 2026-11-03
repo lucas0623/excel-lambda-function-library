@@ -1,4 +1,5 @@
 ---
+description: "Returns the point where a segment meets the infinite line y = mx + C."
 created: 2026-11-03
 tags:
   - coordinate-geometry

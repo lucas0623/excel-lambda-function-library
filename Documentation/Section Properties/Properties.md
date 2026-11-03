@@ -1,4 +1,5 @@
 ---
+description: "Returns elastic and plastic section properties of a simple polygon as a 27×3 array of name, value, and unit."
 created: 2026-11-03
 tags:
   - section-properties

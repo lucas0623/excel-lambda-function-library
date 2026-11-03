@@ -1,4 +1,5 @@
 ---
+description: "Returns the design-section text at each chainage after the first."
 created: 2026-11-03
 tags:
   - strength

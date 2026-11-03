@@ -1,4 +1,5 @@
 ---
+description: "Splits a closed polygon by a line segment."
 created: 2026-11-03
 tags:
   - coordinate-geometry

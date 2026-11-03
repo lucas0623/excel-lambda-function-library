@@ -1,4 +1,5 @@
 ---
+description: "Returns TRUE when an edge of polygon A meets an edge of polygon B."
 created: 2026-11-03
 tags:
   - coordinate-geometry

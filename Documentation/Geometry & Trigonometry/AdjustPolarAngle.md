@@ -1,4 +1,5 @@
 ---
+description: "Wraps an angle in degrees into the half-open range [0, 360)."
 created: 2026-11-03
 tags:
   - coordinate-geometry

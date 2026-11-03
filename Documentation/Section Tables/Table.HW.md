@@ -1,4 +1,5 @@
 ---
+description: "Returns the Chinese HW section property table stored in the formula, from 100x100x16.9 through 500x500x258.7."
 AI Reviewed: true
 ---
 

@@ -1,4 +1,5 @@
 ---
+description: "Returns the y on the straight line through two points at a given x."
 created: 2026-11-03
 tags:
   - interpolation

@@ -1,4 +1,5 @@
 ---
+description: "Returns the vertices strictly between two named rows of an intersection list."
 created: 2026-11-03
 tags:
   - coordinate-geometry

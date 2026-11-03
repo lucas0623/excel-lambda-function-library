@@ -1,4 +1,5 @@
 ---
+description: "Returns the cross-section area of a parabolic dish channel."
 created: 2026-11-03
 tags:
   - section-properties

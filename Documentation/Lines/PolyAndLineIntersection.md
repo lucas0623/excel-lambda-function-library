@@ -1,4 +1,5 @@
 ---
+description: "Returns the points where a closed polygon meets a line segment."
 created: 2026-11-03
 tags:
   - coordinate-geometry

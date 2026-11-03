@@ -1,4 +1,5 @@
 ---
+description: "Returns the bolt grade and strength table stored in the formula."
 AI Reviewed: true
 ---
 

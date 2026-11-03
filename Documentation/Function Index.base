@@ -1,0 +1,29 @@
+filters:
+  and:
+    - file.inFolder("Documentation")
+    - 'file.ext == "md"'
+    - file.hasProperty("description")
+
+formulas:
+  group: 'file.folder.replace("Documentation/", "")'
+
+properties:
+  file.name:
+    displayName: Function
+  description:
+    displayName: Description
+  formula.group:
+    displayName: Group
+
+views:
+  - type: table
+    name: Functions
+    order:
+      - file.name
+      - description
+    groupBy:
+      property: formula.group
+      direction: ASC
+    sort:
+      - property: file.name
+        direction: ASC

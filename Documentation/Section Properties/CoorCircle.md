@@ -1,4 +1,5 @@
 ---
+description: "Returns n points on a circle of radius r centered at (x0, y0)."
 created: 2026-11-03
 tags:
   - section-properties

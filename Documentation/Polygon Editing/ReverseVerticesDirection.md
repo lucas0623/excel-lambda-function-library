@@ -1,4 +1,5 @@
 ---
+description: "Reverses the row order of a vertex list, which swaps clockwise and counterclockwise."
 created: 2026-11-03
 tags:
   - coordinate-geometry

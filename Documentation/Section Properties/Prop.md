@@ -1,4 +1,5 @@
 ---
+description: "Returns elastic section properties of a simple polygon about its centroid, as a 16×3 array of name, value, and unit."
 created: 2026-11-03
 tags:
   - section-properties

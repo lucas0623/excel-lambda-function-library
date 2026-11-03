@@ -1,4 +1,5 @@
 ---
+description: "Forward-fills blanks in arr."
 created: 2026-11-03
 tags:
   - excel-lambda

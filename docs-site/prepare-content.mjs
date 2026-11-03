@@ -40,12 +40,15 @@ function stripAliases(markdown) {
 rm(dest)
 const docDest = path.join(dest, "Documentation")
 for (const file of walk(path.join(vault, "Documentation"))) {
-  if (!file.endsWith(".md")) continue
   const rel = path.relative(path.join(vault, "Documentation"), file)
   const target = path.join(docDest, rel)
-  const text = stripAliases(fs.readFileSync(file, "utf8"))
-  fs.mkdirSync(path.dirname(target), { recursive: true })
-  fs.writeFileSync(target, text)
+  if (file.endsWith(".md")) {
+    const text = stripAliases(fs.readFileSync(file, "utf8"))
+    fs.mkdirSync(path.dirname(target), { recursive: true })
+    fs.writeFileSync(target, text)
+  } else if (file.endsWith(".base")) {
+    copyFile(file, target)
+  }
 }
 
 const examples = path.join(vault, "Examples")

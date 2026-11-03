@@ -1,4 +1,5 @@
 ---
+description: "Returns the reinforcement required for a rectangular beam by the Hong Kong Code of Practice for Structural Use of Concrete 2013, clause 6.1.2.4, equations 6.7 to 6.16."
 created: 2026-11-03
 tags:
   - strength

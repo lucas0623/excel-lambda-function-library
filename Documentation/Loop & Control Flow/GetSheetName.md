@@ -1,4 +1,5 @@
 ---
+description: "Returns the sheet name of refCell."
 created: 2026-11-03
 tags:
   - excel-lambda

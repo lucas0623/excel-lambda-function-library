@@ -1,4 +1,5 @@
 ---
+description: "Returns TRUE when at least one point lies inside a polygon."
 created: 2026-11-03
 tags:
   - coordinate-geometry

@@ -1,4 +1,5 @@
 ---
+description: "Returns the Euclidean distance from a query to the nearest point in a list."
 created: 2026-05-02
 tags:
   - coordinate-geometry

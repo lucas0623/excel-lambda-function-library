@@ -1,4 +1,5 @@
 ---
+description: "Returns the y coordinate of the centroid."
 created: 2026-11-03
 tags:
   - section-properties

@@ -1,4 +1,5 @@
 ---
+description: "Returns the rectangular hollow section (RHS) property table stored in the formula, from 250x150x5 through 500x300x20."
 AI Reviewed: true
 ---
 

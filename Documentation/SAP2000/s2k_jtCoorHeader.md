@@ -1,4 +1,5 @@
 ---
+description: "Returns the joint-coordinate table header for a SAP2000 .s2k file."
 created: 2026-11-03
 tags:
   - sap2000

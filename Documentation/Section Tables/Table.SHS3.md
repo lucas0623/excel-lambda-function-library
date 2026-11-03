@@ -1,4 +1,5 @@
 ---
+description: "Returns the square hollow section (SHS) property table stored in the formula, from 220x220x6 through 400x400x20."
 AI Reviewed: true
 ---
 

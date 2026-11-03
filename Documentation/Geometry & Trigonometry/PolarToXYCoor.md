@@ -1,4 +1,5 @@
 ---
+description: "Converts a polar radius and angle into Cartesian coordinates."
 created: 2026-11-03
 tags:
   - coordinate-geometry

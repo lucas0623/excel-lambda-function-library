@@ -1,4 +1,5 @@
 ---
+description: "Returns the x values where a polyline crosses target_y."
 created: 2026-11-03
 tags:
   - civil

@@ -1,4 +1,5 @@
 ---
+description: "Returns the vertices of an I section centered on the origin."
 created: 2026-11-03
 tags:
   - section-properties

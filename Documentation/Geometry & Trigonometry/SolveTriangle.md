@@ -1,4 +1,5 @@
 ---
+description: "Solves one triangle from two sides and the included angle."
 created: 2026-11-03
 tags:
   - trigonometry

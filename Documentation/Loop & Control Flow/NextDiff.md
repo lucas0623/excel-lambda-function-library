@@ -1,4 +1,5 @@
 ---
+description: "Returns each non-blank run and the row of its first cell."
 created: 2026-11-03
 tags:
   - excel-lambda

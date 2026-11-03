@@ -1,4 +1,5 @@
 ---
+description: "Returns TRUE when a point lies on a line segment."
 created: 2026-11-03
 tags:
   - coordinate-geometry

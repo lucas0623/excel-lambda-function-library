@@ -1,4 +1,5 @@
 ---
+description: "Returns the RSC section property table stored in the formula, from 432x102x65 through 76x38x7."
 AI Reviewed: true
 ---
 

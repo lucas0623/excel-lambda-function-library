@@ -1,4 +1,5 @@
 ---
+description: "Returns the UKPFC section property table stored in the formula, from 430x100x64 through 100x50x10."
 AI Reviewed: true
 ---
 

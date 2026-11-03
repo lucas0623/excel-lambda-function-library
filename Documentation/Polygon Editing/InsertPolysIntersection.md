@@ -1,4 +1,5 @@
 ---
+description: "Inserts every intersection of polygon B into polygon A."
 created: 2026-11-03
 tags:
   - coordinate-geometry

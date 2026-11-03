@@ -1,4 +1,5 @@
 ---
+description: "Returns the elevation of a bolt and its nuts as an n×2 array."
 created: 2026-11-03
 tags:
   - section-properties

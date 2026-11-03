@@ -1,4 +1,5 @@
 ---
+description: "Returns the name of the point closest to a query."
 created: 2026-05-02
 tags:
   - coordinate-geometry

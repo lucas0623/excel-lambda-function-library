@@ -1,4 +1,5 @@
 ---
+description: "Splits one polygon at the intersections of a segment."
 created: 2026-11-03
 tags:
   - coordinate-geometry

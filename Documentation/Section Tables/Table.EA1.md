@@ -1,4 +1,5 @@
 ---
+description: "Returns the equal angle (EA) section property table stored in the formula, from 250x250x35 through 100x100x8."
 AI Reviewed: true
 ---
 

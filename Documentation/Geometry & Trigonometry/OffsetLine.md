@@ -1,4 +1,5 @@
 ---
+description: "Returns a parallel copy of a segment, shifted to the left of its direction."
 created: 2026-11-03
 tags:
   - coordinate-geometry

@@ -1,4 +1,5 @@
 ---
+description: "Returns the centers of four bolts on a 2 by 2 grid."
 created: 2026-11-03
 tags:
   - bolts

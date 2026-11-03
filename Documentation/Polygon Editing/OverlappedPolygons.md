@@ -1,4 +1,5 @@
 ---
+description: "Returns the overlap of two polygons as one strict ARRAYTOTEXT of (x, y) rows."
 created: 2026-11-03
 tags:
   - coordinate-geometry

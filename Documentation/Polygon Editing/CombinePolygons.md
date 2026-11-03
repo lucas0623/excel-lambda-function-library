@@ -1,4 +1,5 @@
 ---
+description: "Combines a column of polygons into as few outlines as their overlaps allow."
 created: 2026-11-03
 tags:
   - coordinate-geometry

@@ -1,4 +1,5 @@
 ---
+description: "Returns a manhole schedule from a pipe schedule."
 created: 2026-11-03
 tags:
   - civil

@@ -1,4 +1,5 @@
 ---
+description: "Returns the point at distance rLen from I toward J."
 created: 2026-11-03
 tags:
   - interpolation

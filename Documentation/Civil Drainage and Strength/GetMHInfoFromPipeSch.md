@@ -1,4 +1,5 @@
 ---
+description: "Returns one row for each pipe connected to a manhole."
 created: 2026-11-03
 tags:
   - civil

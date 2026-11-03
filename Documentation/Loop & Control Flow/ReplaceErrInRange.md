@@ -1,4 +1,5 @@
 ---
+description: "Returns arr with every Excel error replaced."
 created: 2026-11-03
 tags:
   - excel-lambda

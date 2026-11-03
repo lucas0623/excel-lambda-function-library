@@ -1,4 +1,5 @@
 ---
+description: "Returns arr without the given row."
 created: 2026-11-03
 tags:
   - excel-lambda

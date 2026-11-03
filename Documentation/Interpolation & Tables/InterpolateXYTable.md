@@ -1,4 +1,5 @@
 ---
+description: "Returns the linear y at x_value from a sorted column of x and a matching column of y."
 created: 2026-11-03
 tags:
   - interpolation

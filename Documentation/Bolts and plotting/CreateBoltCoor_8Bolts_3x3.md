@@ -1,4 +1,5 @@
 ---
+description: "Returns eight bolt centers on a 3 by 3 grid."
 created: 2026-11-03
 tags:
   - bolts

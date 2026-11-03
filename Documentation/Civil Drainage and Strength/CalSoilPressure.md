@@ -1,4 +1,5 @@
 ---
+description: "Returns the effective vertical soil stress and the force on a wall of length Length."
 created: 2026-11-03
 tags:
   - civil

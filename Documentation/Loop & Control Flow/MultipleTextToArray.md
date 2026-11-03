@@ -1,4 +1,5 @@
 ---
+description: "Stacks strict ARRAYTOTEXT strings and places a row of #N/A between the blocks."
 created: 2026-11-03
 tags:
   - excel-lambda

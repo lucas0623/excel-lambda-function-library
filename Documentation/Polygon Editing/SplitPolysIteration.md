@@ -1,4 +1,5 @@
 ---
+description: "Splits a polygon once for each pair of intersection points."
 created: 2026-11-03
 tags:
   - coordinate-geometry

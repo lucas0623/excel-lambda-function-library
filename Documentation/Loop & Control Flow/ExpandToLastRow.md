@@ -1,4 +1,5 @@
 ---
+description: "Returns rows from refCell down to the blank in its first column."
 created: 2026-11-03
 tags:
   - excel-lambda

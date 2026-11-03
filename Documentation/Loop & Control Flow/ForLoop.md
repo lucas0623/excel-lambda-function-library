@@ -1,4 +1,5 @@
 ---
+description: "Returns func at each step from start through the last value not past end."
 created: 2026-11-03
 tags:
   - excel-lambda

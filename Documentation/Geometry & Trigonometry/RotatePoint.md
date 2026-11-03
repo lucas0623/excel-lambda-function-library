@@ -1,4 +1,5 @@
 ---
+description: "Rotates one point counterclockwise about a center."
 created: 2026-11-03
 tags:
   - coordinate-geometry

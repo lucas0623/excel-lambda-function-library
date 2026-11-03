@@ -1,4 +1,5 @@
 ---
+description: "Returns TRUE when two polygons meet or one lies inside the other."
 created: 2026-11-03
 tags:
   - coordinate-geometry

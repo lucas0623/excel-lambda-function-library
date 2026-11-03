@@ -1,4 +1,5 @@
 ---
+description: "Returns TRUE when polygon A lies inside polygon B, including the boundary."
 created: 2026-11-03
 tags:
   - coordinate-geometry

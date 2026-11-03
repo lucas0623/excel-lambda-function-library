@@ -1,4 +1,5 @@
 ---
+description: "Returns the interior angle, in degrees, at the middle point."
 created: 2026-04-29
 tags:
   - coordinate-geometry

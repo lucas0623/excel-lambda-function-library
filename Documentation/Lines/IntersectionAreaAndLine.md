@@ -1,4 +1,5 @@
 ---
+description: "Returns the points where a closed polygon meets the line y = mx + c."
 created: 2026-11-03
 tags:
   - coordinate-geometry

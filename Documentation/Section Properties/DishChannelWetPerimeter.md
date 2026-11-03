@@ -1,4 +1,5 @@
 ---
+description: "Returns the wetted perimeter of a parabolic dish channel, the arc length of the parabola through (0, 0), (Width/2, -Height), and (Width, 0)."
 created: 2026-11-03
 tags:
   - section-properties

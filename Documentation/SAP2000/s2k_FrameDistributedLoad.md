@@ -1,4 +1,5 @@
 ---
+description: "Returns one distributed frame-load record for each frame name in Frames."
 created: 2026-11-03
 tags:
   - sap2000

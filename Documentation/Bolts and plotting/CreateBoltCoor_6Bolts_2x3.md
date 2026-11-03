@@ -1,4 +1,5 @@
 ---
+description: "Returns the centers of six bolts in 2 columns and 3 rows."
 created: 2026-11-03
 tags:
   - bolts

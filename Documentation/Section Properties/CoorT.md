@@ -1,4 +1,5 @@
 ---
+description: "Returns the vertices of a T section."
 created: 2026-11-03
 tags:
   - section-properties

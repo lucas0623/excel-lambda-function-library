@@ -1,4 +1,5 @@
 ---
+description: "Returns TRUE when the vertices of a polygon run clockwise."
 created: 2026-11-03
 tags:
   - coordinate-geometry

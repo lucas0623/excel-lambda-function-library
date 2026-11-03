@@ -1,4 +1,5 @@
 ---
+description: "Returns the vertices of a parallel flange channel."
 created: 2026-11-03
 tags:
   - section-properties

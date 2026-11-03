@@ -1,4 +1,5 @@
 ---
+description: "Returns the first value for which conditionFunc is TRUE."
 created: 2026-11-03
 tags:
   - excel-lambda

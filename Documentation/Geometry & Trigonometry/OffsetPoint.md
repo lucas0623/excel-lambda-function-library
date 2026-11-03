@@ -1,4 +1,5 @@
 ---
+description: "Returns a point reached by walking along a segment and then stepping to its left."
 created: 2026-11-03
 tags:
   - coordinate-geometry

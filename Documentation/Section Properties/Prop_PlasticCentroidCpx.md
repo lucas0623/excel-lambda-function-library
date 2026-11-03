@@ -1,4 +1,5 @@
 ---
+description: "Returns the x coordinate of the plastic centroid for bending about the y-axis with no axial force."
 created: 2026-11-03
 tags:
   - section-properties

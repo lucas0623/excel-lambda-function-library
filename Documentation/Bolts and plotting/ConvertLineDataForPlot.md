@@ -1,4 +1,5 @@
 ---
+description: "Returns plot points for disjoint line segments."
 created: 2026-11-03
 tags:
   - plotting

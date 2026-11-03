@@ -1,4 +1,5 @@
 ---
+description: "Meshes a polygon into grid cells."
 created: 2026-11-03
 tags:
   - coordinate-geometry

@@ -1,4 +1,5 @@
 ---
+description: "Returns the union of two polygons."
 created: 2026-11-03
 tags:
   - coordinate-geometry

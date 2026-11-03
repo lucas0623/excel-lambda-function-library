@@ -1,4 +1,5 @@
 ---
+description: "Returns the name and type line for one load combination in a SAP2000 .s2k file."
 created: 2026-11-03
 tags:
   - sap2000

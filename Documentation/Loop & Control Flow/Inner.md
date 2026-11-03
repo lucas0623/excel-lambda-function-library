@@ -1,4 +1,5 @@
 ---
+description: "Returns values of list1 that also occur in list2, in list1 order."
 created: 2026-11-03
 tags:
   - excel-lambda

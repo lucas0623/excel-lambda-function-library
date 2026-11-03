@@ -1,4 +1,5 @@
 ---
+description: "Returns TRUE when a segment meets a polygon, including a segment that lies along an edge."
 created: 2026-11-03
 tags:
   - coordinate-geometry

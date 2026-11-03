@@ -1,4 +1,5 @@
 ---
+description: "Returns the UKC section property table stored in the formula, from 356x406x634 through 152x152x23."
 AI Reviewed: true
 ---
 

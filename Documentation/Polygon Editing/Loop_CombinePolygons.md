@@ -1,4 +1,5 @@
 ---
+description: "Tries to union one polygon with each polygon in a column."
 created: 2026-11-03
 tags:
   - coordinate-geometry

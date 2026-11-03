@@ -1,4 +1,5 @@
 ---
+description: "Returns one closed hexagon per point, stacked for an XY scatter."
 created: 2026-11-03
 tags:
   - bolts

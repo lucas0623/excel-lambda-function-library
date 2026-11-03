@@ -1,4 +1,5 @@
 ---
+description: "Returns the circular hollow section (CHS) property table stored in the formula, from 559x12 through 1219x25."
 AI Reviewed: true
 ---
 

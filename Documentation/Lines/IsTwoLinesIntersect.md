@@ -1,4 +1,5 @@
 ---
+description: "Returns TRUE when two line segments meet."
 created: 2026-11-03
 tags:
   - coordinate-geometry

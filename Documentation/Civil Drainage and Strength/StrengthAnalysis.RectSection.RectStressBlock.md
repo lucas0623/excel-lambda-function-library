@@ -1,4 +1,5 @@
 ---
+description: "Returns the ultimate moment and axial force of a rectangular section under a rectangular stress block."
 created: 2026-11-03
 tags:
   - strength

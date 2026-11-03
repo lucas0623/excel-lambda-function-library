@@ -1,4 +1,5 @@
 ---
+description: "Returns the Chinese GB channel (GB-C) section property table stored in the formula, from GB-C5 through GB-C40c."
 AI Reviewed: true
 ---
 

@@ -1,4 +1,5 @@
 ---
+description: "Returns the key, first row, last row, and address for each group."
 created: 2026-11-03
 tags:
   - excel-lambda

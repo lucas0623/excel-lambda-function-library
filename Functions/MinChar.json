@@ -1,7 +1,7 @@
 {
   "name": "MinChar",
-  "formula": "=LAMBDA(cell_range, CHAR(MIN(MAP(cell_range, LAMBDA(x, IFERROR(UNICODE(x), 99999))))))",
-  "comment": "Return the smallest Char",
+  "formula": "=LAMBDA(cell_range,UNICHAR(MIN(MAP(cell_range,LAMBDA(x,IFERROR(UNICODE(x),1114112))))))",
+  "comment": "Returns the character with the smallest UNICODE code in cell_range. Argument: cell_range. Only the first character is read. Unreadable values are ignored. If none remain, the result is #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

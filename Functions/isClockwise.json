@@ -1,7 +1,7 @@
 {
   "name": "isClockwise",
   "formula": "=LAMBDA(vertices,LET(shapeArr, vertices, x, CHOOSECOLS(shapeArr, 1), y, CHOOSECOLS(shapeArr, 2), xShift, VSTACK(DROP(x, 1), TAKE(x, 1)), yShift, VSTACK(DROP(y, 1), TAKE(y, 1)), area, SUM(x * yShift - y * xShift), area < 0))",
-  "comment": "To determine if a vertices of a polygon is in clockwise direction. Last update at 2024-07-05.",
+  "comment": "Returns TRUE when the vertices run clockwise. Vertices is an n×2 array of (x, y) rows in order; the last row connects to the first. The shoelace sum of x*y_next - y*x_next is negative for clockwise and positive for counterclockwise. A zero-area ring returns FALSE. Fewer than two columns returns #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

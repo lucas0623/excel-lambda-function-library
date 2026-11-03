@@ -1,7 +1,7 @@
 {
   "name": "IsPointOnPolyEdge",
-  "formula": "=LAMBDA(Vertices,Point,[count],LET(n, ROWS(Vertices), i, IF(ISOMITTED(count), 1, count), x, INDEX(Point, 1), y, INDEX(Point, 2), j, IF(i = n, 1, i + 1), xi, INDEX(Vertices, i, 1), yi, INDEX(Vertices, i, 2), xj, INDEX(Vertices, j, 1), yj, INDEX(Vertices, j, 2), isOnLine, {ref}isPointOnLine(xi, yi, xj, yj, x, y), IF(isOnLine, TRUE, IF(i < n, IsPointOnPolyEdge(Vertices, Point, i + 1), FALSE))))",
-  "comment": "To check if a point lies on an edge of a polygon. Last update at 2024-06-27.",
+  "formula": "=LAMBDA(Vertices,Point,[count],LET(n, ROWS(Vertices), i, IF(ISOMITTED(count), 1, count), x, INDEX(Point, 1), y, INDEX(Point, 2), j, IF(i = n, 1, i + 1), xi, INDEX(Vertices, i, 1), yi, INDEX(Vertices, i, 2), xj, INDEX(Vertices, j, 1), yj, INDEX(Vertices, j, 2), isOnLine, {ref}isPointOnLine(xi, yi, xj, yj, x, y), IF(isOnLine, TRUE, IF(i < n, {ref}IsPointOnPolyEdge(Vertices, Point, i + 1), FALSE))))",
+  "comment": "Returns TRUE when Point lies on an edge of the polygon, including a vertex. Vertices is an n×2 array of (x, y) rows in order; the last row connects to the first. Point is x then y, as a 1×2 row or a 2×1 column. count is optional and starts the walk at that row; omit it to start at the first row. Fewer than two columns returns #REF!. Last Update at 2026-11-03.",
   "children": [
     "isPointOnLine"
   ],

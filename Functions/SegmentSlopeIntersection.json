@@ -1,0 +1,7 @@
+{
+  "name": "SegmentSlopeIntersection",
+  "formula": "=LAMBDA(xi,yi,xj,yj,m,C,LET(eps,0.0000000001,lineVertical,IF(ISNA(m),TRUE,ABS(m)>1000000000000000),dx,xj-xi,dy,yj-yi,parallel,IF(lineVertical,ABS(dx)<eps,ABS(dy-m*dx)<eps),t,IF(parallel,NA(),IF(lineVertical,(C-xi)/dx,(m*xi+C-yi)/(dy-m*dx))),x,IF(parallel,NA(),IF(lineVertical,C,xi+t*dx)),y,IF(parallel,NA(),IF(lineVertical,yi+t*dy,m*x+C)),IF(parallel,NA(),IF(AND(t>=-eps,t<=1+eps),HSTACK(x,y),NA()))))",
+  "comment": "Intersection of segment I(xi, yi) to J(xj, yj) with the infinite line y = m*x + C. A vertical line is m = #N/A, or ABS(m) greater than 1E15, and C is that line's x coordinate. Returns a 1x2 row (x, y). Tolerance is 1E-10. Parallel and collinear inputs return #N/A. A line that misses the segment returns #N/A. Non-numeric input returns #VALUE!. Last Update at 2026-11-03.",
+  "children": [],
+  "allChildren": []
+}

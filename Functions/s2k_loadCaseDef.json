@@ -1,7 +1,7 @@
 {
   "name": "s2k_loadCaseDef",
   "formula": "=LAMBDA(name,TEXTJOIN(\"   \", FALSE, \"Case=\" & name, \"Type=LinStatic\"))",
-  "comment": "Create text regarding load case definition data in SAP2000 $2k format. Last Update at 2024-07-11.",
+  "comment": "Returns one LOAD CASE DEFINITIONS record. Fields, separated by three spaces: Case=name, Type=LinStatic. Argument: name. The formula has no error branch. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

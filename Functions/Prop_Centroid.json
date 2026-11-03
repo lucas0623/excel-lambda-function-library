@@ -1,7 +1,7 @@
 {
   "name": "Prop_Centroid",
-  "formula": "=LAMBDA(vertices,LET(shapeArr, vertices, x, CHOOSECOLS(shapeArr, 1), y, CHOOSECOLS(shapeArr, 2), xShift, VSTACK(DROP(x, 1), TAKE(x, 1)), yShift, VSTACK(DROP(y, 1), TAKE(y, 1)), area, SUM(x * yShift - y * xShift) / 2, Cx, SUM((x + xShift) * (x * yShift - y * xShift)) / (6 * area), Cy, SUM((y + yShift) * (x * yShift - y * xShift)) / (6 * area), HSTACK(Cx, Cy)))",
-  "comment": "",
+  "formula": "=LAMBDA(vertices,LET(x,CHOOSECOLS(vertices,1),y,CHOOSECOLS(vertices,2),xShift,VSTACK(DROP(x,1),TAKE(x,1)),yShift,VSTACK(DROP(y,1),TAKE(y,1)),cross,x*yShift-y*xShift,area,SUM(cross)/2,Cx,SUM((x+xShift)*cross)/(6*area),Cy,SUM((y+yShift)*cross)/(6*area),HSTACK(Cx,Cy)))",
+  "comment": "Returns the centroid as a 1×2 row (Cx, Cy). vertices is an n×2 array in vertex order, column 1 x and column 2 y, with no repeated closing vertex. A zero-area polygon returns #DIV/0!. Fewer than two columns returns #VALUE!. Non-numeric coordinates return #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

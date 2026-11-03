@@ -1,7 +1,7 @@
 {
   "name": "SaveTableAsFormula",
-  "formula": "=LAMBDA(array,\"=VSTACK(\" & TEXTJOIN(\",\", TRUE, BYROW(array, LAMBDA(row, LET(rowWithSemiColon, BYCOL(row, LAMBDA(col, IF(ISNUMBER(col), col, CHAR(34) & col & CHAR(34)))), \"HSTACK(\" & TEXTJOIN(\",\", TRUE, rowWithSemiColon) & \")\")))) & \")\")",
-  "comment": "To store a data table as a lambda function. output a formula for the lambda function.",
+  "formula": "=LAMBDA(array,\"=VSTACK(\"&TEXTJOIN(\",\",TRUE,BYROW(array,LAMBDA(row,LET(parts,BYCOL(row,LAMBDA(col,IF(ISNUMBER(col),col,IF(ISLOGICAL(col),IF(col,\"TRUE\",\"FALSE\"),CHAR(34)&SUBSTITUTE(col,CHAR(34),CHAR(34)&CHAR(34))&CHAR(34))))),\"HSTACK(\"&TEXTJOIN(\",\",TRUE,parts)&\")\"))))&\")\")",
+  "comment": "Returns a VSTACK/HSTACK formula that rebuilds array. Argument: array. Numbers and logicals stay bare. Other text is quoted, with quotes doubled. An error in array returns that error. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

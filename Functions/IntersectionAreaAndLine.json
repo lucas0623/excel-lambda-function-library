@@ -1,11 +1,12 @@
 {
   "name": "IntersectionAreaAndLine",
-  "formula": "=LAMBDA(points,m,c,LET(n, ROWS(points), intersections, SEQUENCE(n, 1, 1, 1), results, MAP(intersections, LAMBDA(i, LET(xi, INDEX(points, i, 1), yi, INDEX(points, i, 2), xj, INDEX(points, IF(i = n, 1, i + 1), 1), yj, INDEX(points, IF(i = n, 1, i + 1), 2), intersection, {ref}IntersectionOfTwoLines(xi, yi, xj, yj, m, c), intersection))), FILTER(results, NOT(ISERROR((results))))))",
-  "comment": "",
+  "formula": "=LAMBDA(points,m,c,{ref}PolySlopeIntersection(points,m,c))",
+  "comment": "Intersection points of a closed polygon and the line y = m*x + c. points is an n by 2 array of (x, y) rows in order; the last vertex connects to the first. Returns the points sorted by x, then by y. A hit exactly at the first vertex of an edge is omitted, so a shared vertex is returned once. No intersection returns #N/A. Fewer than two columns returns #REF!. Non-numeric input returns #VALUE!. Last Update at 2026-11-03.",
   "children": [
-    "IntersectionOfTwoLines"
+    "PolySlopeIntersection"
   ],
   "allChildren": [
-    "IntersectionOfTwoLines"
+    "PolySlopeIntersection",
+    "SegmentSlopeIntersection"
   ]
 }

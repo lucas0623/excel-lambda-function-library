@@ -1,23 +1,22 @@
 {
   "name": "Prop_PlasticCentroidCpx",
-  "formula": "=LAMBDA(vertices,totalArea,maxX,minX,maxY,minY,LET(cNA, (maxX + minX) / 2, shapesArr, {ref}SplitPolyByLine(vertices, cNA, minY, cNA, maxY), rightArea, REDUCE(0, shapesArr, LAMBDA(acc,shapeText, LET(shape, VALUE(DROP({ref}TextToArray(shapeText), , -1)), Cx, {ref}Prop_Cx(shape), IF(Cx > cNA, acc + {ref}Prop_Area(shape), acc)))), areaDiff, rightArea - totalArea / 2, IF(ABS(areaDiff / (totalArea / 2)) < 0.0001, cNA, IF(areaDiff < 0, Prop_PlasticCentroidCpx(vertices, totalArea, cNA, minX, maxY, minY), Prop_PlasticCentroidCpx(vertices, totalArea, maxX, cNA, maxY, minY)))))",
-  "comment": "Find the x-coordinate of plastic centroid of a polygon bending about y axis (axial force = 0). Last update at 2024-07-02.",
+  "formula": "=LAMBDA(vertices,totalArea,maxX,minX,maxY,minY,IF(totalArea=0,1/0,LET(cNA,(maxX+minX)/2,shapesArr,{ref}SplitPolyByLine(vertices,cNA,minY,cNA,maxY),rightArea,REDUCE(0,shapesArr,LAMBDA(acc,shapeText,LET(shape,VALUE({ref}TextToArray(shapeText)),Cx,{ref}Prop_Cx(shape),IF(Cx>cNA,acc+{ref}Prop_Area(shape),acc)))),areaDiff,rightArea-totalArea/2,IF(ABS(areaDiff/(totalArea/2))<0.0001,cNA,IF(areaDiff<0,{ref}Prop_PlasticCentroidCpx(vertices,totalArea,cNA,minX,maxY,minY),{ref}Prop_PlasticCentroidCpx(vertices,totalArea,maxX,cNA,maxY,minY))))))",
+  "comment": "Returns the x coordinate of the plastic centroid for bending about the y-axis with no axial force. vertices is an n×2 array in vertex order, column 1 x and column 2 y, with no repeated closing vertex. totalArea is the positive area. maxX, minX, maxY, and minY are the bounding box, in that argument order. The result is the vertical line that divides the polygon into two equal areas. A zero totalArea returns #DIV/0!. Non-numeric input returns #VALUE!. Last Update at 2026-11-03.",
   "children": [
-    "Prop_Area",
-    "Prop_Cx",
-    "SplitPolyByLine",
-    "TextToArray"
-  ],
-  "allChildren": [
-    "Prop_Area",
-    "Prop_Cx",
     "SplitPolyByLine",
     "TextToArray",
+    "Prop_Cx",
+    "Prop_Area"
+  ],
+  "allChildren": [
+    "SplitPolyByLine",
+    "TextToArray",
+    "Prop_Cx",
+    "Prop_Area",
     "PolyAndLineIntersection",
     "SplitPolyIntoTwoPolys",
     "SplitPolysIteration",
-    "TextToArray",
-    "InsertPolyAndLineIntersection",
-    "TwoLinesIntersection"
+    "TwoLinesIntersection",
+    "InsertPolyAndLineIntersection"
   ]
 }

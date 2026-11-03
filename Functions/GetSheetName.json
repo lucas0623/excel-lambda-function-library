@@ -1,7 +1,7 @@
 {
   "name": "GetSheetName",
-  "formula": "=LAMBDA(refCell,TEXTAFTER(CELL(\"filename\", refCell), \"]\"))",
-  "comment": "Returns the sheet name of the referenced cell.\nSyntax: =GetSheetName(refCell)\nRequires the workbook to be saved.",
+  "formula": "=LAMBDA(refCell,TEXTAFTER(CELL(\"filename\",refCell),\"]\"))",
+  "comment": "Returns the sheet name of refCell. Argument: refCell. The workbook must be saved. A value that is not a cell reference returns #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

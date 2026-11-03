@@ -1,7 +1,7 @@
 {
   "name": "CoorHexagon",
-  "formula": "=LAMBDA(circumDiameter,x0,y0,LET(angle, PI() / 3, circumradius, circumDiameter / 2, MAKEARRAY(6, 2, LAMBDA(i,j, IF(j = 1, x0 + circumradius * COS((i - 1) * angle), y0 + circumradius * SIN((i - 1) * angle))))))",
-  "comment": "Create coordinates of a hexagon. Last Update at 2024-11-07.",
+  "formula": "=LAMBDA(circumDiameter,x0,y0,LET(angle,PI()/3,circumradius,circumDiameter/2,MAKEARRAY(6,2,LAMBDA(i,j,IF(j=1,x0+circumradius*COS((i-1)*angle),y0+circumradius*SIN((i-1)*angle))))))",
+  "comment": "Returns 6 vertices of a hexagon centered at (x0, y0). Argument order is circumDiameter, x0, y0. circumDiameter is the vertex-to-vertex diameter. The first vertex is at angle 0 on the positive x-axis, then every 60 degrees counterclockwise, so the hexagon is flat on the top and bottom. The first vertex is not repeated. Non-numeric input returns #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

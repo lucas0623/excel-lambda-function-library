@@ -1,7 +1,7 @@
 {
   "name": "CreateStepRange",
-  "formula": "=LAMBDA(start,end,numOfStep_optional,LET(author, \"Kinen Ma\", version_date,\"v1, 2023-08-21\", omitted,ISOMITTED(numOfStep_optional),step,IF(omitted=FALSE,numOfStep_optional,end-start+1),step_2, FLOOR.MATH(step),increment,(end-start)/(step_2-1),arr,MAKEARRAY(step_2,1,LAMBDA(x,y, start+(x-1)*increment)),arr))",
-  "comment": "Make range of array by specifing start, end, and optional step. RANGE(float, float, optional_int)",
+  "formula": "=LAMBDA(start,end,count,LET(n,FLOOR.MATH(IF(ISOMITTED(count),end-start+1,count)),IF(n<2,1/0,MAKEARRAY(n,1,LAMBDA(i,j,start+(i-1)*(end-start)/(n-1))))))",
+  "comment": "Column of count evenly spaced values from start through end. Arguments: start, end, count. count is how many values, not the gap. Fractions round down. If omitted, end-start+1. Below 2 returns #DIV/0!. Text returns #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

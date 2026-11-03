@@ -1,6 +1,6 @@
 # Library review tracker
 
-152 functions in `Functions/`. 13 are AI Reviewed. The order below is the suggested review order: shared leaves first, then the functions that call them. Finish a group before starting the next.
+152 functions in `Functions/`. 111 are AI Reviewed. The order below is the suggested review order: shared leaves first, then the functions that call them. Finish a group before starting the next.
 
 Method: `.cursor/skills/lfm-function-review/SKILL.md`. A tick here matches `AI Reviewed: true` on the note and a section in [[ReviewResult]]. A line marked `stopped:` is an open question, not a tick. The review moves on after three failed rounds, after the same failure survives two formula edits, or when asked to stop review.
 
@@ -39,15 +39,15 @@ Continue the batch that produced [[Angle Functions.xlsx]].
 
 ## 3. Point in polygon
 
-- [ ] IsPointOnPolyEdge
-- [ ] IsPointInPoly
-- [ ] IsAllPointsInPoly
-- [ ] IsAnyPointInPoly
-- [ ] IsAnyEdgeIntersect
-- [ ] IsPolyAndLineIntersect
-- [ ] IsPolysIntersect
-- [ ] isPolyAInPolyB
-- [ ] isClockwise
+- [x] IsPointOnPolyEdge
+- [x] IsPointInPoly
+- [x] IsAllPointsInPoly
+- [x] IsAnyPointInPoly
+- [x] IsAnyEdgeIntersect
+- [x] IsPolyAndLineIntersect
+- [x] IsPolysIntersect
+- [x] isPolyAInPolyB
+- [x] isClockwise
 
 ## 4. Polygon editing
 
@@ -70,30 +70,28 @@ These call the line and polygon tests above, plus `TextToArray` and `RemoveRow` 
 
 ## 5. Section properties and shapes
 
-`CoorAngle` is named like an angle and its comment describes I-section vertices. Decide the name in this group.
-
-- [ ] Prop
-- [ ] Prop_Area
-- [ ] Prop_Cx
-- [ ] Prop_Cy
-- [ ] Prop_Centroid
-- [ ] Prop_PlasticCentroidCpx
-- [ ] Prop_PlasticCentroidCpy
-- [ ] Properties
-- [ ] RotateShape
-- [ ] CoorRect
-- [ ] CoorT
-- [ ] CoorI
-- [ ] CoorPFC
-- [ ] CoorCircle
-- [ ] CoorCircularArc
-- [ ] CoorHexagon
-- [ ] CoorOfCircle
-- [ ] CoorNut
-- [ ] CoorBoltEle
-- [ ] CoorAngle
-- [ ] DishChannelArea
-- [ ] DishChannelWetPerimeter
+- [x] Prop
+- [x] Prop_Area
+- [x] Prop_Cx
+- [x] Prop_Cy
+- [x] Prop_Centroid
+- [x] Prop_PlasticCentroidCpx
+- [x] Prop_PlasticCentroidCpy
+- [x] Properties
+- [x] RotateShape
+- [x] CoorRect
+- [x] CoorT
+- [x] CoorI
+- [x] CoorPFC
+- [x] CoorCircle
+- [x] CoorCircularArc
+- [x] CoorHexagon
+- [x] CoorOfCircle
+- [x] CoorNut
+- [x] CoorBoltEle
+- [x] CoorAngle
+- [x] DishChannelArea
+- [x] DishChannelWetPerimeter
 
 ## 6. Bolts and plotting
 
@@ -108,36 +106,36 @@ These call the line and polygon tests above, plus `TextToArray` and `RemoveRow` 
 
 ## 7. Loops, arrays, and sheets
 
-- [ ] ForLoop — draft
-- [ ] WhileLoop
-- [ ] ForEachRow
-- [ ] ForEachColumn
-- [ ] TextToArray
-- [ ] MultipleTextToArray
-- [ ] VRepeatArray
-- [ ] Reverse
-- [ ] RemoveRow
-- [ ] Except
-- [ ] FillEmpty
-- [ ] Inner
-- [ ] InnerMerge
-- [ ] NumberToLetter
-- [ ] MaxChar
-- [ ] MinChar
-- [ ] ReplaceErrInRange
-- [ ] ExpandToLastRow
-- [ ] NextDiff
-- [ ] GetSheetName
-- [ ] GroupByAddress
-- [ ] GetTableRange — draft
-- [ ] SaveTableAsFormula
+- [x] ForLoop
+- [x] WhileLoop
+- [x] ForEachRow
+- [x] ForEachColumn
+- [x] TextToArray
+- [x] MultipleTextToArray
+- [x] VRepeatArray
+- [x] Reverse
+- [x] RemoveRow
+- [x] Except
+- [x] FillEmpty
+- [x] Inner
+- [x] InnerMerge
+- [x] NumberToLetter
+- [x] MaxChar
+- [x] MinChar
+- [x] ReplaceErrInRange
+- [x] ExpandToLastRow
+- [x] NextDiff
+- [x] GetSheetName
+- [x] GroupByAddress
+- [x] GetTableRange
+- [x] SaveTableAsFormula
 
 ## 8. Interpolation
 
-- [ ] InterpolateXY
-- [ ] InterpolateXY2
-- [ ] InterpolateXYTable
-- [ ] CreateStepRange
+- [x] InterpolateXY
+- [x] InterpolateXY2
+- [x] InterpolateXYTable
+- [x] CreateStepRange
 
 ## 9. Civil, drainage, and strength
 
@@ -154,49 +152,51 @@ These call the line and polygon tests above, plus `TextToArray` and `RemoveRow` 
 
 ## 10. SAP2000 `.s2k`
 
-- [ ] s2k_ProgramControl — file is empty
-- [ ] s2k_jtCoor
-- [ ] s2k_jtCoorHeader
-- [ ] s2k_jtLoad
-- [ ] s2k_jtLoadHeader
-- [ ] s2k_loadPat
-- [ ] s2k_loadPatHeader
-- [ ] s2k_loadCaseDef
-- [ ] s2k_loadCaseDefHeader
-- [ ] s2k_staticLoadCase
-- [ ] s2k_staticLoadCaseHeader
-- [ ] s2k_loadCombHeader
-- [ ] s2k_createLoadComb
-- [ ] s2k_addLoadCaseToLoadComb
-- [ ] s2k_FrameDistributedLoad
-- [ ] s2k_FrameDistributedLoadHeader
+Comment review only. Formulas were not changed, and Excel was not run.
+
+- [ ] s2k_ProgramControl — stopped: the JSON file is empty.
+- [x] s2k_jtCoor
+- [x] s2k_jtCoorHeader
+- [x] s2k_jtLoad
+- [x] s2k_jtLoadHeader
+- [x] s2k_loadPat
+- [x] s2k_loadPatHeader
+- [x] s2k_loadCaseDef
+- [x] s2k_loadCaseDefHeader
+- [x] s2k_staticLoadCase
+- [x] s2k_staticLoadCaseHeader
+- [x] s2k_loadCombHeader
+- [x] s2k_createLoadComb
+- [x] s2k_addLoadCaseToLoadComb
+- [x] s2k_FrameDistributedLoad
+- [x] s2k_FrameDistributedLoadHeader
 
 ## 11. Section tables
 
-Lookup data. Review the comment, the shape of the returned array, and one sample lookup per table. Do not treat each table as a new algorithm.
+Lookup data. Comment review only: the comment states the table and the array shape. Formulas were not changed, and Excel was not run.
 
-- [ ] Table.BoltDimension.BS4190
-- [ ] Table.BoltGrade
-- [ ] Table.ChineseCH.GBC
-- [ ] Table.ChineseCH.YBC
-- [ ] Table.CHS1
-- [ ] Table.CHS2
-- [ ] Table.CHS3
-- [ ] Table.EA1
-- [ ] Table.EA2
-- [ ] Table.HM
-- [ ] Table.HN
-- [ ] Table.HW
-- [ ] Table.RHS1
-- [ ] Table.RHS2
-- [ ] Table.RHS3
-- [ ] Table.RSC
-- [ ] Table.SHS1
-- [ ] Table.SHS2
-- [ ] Table.SHS3
-- [ ] Table.UKB1
-- [ ] Table.UKB2
-- [ ] Table.UKB3
-- [ ] Table.UKBP
-- [ ] Table.UKC
-- [ ] Table.UKPFC
+- [x] Table.BoltDimension.BS4190
+- [x] Table.BoltGrade
+- [x] Table.ChineseCH.GBC
+- [x] Table.ChineseCH.YBC
+- [x] Table.CHS1
+- [x] Table.CHS2
+- [x] Table.CHS3
+- [x] Table.EA1
+- [x] Table.EA2
+- [x] Table.HM
+- [x] Table.HN
+- [x] Table.HW
+- [x] Table.RHS1
+- [x] Table.RHS2
+- [x] Table.RHS3
+- [x] Table.RSC
+- [x] Table.SHS1
+- [x] Table.SHS2
+- [x] Table.SHS3
+- [x] Table.UKB1
+- [x] Table.UKB2
+- [x] Table.UKB3
+- [x] Table.UKBP
+- [x] Table.UKC
+- [x] Table.UKPFC

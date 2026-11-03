@@ -1,7 +1,7 @@
 {
   "name": "CoorNut",
-  "formula": "=LAMBDA(width,thickness,[isRepeatFirstPoint],LET(chamfer_width, width / 8, chamfer_height, chamfer_width * TAN(RADIANS(30)), x_1, width / 2, x_2, width / 2 - chamfer_width, y_1, thickness / 2, y_2, thickness / 2 - chamfer_height, pt_1, HSTACK(-x_2, y_1), pt_2, HSTACK(-x_1, y_2), pt_3, HSTACK(-x_1, -y_2), pt_4, HSTACK(-x_2, -y_1), pt_5, HSTACK(x_2, -y_1), pt_6, HSTACK(x_1, -y_2), pt_7, HSTACK(x_1, y_2), pt_8, HSTACK(x_2, y_1), arr, VSTACK(pt_1, pt_2, pt_3, pt_4, pt_5, pt_6, pt_7, pt_8), IF(isRepeatFirstPoint, VSTACK(arr, pt_1), arr)))",
-  "comment": "Create Coordinates of nuts. Last update at 2024-11-19.",
+  "formula": "=LAMBDA(width,thickness,[isRepeatFirstPoint],LET(isRepeat,IF(ISOMITTED(isRepeatFirstPoint),FALSE,isRepeatFirstPoint),chamfer_width,width/8,chamfer_height,chamfer_width*TAN(RADIANS(30)),x_1,width/2,x_2,width/2-chamfer_width,y_1,thickness/2,y_2,thickness/2-chamfer_height,pt_1,HSTACK(-x_2,y_1),pt_2,HSTACK(-x_1,y_2),pt_3,HSTACK(-x_1,-y_2),pt_4,HSTACK(-x_2,-y_1),pt_5,HSTACK(x_2,-y_1),pt_6,HSTACK(x_1,-y_2),pt_7,HSTACK(x_1,y_2),pt_8,HSTACK(x_2,y_1),arr,VSTACK(pt_1,pt_2,pt_3,pt_4,pt_5,pt_6,pt_7,pt_8),IF(isRepeat,VSTACK(arr,pt_1),arr)))",
+  "comment": "Returns the side elevation of a nut centered on the origin. Argument order is width, thickness, then optional isRepeatFirstPoint. Each corner is chamfered by width/8 horizontally and at 30 degrees. Vertex order starts at the upper-left end of the top flat and runs clockwise. isRepeatFirstPoint defaults to FALSE; TRUE appends the first vertex again. Non-numeric sizes return #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

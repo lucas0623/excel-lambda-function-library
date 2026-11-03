@@ -21,18 +21,13 @@
     "IsPointInPoly",
     "IsPolysIntersect",
     "ReverseVerticesDirection",
+    "InsertPolyAndLineIntersection",
+    "PolyAndLineIntersection",
+    "IsPointOnPolyEdge",
     "IsAnyEdgeIntersect",
     "IsAnyPointInPoly",
-    "IsPolyAndLineIntersect",
-    "PolyAndLineIntersection",
     "TwoLinesIntersection",
-    "IsPointOnPolyEdge",
     "isPointOnLine",
-    "InsertPolyAndLineIntersection",
-    "Loop_CombinePolygons",
-    "RemoveRow",
-    "CombinePolygons",
-    "CombineTwoPolygons",
-    "TextToArray"
+    "IsPolyAndLineIntersect"
   ]
 }

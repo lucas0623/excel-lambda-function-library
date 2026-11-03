@@ -1,7 +1,7 @@
 {
   "name": "TextToArray",
-  "formula": "=LAMBDA(text,LET(Length, LEN(text) - 2, modifiedText, LEFT(REPLACE(text, 1, 1, \"\"), Length), TEXTSPLIT(modifiedText, \",\", \";\")))",
-  "comment": "Reverse of Excel built-in function ArrayToText",
+  "formula": "=LAMBDA(text,LET(Length,LEN(text)-2,modifiedText,LEFT(REPLACE(text,1,1,\"\"),Length),TEXTSPLIT(modifiedText,\",\",\";\")))",
+  "comment": "Returns the array inside an ARRAYTOTEXT strict string. Argument: text. Braces are removed; commas split columns and semicolons split rows. A string shorter than 2 characters returns #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

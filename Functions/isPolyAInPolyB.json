@@ -1,17 +1,12 @@
 {
   "name": "isPolyAInPolyB",
-  "formula": "=LAMBDA(verticesA,verticesB,AND(NOT({ref}IsAnyEdgeIntersect(verticesA, verticesB)), {ref}IsAllPointsInPoly(verticesB, verticesA)))",
-  "comment": "",
+  "formula": "=LAMBDA(verticesA,verticesB,LET(n, ROWS(verticesA), mids, HSTACK(MAP(SEQUENCE(n), LAMBDA(i, (INDEX(verticesA, i, 1) + INDEX(verticesA, IF(i = n, 1, i + 1), 1)) / 2)), MAP(SEQUENCE(n), LAMBDA(i, (INDEX(verticesA, i, 2) + INDEX(verticesA, IF(i = n, 1, i + 1), 2)) / 2))), AND({ref}IsAllPointsInPoly(verticesB, verticesA), {ref}IsAllPointsInPoly(verticesB, mids))))",
+  "comment": "Returns TRUE when polygon A lies inside polygon B, including when A touches the boundary or equals B. VerticesA and verticesB are n×2 arrays of (x, y) rows; the last row connects to the first. Each vertex of A and the midpoint of each edge of A must lie inside or on B. A vertex of A outside B returns FALSE. Fewer than two columns returns #REF!. Last Update at 2026-11-03.",
   "children": [
-    "IsAllPointsInPoly",
-    "IsAnyEdgeIntersect"
+    "IsAllPointsInPoly"
   ],
   "allChildren": [
     "IsAllPointsInPoly",
-    "IsAnyEdgeIntersect",
-    "IsPolyAndLineIntersect",
-    "PolyAndLineIntersection",
-    "TwoLinesIntersection",
     "IsPointInPoly",
     "IsPointOnPolyEdge",
     "isPointOnLine"

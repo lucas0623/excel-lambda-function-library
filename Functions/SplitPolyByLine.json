@@ -11,10 +11,8 @@
     "PolyAndLineIntersection",
     "SplitPolyIntoTwoPolys",
     "SplitPolysIteration",
-    "SplitPolyIntoTwoPolys",
-    "TextToArray",
+    "TwoLinesIntersection",
     "InsertPolyAndLineIntersection",
-    "PolyAndLineIntersection",
-    "TwoLinesIntersection"
+    "TextToArray"
   ]
 }

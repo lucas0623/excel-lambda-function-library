@@ -15,10 +15,9 @@
     "Prop_Centroid",
     "SplitPolyIntoTwoPolys",
     "TextToArray",
-    "InsertPolyAndLineIntersection",
-    "TwoLinesIntersection",
-    "Prop_Centroid",
     "ForEachRow",
-    "RotatePoint"
+    "RotatePoint",
+    "InsertPolyAndLineIntersection",
+    "TwoLinesIntersection"
   ]
 }

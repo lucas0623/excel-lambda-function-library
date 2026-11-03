@@ -1,7 +1,7 @@
 {
   "name": "CoorOfCircle",
   "formula": "=LAMBDA(r,x0,y0,n,LET(angle,360/n,xCoor,x0+r*COS(RADIANS(angle*SEQUENCE(n))),yCoor,y0+r*SIN(RADIANS(angle*SEQUENCE(n))),HSTACK(xCoor,yCoor)))",
-  "comment": "Creates the coordinates of circle.",
+  "comment": "Returns n points on a circle of radius r centered at (x0, y0). Argument order is r, x0, y0, n. Point k is at angle k*360/n degrees for k = 1 to n, measured from the positive x-axis and increasing counterclockwise. The last point lies on the positive x-axis. The first point is not repeated. This is the same polyline as CoorCircle. Non-numeric input returns #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

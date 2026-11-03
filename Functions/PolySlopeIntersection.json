@@ -1,0 +1,11 @@
+{
+  "name": "PolySlopeIntersection",
+  "formula": "=LAMBDA(vertices,m,C,LET(n,ROWS(vertices),raw,REDUCE(0,SEQUENCE(n),LAMBDA(a,i,LET(xi,INDEX(vertices,i,1),yi,INDEX(vertices,i,2),next,IF(i=n,1,i+1),xj,INDEX(vertices,next,1),yj,INDEX(vertices,next,2),hit,{ref}SegmentSlopeIntersection(xi,yi,xj,yj,m,C),x,INDEX(hit,1,1),y,INDEX(hit,1,2),IF(ISNA(x),a,IF(AND(x=xi,y=yi),a,VSTACK(a,hit)))))),IF(ROWS(raw)=1,NA(),LET(pts,DROP(raw,1),SORTBY(pts,CHOOSECOLS(pts,1),1,CHOOSECOLS(pts,2),1)))))",
+  "comment": "Intersection points of a closed polygon and the line y = m*x + C. vertices is an n by 2 array of (x, y) rows in order; the last vertex connects to the first. A vertical line is m = #N/A, or ABS(m) greater than 1E15, and C is that line's x coordinate. Returns the points sorted by x, then by y. A hit exactly at the first vertex of an edge is omitted, so a shared vertex is returned once. No intersection returns #N/A. Fewer than two columns returns #REF!. Non-numeric coordinates return #VALUE!. Last Update at 2026-11-03.",
+  "children": [
+    "SegmentSlopeIntersection"
+  ],
+  "allChildren": [
+    "SegmentSlopeIntersection"
+  ]
+}

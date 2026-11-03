@@ -1,7 +1,7 @@
 {
   "name": "IsAnyPointInPoly",
   "formula": "=LAMBDA(vertices,points,LET(n, ROWS(points), result, REDUCE(FALSE, SEQUENCE(n), LAMBDA(acc,i, LET(point, HSTACK(INDEX(points, i, 1), INDEX(points, i, 2)), inside, {ref}IsPointInPoly(vertices, point), OR(inside, acc)))), result))",
-  "comment": "To check if there is any point lies inside a polygon. Last update at 2024-06-27.",
+  "comment": "Returns TRUE when any row of points lies inside the polygon. Vertices and points are n×2 arrays of (x, y) rows; the last vertex connects to the first. A point on the boundary counts as inside. Fewer than two columns returns #REF!. Last Update at 2026-11-03.",
   "children": [
     "IsPointInPoly"
   ],

@@ -9,9 +9,7 @@
   "allChildren": [
     "Loop_CombinePolygons",
     "RemoveRow",
-    "CombinePolygons",
     "CombineTwoPolygons",
-    "RemoveRow",
     "TextToArray",
     "CleanUpContinuousIntersections",
     "GetVerticesBetweenIntersections",
@@ -21,14 +19,13 @@
     "IsPointInPoly",
     "IsPolysIntersect",
     "ReverseVerticesDirection",
+    "InsertPolyAndLineIntersection",
+    "PolyAndLineIntersection",
+    "IsPointOnPolyEdge",
     "IsAnyEdgeIntersect",
     "IsAnyPointInPoly",
-    "IsPolyAndLineIntersect",
-    "PolyAndLineIntersection",
     "TwoLinesIntersection",
-    "IsPointOnPolyEdge",
     "isPointOnLine",
-    "InsertPolyAndLineIntersection",
-    "Loop_CombinePolygons"
+    "IsPolyAndLineIntersect"
   ]
 }

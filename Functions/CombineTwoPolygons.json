@@ -21,14 +21,13 @@
     "IsPointInPoly",
     "IsPolysIntersect",
     "ReverseVerticesDirection",
+    "InsertPolyAndLineIntersection",
+    "PolyAndLineIntersection",
+    "IsPointOnPolyEdge",
     "IsAnyEdgeIntersect",
     "IsAnyPointInPoly",
-    "IsPointInPoly",
-    "IsPointOnPolyEdge",
-    "isPointOnLine",
-    "IsPolyAndLineIntersect",
-    "PolyAndLineIntersection",
     "TwoLinesIntersection",
-    "InsertPolyAndLineIntersection"
+    "isPointOnLine",
+    "IsPolyAndLineIntersect"
   ]
 }

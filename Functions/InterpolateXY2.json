@@ -1,7 +1,11 @@
 {
   "name": "InterpolateXY2",
-  "formula": "=LAMBDA(xi,yi,xj,yj,rLen,LET(dist_ij,SQRT((xj-xi)^2+(yj-yi)^2),x,xi+rLen/dist_ij*(xj-xi),y,yi+rLen/dist_ij*(yj-yi),HSTACK(x,y)))",
-  "comment": "Interpolate value for straight line. Input: x1,y1,x2,y2,relative length from (x1,y1). Output: (x,y).",
-  "children": [],
-  "allChildren": []
+  "formula": "=LAMBDA(xi,yi,xj,yj,rLen,LET(dist_ij,{ref}Dist(xi,yi,xj,yj),HSTACK(xi+rLen/dist_ij*(xj-xi),yi+rLen/dist_ij*(yj-yi))))",
+  "comment": "Point at distance rLen from (xi, yi) toward (xj, yj). Arguments: xi, yi, xj, yj, rLen. rLen is a length. 0 returns (xi, yi). Past either end stays on the line. Coincident points return #DIV/0!. Non-numeric input returns #VALUE!. Last Update at 2026-11-03.",
+  "children": [
+    "Dist"
+  ],
+  "allChildren": [
+    "Dist"
+  ]
 }

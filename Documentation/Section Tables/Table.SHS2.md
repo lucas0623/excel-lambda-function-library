@@ -1,0 +1,34 @@
+---
+AI Reviewed: true
+---
+
+# Table.SHS2
+
+This was a comment review. The function was not calculated.
+
+Returns the square hollow section (SHS) property table stored in the formula. The array is 50 rows by 18 columns: three header rows, then 47 sections from `120x120x4` through `200x200x16`.
+
+## Syntax
+
+```
+=Table.SHS2()
+```
+
+`Table.SHS2` has no arguments.
+
+| Argument | Description |
+| --- | --- |
+| (none) | The call is `=Table.SHS2()`. |
+
+## Remarks
+
+- Row 1 stores the property codes: blank, mass, h, b, tw, tf, r, d, Iy, Iz, ry, rz, Wel,y, Wel,z, Wpl,y, Wpl,z, IT, A.
+- Row 2 names those properties, from mass per metre through area of section. Row 3 stores the units, and its first cell is Section Name.
+- The columns end at IT and A.
+- The formula is a `VSTACK` of `HSTACK` rows. It returns that array and does not raise a lookup error.
+- Last Update at 2026-11-03. The formula was left unchanged.
+
+## Related functions
+
+- [[Table.SHS1]]
+- [[Table.SHS3]]

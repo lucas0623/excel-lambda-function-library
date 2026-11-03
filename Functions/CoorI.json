@@ -1,7 +1,7 @@
 {
   "name": "CoorI",
-  "formula": "=LAMBDA(h,b,tf,tw,[isRepeatFirstPoint],LET(isRepeat, IF(ISOMITTED(isRepeatFirstPoint), FALSE, TRUE), xa, b / 2, ya, h / 2, xb, b / 2, yb, h / 2 - tf, xc, tw / 2, yc, h / 2 - tf, xd, tw / 2, yd, -yc, xe, b / 2, ye, -yb, xf, b / 2, yf, -ya, rowA, HSTACK(xa, ya), rowB, HSTACK(xb, yb), rowC, HSTACK(xc, yc), rowD, HSTACK(xd, yd), rowE, HSTACK(xe, ye), rowF, HSTACK(xf, yf), rowG, HSTACK(-xf, yf), rowH, HSTACK(-xe, ye), rowI, HSTACK(-xd, yd), rowJ, HSTACK(-xd, yd), rowK, HSTACK(-xc, yc), rowL, HSTACK(-xb, yb), rowM, HSTACK(-xa, ya), output, IF(isRepeat, VSTACK(rowM, rowL, rowK, rowJ, rowI, rowH, rowG, rowF, rowE, rowD, rowC, rowB, rowA, rowM), VSTACK(rowM, rowL, rowK, rowJ, rowI, rowH, rowG, rowF, rowE, rowD, rowC, rowB, rowA)), output))",
-  "comment": "Create coordinates of vertices for a I Section. isRepeatFirstPoint = FALSE by default. Last Update at 2024-07-02.",
+  "formula": "=LAMBDA(h,b,tf,tw,[isRepeatFirstPoint],LET(isRepeat,IF(ISOMITTED(isRepeatFirstPoint),FALSE,isRepeatFirstPoint),xa,b/2,ya,h/2,xb,b/2,yb,h/2-tf,xc,tw/2,yc,h/2-tf,xd,tw/2,yd,-(h/2-tf),xe,b/2,ye,-(h/2-tf),xf,b/2,yf,-h/2,rowA,HSTACK(xa,ya),rowB,HSTACK(xb,yb),rowC,HSTACK(xc,yc),rowD,HSTACK(xd,yd),rowE,HSTACK(xe,ye),rowF,HSTACK(xf,yf),rowG,HSTACK(-xf,yf),rowH,HSTACK(-xe,ye),rowI,HSTACK(-xd,yd),rowJ,HSTACK(-xc,yc),rowK,HSTACK(-xb,yb),rowL,HSTACK(-xa,ya),pts,VSTACK(rowL,rowK,rowJ,rowI,rowH,rowG,rowF,rowE,rowD,rowC,rowB,rowA),IF(isRepeat,VSTACK(pts,rowL),pts)))",
+  "comment": "Returns vertices of an I section centered on the origin. Argument order is h, b, tf, tw, then optional isRepeatFirstPoint. h is the overall height, b the flange width, tf the flange thickness, and tw the web thickness. Vertex order starts at the top-left and runs clockwise around the profile. isRepeatFirstPoint defaults to FALSE; TRUE appends the first vertex again. Non-numeric sizes return #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

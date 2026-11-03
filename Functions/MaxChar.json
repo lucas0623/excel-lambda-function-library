@@ -1,7 +1,7 @@
 {
   "name": "MaxChar",
-  "formula": "=LAMBDA(cell_range, CHAR(MAX(MAP(cell_range, LAMBDA(x, IFERROR(UNICODE(x), 0))))))",
-  "comment": "Return the largest Char",
+  "formula": "=LAMBDA(cell_range,UNICHAR(MAX(MAP(cell_range,LAMBDA(x,IFERROR(UNICODE(x),0))))))",
+  "comment": "Returns the character with the largest UNICODE code in cell_range. Argument: cell_range. Only the first character is read. Unreadable values are ignored. If none remain, the result is #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

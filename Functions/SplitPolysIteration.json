@@ -1,16 +1,15 @@
 {
   "name": "SplitPolysIteration",
-  "formula": "=LAMBDA(vertices,intersections,LET(numOfIterations, ROWS(intersections / 2), iterations, SEQUENCE(numOfIterations), initShapeText, ARRAYTOTEXT(vertices, 1), REDUCE(initShapeText, iterations, LAMBDA(shapes,i, LET(xp, INDEX(intersections, 2 * i - 1, 1), yp, INDEX(intersections, 2 * i - 1, 2), xq, INDEX(intersections, 2 * i, 1), yq, INDEX(intersections, 2 * i, 2), DROP(REDUCE(0, shapes, LAMBDA(a,shape, LET(shapeArr, VALUE({ref}TextToArray(shape)), splited, {ref}SplitPolyIntoTwoPolys(shapeArr, xp, yp, xq, yq), IF(ISERROR(INDEX(splited, 1, 1)), VSTACK(a, shape), VSTACK(a, splited))))), 1))))))",
-  "comment": "A helper function for SplitPolyByLine. Last Update at 2024-06-23.",
+  "formula": "=LAMBDA(vertices,intersections,LET(numOfIterations, ROWS(intersections) / 2, iterations, SEQUENCE(numOfIterations), initShapeText, ARRAYTOTEXT(vertices, 1), REDUCE(initShapeText, iterations, LAMBDA(shapes,i, LET(xp, INDEX(intersections, 2 * i - 1, 1), yp, INDEX(intersections, 2 * i - 1, 2), xq, INDEX(intersections, 2 * i, 1), yq, INDEX(intersections, 2 * i, 2), DROP(REDUCE(0, shapes, LAMBDA(a,shape, LET(shapeArr, VALUE({ref}TextToArray(shape)), splited, {ref}SplitPolyIntoTwoPolys(shapeArr, xp, yp, xq, yq), IF(ISERROR(INDEX(splited, 1, 1)), VSTACK(a, shape), VSTACK(a, splited))))), 1))))))",
+  "comment": "Splits a polygon once for each pair of intersection points. vertices is an n×2 array of (x, y) rows. intersections is a 2k×2 array of (x, y) rows, paired as (1, 2), (3, 4), and so on. Each result row is a strict ARRAYTOTEXT of one piece. A pair that cannot be read leaves that piece unchanged. Omitting intersections returns #VALUE!. Last Update at 2026-11-03.",
   "children": [
-    "SplitPolyIntoTwoPolys",
-    "TextToArray"
+    "TextToArray",
+    "SplitPolyIntoTwoPolys"
   ],
   "allChildren": [
-    "SplitPolyIntoTwoPolys",
     "TextToArray",
+    "SplitPolyIntoTwoPolys",
     "InsertPolyAndLineIntersection",
-    "PolyAndLineIntersection",
     "TwoLinesIntersection"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "name": "IntersectionOfTwoLines",
-  "formula": "=LAMBDA(xi,yi,xj,yj,m,C,LET(m_seg, IF(xi = xj, 0, (yj - yi) / (xj - xi)), C_seg, IF(xi = xj, 0, yi - m_seg * xi), x_int, IF(xi = xj, xi, (C_seg - C) / (m - m_seg)), y_int, IF(xi = xj, m * xi + C, m * x_int + C), IF(xi = xj, IF(AND(y_int >= MIN(yi, yj), y_int <= MAX(yi, yj)), xi & \",\" & y_int, NA()), IF(AND(x_int >= MIN(xi, xj), x_int <= MAX(xi, xj), y_int >= MIN(yi, yj), y_int <= MAX(yi, yj)), x_int & \",\" & y_int, NA()))))",
-  "comment": "",
+  "formula": "=LAMBDA(xi,yi,xj,yj,m,C,LET(dx,xj-xi,dy,yj-yi,vertical,xi=xj,parallel,IF(vertical,FALSE,dy=m*dx),t,IF(OR(parallel,vertical),NA(),(m*xi+C-yi)/(dy-m*dx)),x,IF(parallel,NA(),IF(vertical,xi,xi+t*dx)),y,IF(parallel,NA(),m*x+C),IF(parallel,NA(),IF(vertical,IF(AND(y>=MIN(yi,yj),y<=MAX(yi,yj)),HSTACK(x,y),NA()),IF(AND(t>=0,t<=1),HSTACK(x,y),NA())))))",
+  "comment": "Intersection of segment I(xi, yi) to J(xj, yj) with the infinite line y = m*x + C. Returns a 1x2 row (x, y). m is a finite slope. A vertical segment uses x = xi. Parallel and collinear inputs return #N/A. A line that misses the segment returns #N/A. Non-numeric input returns #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

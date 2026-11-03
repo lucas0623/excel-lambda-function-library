@@ -1,7 +1,7 @@
 {
   "name": "CoorT",
-  "formula": "=LAMBDA(h,b,tf,tw,[isRepeatFirstPoint],LET(isRepeat, IF(ISOMITTED(isRepeatFirstPoint), FALSE, TRUE), xa, b / 2, ya, 0, xb, b / 2, yb, -tf, xc, tw / 2, yc, -tf, xd, tw / 2, yd, -h, rowA, HSTACK(xa, ya), rowB, HSTACK(xb, yb), rowC, HSTACK(xc, yc), rowD, HSTACK(xd, yd), rowE, HSTACK(-xd, yd), rowF, HSTACK(-xc, yc), rowG, HSTACK(-xb, yb), rowH, HSTACK(-xa, ya), output, IF(isRepeat, VSTACK(rowH, rowG, rowF, rowE, rowD, rowC, rowB, rowA, rowH), VSTACK(rowH, rowG, rowF, rowE, rowD, rowC, rowB, rowA)), output))",
-  "comment": "Create coordinates of vertices for a T Section. isRepeatFirstPoint = FALSE by default. Last Update at 2024-07-02.",
+  "formula": "=LAMBDA(h,b,tf,tw,[isRepeatFirstPoint],LET(isRepeat,IF(ISOMITTED(isRepeatFirstPoint),FALSE,isRepeatFirstPoint),xa,b/2,ya,0,xb,b/2,yb,-tf,xc,tw/2,yc,-tf,xd,tw/2,yd,-h,rowA,HSTACK(xa,ya),rowB,HSTACK(xb,yb),rowC,HSTACK(xc,yc),rowD,HSTACK(xd,yd),rowE,HSTACK(-xd,yd),rowF,HSTACK(-xc,yc),rowG,HSTACK(-xb,yb),rowH,HSTACK(-xa,ya),pts,VSTACK(rowH,rowG,rowF,rowE,rowD,rowC,rowB,rowA),IF(isRepeat,VSTACK(pts,rowH),pts)))",
+  "comment": "Returns vertices of a T section. Argument order is h, b, tf, tw, then optional isRepeatFirstPoint. h is the overall height, b the flange width, tf the flange thickness, and tw the stem thickness. The flange top lies on y = 0 and the stem extends down to y = -h. Vertex order starts at the top-left and runs counterclockwise. isRepeatFirstPoint defaults to FALSE; TRUE appends the first vertex again. Non-numeric sizes return #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

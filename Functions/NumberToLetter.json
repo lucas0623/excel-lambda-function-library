@@ -1,7 +1,7 @@
 {
   "name": "NumberToLetter",
-  "formula": "=LAMBDA(n,IFS(n<1,\"INVALID INPUT\",n<27,CHAR(n+64),n<703,CHAR(INT((n-1)/26)+64)&CHAR(MOD(n-1,26)+65),n<18279,CHAR(INT((n-703)/676)+65)&CHAR(MOD(INT((n-703)/26),26)+65)&CHAR(MOD(n-703,26)+65),TRUE,\"Exceeds limit\"))",
-  "comment": "Convert Number to Letter",
+  "formula": "=LAMBDA(n,IF(NOT(ISNUMBER(n)),VALUE(\"x\"),IFS(n<1,\"INVALID INPUT\",n<27,CHAR(n+64),n<703,CHAR(INT((n-1)/26)+64)&CHAR(MOD(n-1,26)+65),n<18279,CHAR(INT((n-703)/676)+65)&CHAR(MOD(INT((n-703)/26),26)+65)&CHAR(MOD(n-703,26)+65),TRUE,\"Exceeds limit\")))",
+  "comment": "Returns the Excel column letter for column number n. Argument: n. 1 is A and 26 is Z. n below 1 returns INVALID INPUT. n above 18278 returns Exceeds limit. Text returns #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

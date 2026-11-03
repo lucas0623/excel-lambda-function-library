@@ -1,12 +1,13 @@
 {
   "name": "IsAnyEdgeIntersect",
   "formula": "=LAMBDA(verticesA,verticesB,LET(nA, ROWS(verticesA), nB, ROWS(verticesB), edgeIntersect, REDUCE(FALSE, SEQUENCE(nA), LAMBDA(acc,i, LET(xi, INDEX(verticesA, i, 1), yi, INDEX(verticesA, i, 2), xj, INDEX(verticesA, IF(i = nA, 1, i + 1), 1), yj, INDEX(verticesA, IF(i = nA, 1, i + 1), 2), lineIntersect, {ref}IsPolyAndLineIntersect(verticesB, xi, yi, xj, yj), OR(acc, lineIntersect)))), edgeIntersect))",
-  "comment": "To determine if any edge of 2 polygons intersect each other. Last update at 2024-06-27.",
+  "comment": "Returns TRUE when an edge of polygon A meets an edge of polygon B, including a shared vertex or a shared edge. A polygon strictly inside the other, with no boundary contact, returns FALSE. Both arguments are n×2 arrays of (x, y) rows; the last row connects to the first. Fewer than two columns returns #REF!. Last Update at 2026-11-03.",
   "children": [
     "IsPolyAndLineIntersect"
   ],
   "allChildren": [
     "IsPolyAndLineIntersect",
+    "isPointOnLine",
     "PolyAndLineIntersection",
     "TwoLinesIntersection"
   ]

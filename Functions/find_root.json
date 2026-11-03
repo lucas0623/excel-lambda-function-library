@@ -1,7 +1,7 @@
 {
   "name": "find_root",
-  "formula": "=LAMBDA(target_y,x_vals,y_vals,LET(num_points,ROWS(x_vals),pt_indices,SEQUENCE(num_points),eval_segment,LAMBDA(idx,LET(x_start,INDEX(x_vals,idx),dy_start,INDEX(y_vals,idx)-target_y,IF(idx=num_points,IF(dy_start=0,x_start,NA()),LET(x_end,INDEX(x_vals,idx+1),dy_end,INDEX(y_vals,idx+1)-target_y,IF(dy_start=0,x_start,IF(dy_start*dy_end<0,x_start-dy_start*(x_end-x_start)/(dy_end-dy_start),NA())))))),all_intersections,MAP(pt_indices,eval_segment),FILTER(all_intersections,ISNUMBER(all_intersections),\"No roots found\")))",
-  "comment": "",
+  "formula": "=LAMBDA(target_y,x_vals,y_vals,LET(num_points,ROWS(x_vals),pt_indices,SEQUENCE(num_points),eval_segment,LAMBDA(idx,LET(x_start,INDEX(x_vals,idx),dy_start,INDEX(y_vals,idx)-target_y,IF(idx=num_points,IF(dy_start=0,x_start,NA()),LET(x_end,INDEX(x_vals,idx+1),dy_end,INDEX(y_vals,idx+1)-target_y,IF(dy_start=0,x_start,IF(dy_start*dy_end<0,x_start-dy_start*(x_end-x_start)/(dy_end-dy_start),NA())))))),all_intersections,MAP(pt_indices,eval_segment),IF(ISERROR(SUM(VALUE(x_vals))+SUM(VALUE(y_vals))+VALUE(target_y)),VALUE(\"x\"),FILTER(all_intersections,ISNUMBER(all_intersections),\"No roots found\"))))",
+  "comment": "Returns the x values where a polyline crosses target_y. Arguments: target_y, x_vals, y_vals. x_vals and y_vals are columns of equal length, in the same order. Each crossing is linear between the vertices. A vertex that equals target_y is returned once. No crossing returns \"No roots found\". Text returns #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

@@ -1,7 +1,7 @@
 {
   "name": "IsTwoLinesIntersect",
-  "formula": "=LAMBDA(xi,yi,xj,yj,xp,yp,xq,yq,IF(ISERR(INDEX({ref}TwoLinesIntersection(xi, yi, xj, yj, xp, yp, xq, yq), 1, 1)), FALSE, TRUE))",
-  "comment": "To determine if 2 lines intersecting each others. Last Update at 2024-06-27.",
+  "formula": "=LAMBDA(xi,yi,xj,yj,xp,yp,xq,yq,LET(hit,INDEX({ref}TwoLinesIntersection(xi,yi,xj,yj,xp,yp,xq,yq),1,1),IF(ISNA(hit),FALSE,IF(ISNUMBER(hit),TRUE,hit))))",
+  "comment": "TRUE when segment I(xi, yi) to J(xj, yj) meets segment P(xp, yp) to Q(xq, yq), including an endpoint. Parallel segments, collinear segments, and a miss return FALSE. Non-numeric input returns #VALUE!. Last Update at 2026-11-03.",
   "children": [
     "TwoLinesIntersection"
   ],

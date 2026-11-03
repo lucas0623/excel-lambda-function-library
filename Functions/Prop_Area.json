@@ -1,7 +1,7 @@
 {
   "name": "Prop_Area",
-  "formula": "=LAMBDA(vertices,LET(shapeArr, vertices, x, CHOOSECOLS(shapeArr, 1), y, CHOOSECOLS(shapeArr, 2), xShift, VSTACK(DROP(x, 1), TAKE(x, 1)), yShift, VSTACK(DROP(y, 1), TAKE(y, 1)), area, ABS(SUM(x * yShift - y * xShift)) / 2, area))",
-  "comment": "",
+  "formula": "=LAMBDA(vertices,LET(x,CHOOSECOLS(vertices,1),y,CHOOSECOLS(vertices,2),xShift,VSTACK(DROP(x,1),TAKE(x,1)),yShift,VSTACK(DROP(y,1),TAKE(y,1)),ABS(SUM(x*yShift-y*xShift))/2))",
+  "comment": "Returns the positive area of a simple polygon. vertices is an n×2 array in vertex order, column 1 x and column 2 y, with no repeated closing vertex. Clockwise and counterclockwise orders return the same area. Fewer than two columns returns #VALUE!. Non-numeric coordinates return #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

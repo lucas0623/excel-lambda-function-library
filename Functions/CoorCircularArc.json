@@ -1,7 +1,7 @@
 {
   "name": "CoorCircularArc",
-  "formula": "=LAMBDA(x0,y0,r,startAngle,endAngle,n,LET(angle1, startAngle, angle2, IF(endAngle < startAngle, endAngle + (INT((startAngle - endAngle) / 360) + 1) * 360, endAngle), angles, SEQUENCE(n, 1, angle1, (angle2 - angle1) / (n - 1)), coorsToCenter, {ref}PolarToXYCoor(r, angles), coors, HSTACK(x0 + VALUE(CHOOSECOLS(coorsToCenter, 1)), y0 + VALUE(CHOOSECOLS(coorsToCenter, 2))), coors))",
-  "comment": "To create coordinates of circular arc from specified angles. Input startAngle and endAngle in Anti-Clockwise Direction. Last Update at 2026-04-21.",
+  "formula": "=LAMBDA(x0,y0,r,startAngle,endAngle,n,LET(angle1,startAngle,angle2,IF(endAngle<startAngle,endAngle+(INT((startAngle-endAngle)/360)+1)*360,endAngle),angles,SEQUENCE(n,1,angle1,(angle2-angle1)/(n-1)),coorsToCenter,{ref}PolarToXYCoor(r,angles),HSTACK(x0+CHOOSECOLS(coorsToCenter,1),y0+CHOOSECOLS(coorsToCenter,2))))",
+  "comment": "Returns n points on a circular arc centered at (x0, y0) with radius r. Argument order is x0, y0, r, startAngle, endAngle, n. Angles are in degrees from the positive x-axis, increasing counterclockwise. The points run from startAngle to endAngle and include both ends. If endAngle is below startAngle, multiples of 360 are added so the sweep stays counterclockwise. n must be at least 2; n below 2 returns #DIV/0!. Non-numeric input returns #VALUE!. Last Update at 2026-11-03.",
   "children": [
     "PolarToXYCoor"
   ],

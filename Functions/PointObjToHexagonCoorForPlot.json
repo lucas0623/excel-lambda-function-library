@@ -1,7 +1,7 @@
 {
   "name": "PointObjToHexagonCoorForPlot",
-  "formula": "=LAMBDA(xCoorArr,yCoorArr,diaArr,VALUE(DROP(REDUCE(0, SEQUENCE(ROWS(xCoorArr)), LAMBDA(a,i, LET(x, CHOOSEROWS(xCoorArr, i), y, CHOOSEROWS(yCoorArr, i), Dia, CHOOSEROWS(diaArr, i), circleCoor, {ref}CoorHexagon(Dia, x, y), VSTACK(a, circleCoor, TAKE(circleCoor, 1), \"\")))), 1)))",
-  "comment": "",
+  "formula": "=LAMBDA(xCoorArr,yCoorArr,diaArr,LET(emptyRow,MAKEARRAY(1,2,LAMBDA(r,c,NA())),DROP(REDUCE(0,SEQUENCE(ROWS(xCoorArr)),LAMBDA(a,i,LET(x,CHOOSEROWS(xCoorArr,i),y,CHOOSEROWS(yCoorArr,i),Dia,CHOOSEROWS(diaArr,i),hexCoor,{ref}CoorHexagon(Dia,x,y),VSTACK(a,hexCoor,TAKE(hexCoor,1),emptyRow)))),1)))",
+  "comment": "Returns one closed hexagon per point, stacked for an XY scatter. Argument order is xCoorArr, yCoorArr, diaArr. diaArr is the vertex-to-vertex diameter. The first vertex is at angle 0 on the positive x-axis, then every 60 degrees counterclockwise, so the hexagon is flat on the top and bottom. The first vertex is repeated to close the shape. An #N/A row separates hexagons. A non-numeric argument returns #VALUE!. Last Update at 2026-11-03.",
   "children": [
     "CoorHexagon"
   ],

@@ -1,38 +1,31 @@
 {
   "name": "Loop_CombinePolygons",
-  "formula": "=LAMBDA(verticesText,verticesArrText,[count],LET(i, IF(ISOMITTED(count), 1, count), n, ROWS(verticesArrText), verticesA, VALUE({ref}TextToArray(verticesText)), verticesB, VALUE({ref}TextToArray(INDEX(verticesArrText, i, 1))), combinedPolys, {ref}CombineTwoPolygons(verticesA, verticesB), isCombined, ROWS(combinedPolys) = 1, returnVerticesArrText, IF(isCombined, IF(n = 1, combinedPolys, VSTACK(combinedPolys, {ref}RemoveRow(verticesArrText, i))), VSTACK(verticesArrText, verticesText)), out, IF(OR(i = n, isCombined), returnVerticesArrText, Loop_CombinePolygons(verticesText, verticesArrText, i + 1)), out))",
-  "comment": "A helper function of CombinedPolygons",
+  "formula": "=LAMBDA(verticesText,verticesArrText,[count],LET(i, IF(ISOMITTED(count), 1, count), n, ROWS(verticesArrText), verticesA, VALUE({ref}TextToArray(verticesText)), verticesB, VALUE({ref}TextToArray(INDEX(verticesArrText, i, 1))), combinedPolys, {ref}CombineTwoPolygons(verticesA, verticesB), isCombined, ROWS(combinedPolys) = 1, returnVerticesArrText, IF(isCombined, IF(n = 1, combinedPolys, VSTACK(combinedPolys, {ref}RemoveRow(verticesArrText, i))), VSTACK(verticesArrText, verticesText)), out, IF(OR(i = n, isCombined), returnVerticesArrText, {ref}Loop_CombinePolygons(verticesText, verticesArrText, i + 1)), out))",
+  "comment": "Tries to union one polygon with each polygon in a column. verticesText is one strict ARRAYTOTEXT of (x, y) rows. verticesArrText is a column of the same kind of string. count is optional and is the 1-based row to try; omit it to start at 1. A union replaces that row with the combined polygon. No union appends verticesText. A string shorter than 2 characters returns #VALUE!. Last Update at 2026-11-03.",
   "children": [
-    "CombinePolygons",
+    "TextToArray",
     "CombineTwoPolygons",
-    "RemoveRow",
-    "TextToArray"
+    "RemoveRow"
   ],
   "allChildren": [
-    "CombinePolygons",
+    "TextToArray",
     "CombineTwoPolygons",
     "RemoveRow",
-    "TextToArray",
-    "CleanUpContinuousIntersections",
-    "GetVerticesBetweenIntersections",
-    "InsertPolysIntersection",
+    "IsPolysIntersect",
     "IsAllPointsInPoly",
     "isClockwise",
-    "IsPointInPoly",
-    "IsPolysIntersect",
     "ReverseVerticesDirection",
+    "CleanUpContinuousIntersections",
+    "InsertPolysIntersection",
+    "GetVerticesBetweenIntersections",
+    "IsPointInPoly",
     "IsAnyEdgeIntersect",
     "IsAnyPointInPoly",
-    "IsPolyAndLineIntersect",
-    "PolyAndLineIntersection",
-    "TwoLinesIntersection",
-    "IsPointOnPolyEdge",
-    "isPointOnLine",
     "InsertPolyAndLineIntersection",
-    "Loop_CombinePolygons",
-    "RemoveRow",
-    "CombinePolygons",
-    "CombineTwoPolygons",
-    "TextToArray"
+    "IsPointOnPolyEdge",
+    "IsPolyAndLineIntersect",
+    "TwoLinesIntersection",
+    "isPointOnLine",
+    "PolyAndLineIntersection"
   ]
 }

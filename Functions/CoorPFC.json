@@ -1,7 +1,7 @@
 {
   "name": "CoorPFC",
-  "formula": "=LAMBDA(h,b,tf,tw,[isRepeatFirstPoint],LET(isRepeat, IF(ISOMITTED(isRepeatFirstPoint), FALSE, TRUE), xa, b, ya, h / 2, xb, b, yb, h / 2 - tf, xc, tw, yc, h / 2 - tf, xd, tw, yd, -yc, xe, b, ye, -yb, xf, b, yf, -ya, xg, 0, yg, -h / 2, rowA, HSTACK(xa, ya), rowB, HSTACK(xb, yb), rowC, HSTACK(xc, yc), rowD, HSTACK(xd, yd), rowE, HSTACK(xe, ye), rowF, HSTACK(xf, yf), rowG, HSTACK(xg, yg), rowH, HSTACK(xg, -yg), output, IF(isRepeat, VSTACK(rowH, rowG, rowF, rowE, rowD, rowC, rowB, rowA, rowH), VSTACK(rowH, rowG, rowF, rowE, rowD, rowC, rowB, rowA)), output))",
-  "comment": "Create coordinates of vertices for a I Section. isRepeatFirstPoint = FALSE by default. Last Update at 2024-07-02.",
+  "formula": "=LAMBDA(h,b,tf,tw,[isRepeatFirstPoint],LET(isRepeat,IF(ISOMITTED(isRepeatFirstPoint),FALSE,isRepeatFirstPoint),xa,b,ya,h/2,xb,b,yb,h/2-tf,xc,tw,yc,h/2-tf,xd,tw,yd,-(h/2-tf),xe,b,ye,-(h/2-tf),xf,b,yf,-h/2,xg,0,yg,-h/2,rowA,HSTACK(xa,ya),rowB,HSTACK(xb,yb),rowC,HSTACK(xc,yc),rowD,HSTACK(xd,yd),rowE,HSTACK(xe,ye),rowF,HSTACK(xf,yf),rowG,HSTACK(xg,yg),rowH,HSTACK(0,h/2),pts,VSTACK(rowH,rowG,rowF,rowE,rowD,rowC,rowB,rowA),IF(isRepeat,VSTACK(pts,rowH),pts)))",
+  "comment": "Returns vertices of a parallel flange channel. Argument order is h, b, tf, tw, then optional isRepeatFirstPoint. h is the overall height, b the flange width, tf the flange thickness, and tw the web thickness. The web lies on x = 0 and the flanges extend to x = b. The section is centered on y = 0. Vertex order starts at the top of the web and runs around the profile. isRepeatFirstPoint defaults to FALSE; TRUE appends the first vertex again. Non-numeric sizes return #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

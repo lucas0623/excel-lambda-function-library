@@ -1,7 +1,7 @@
 {
   "name": "PolarToXYCoor",
   "formula": "=LAMBDA(r,theta_deg,LET(theta,RADIANS(theta_deg),x,r*COS(theta),y,r*SIN(theta),HSTACK(x,y)))",
-  "comment": "This function converts polar coor to xy coor. Input: r, theta(deg). Output: x,y",
+  "comment": "Converts polar radius r and angle theta_deg, in degrees, to a 1x2 row (x, y). Angle 0 is the positive x-axis and increases counterclockwise. Non-numeric input returns #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

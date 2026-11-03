@@ -1,7 +1,7 @@
 {
   "name": "PointObjToBoltEleForPlot",
-  "formula": "=LAMBDA(xCoorArr,yCoorArr,dia,length,NutNum_Top,NutNum_Bot,NutWidth,NutThick,[Deg],VALUE(DROP(REDUCE(0, SEQUENCE(ROWS(xCoorArr)), LAMBDA(a,i, LET(x, CHOOSEROWS(xCoorArr, i), y, CHOOSEROWS(yCoorArr, i), BoltCoor, {ref}CoorBoltEle(dia, length, NutNum_Top, NutNum_Bot, NutWidth, NutThick, x, y), BoltCoor_Rotated, IF(NOT(Deg = 0), {ref}RotateCoor(BoltCoor, x, y, Deg), BoltCoor), VSTACK(a, BoltCoor_Rotated)))), 1)))",
-  "comment": "",
+  "formula": "=LAMBDA(xCoorArr,yCoorArr,dia,length,NutNum_Top,NutNum_Bot,NutWidth,NutThick,[Deg],LET(degUse,IF(ISOMITTED(Deg),0,Deg),DROP(REDUCE(0,SEQUENCE(ROWS(xCoorArr)),LAMBDA(a,i,LET(x,CHOOSEROWS(xCoorArr,i),y,CHOOSEROWS(yCoorArr,i),BoltCoor,{ref}CoorBoltEle(dia,length,NutNum_Top,NutNum_Bot,NutWidth,NutThick,x,y),BoltCoor_Rotated,IF(degUse=0,BoltCoor,{ref}RotateCoor(BoltCoor,x,y,degUse)),VSTACK(a,BoltCoor_Rotated)))),1)))",
+  "comment": "Returns one bolt elevation per point, stacked for an XY scatter. Argument order is xCoorArr, yCoorArr, dia, length, NutNum_Top, NutNum_Bot, NutWidth, NutThick, then optional Deg. Each elevation is CoorBoltEle centered at that point. Positive Deg rotates it counterclockwise about the bolt center, matching RotatePoint, which reverses the old clockwise plot. Omitted Deg or 0 leaves it unrotated. #N/A rows separate the shank, the nuts, and the bolts. A non-numeric size returns #VALUE!. Last Update at 2026-11-03.",
   "children": [
     "CoorBoltEle",
     "RotateCoor"

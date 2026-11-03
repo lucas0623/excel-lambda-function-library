@@ -1,11 +1,13 @@
 {
   "name": "IsPolyAndLineIntersect",
-  "formula": "=LAMBDA(vertices,xi,yi,xj,yj,IF(ISERR(INDEX({ref}PolyAndLineIntersection(vertices, xi, yi, xj, yj), 1, 1)), FALSE, TRUE))",
-  "comment": "To determine if a line intersect a polygon. Last Update at 2024-06-27.",
+  "formula": "=LAMBDA(vertices,xi,yi,xj,yj,LET(n, ROWS(vertices), onBoundary, OR(MAP(SEQUENCE(n), LAMBDA(i, LET(j, IF(i = n, 1, i + 1), xa, INDEX(vertices, i, 1), ya, INDEX(vertices, i, 2), xb, INDEX(vertices, j, 1), yb, INDEX(vertices, j, 2), OR({ref}isPointOnLine(xa, ya, xb, yb, xi, yi), {ref}isPointOnLine(xa, ya, xb, yb, xj, yj), {ref}isPointOnLine(xi, yi, xj, yj, xa, ya)))))), pt, INDEX({ref}PolyAndLineIntersection(vertices, xi, yi, xj, yj), 1, 1), crossed, IF(ISERROR(pt), FALSE, ISNUMBER(pt)), OR(onBoundary, crossed)))",
+  "comment": "Returns TRUE when the segment (xi, yi)-(xj, yj) meets the polygon, including a segment that lies along an edge. Vertices is an n×2 array of (x, y) rows in order; the last row connects to the first. A segment that misses the polygon returns FALSE. Non-numeric coordinates return #VALUE!. Fewer than two vertex columns returns #REF!. Last Update at 2026-11-03.",
   "children": [
+    "isPointOnLine",
     "PolyAndLineIntersection"
   ],
   "allChildren": [
+    "isPointOnLine",
     "PolyAndLineIntersection",
     "TwoLinesIntersection"
   ]

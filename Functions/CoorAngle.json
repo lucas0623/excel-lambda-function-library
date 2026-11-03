@@ -1,7 +1,7 @@
 {
   "name": "CoorAngle",
-  "formula": "=LAMBDA(h,b,tf,tw,[isRepeatFirstPoint],LET(isRepeat, IF(ISOMITTED(isRepeatFirstPoint), FALSE, TRUE), xa, b, ya, h, xb, b, yb, h - tf, xc, tw, yc, h - tf, xd, tw, yd, 0, xe, 0, ye, 0, xf, 0, yf, h, rowA, HSTACK(xa, ya), rowB, HSTACK(xb, yb), rowC, HSTACK(xc, yc), rowD, HSTACK(xd, yd), rowE, HSTACK(xe, ye), rowF, HSTACK(xf, yf), output, IF(isRepeat, VSTACK(rowF, rowE, rowD, rowC, rowB, rowA, rowF), VSTACK(rowF, rowE, rowD, rowC, rowB, rowA)), output))",
-  "comment": "Create coordinates of vertices for a I Section. isRepeatFirstPoint = FALSE by default. Last Update at 2024-07-02.",
+  "formula": "=LAMBDA(h,b,tf,tw,[isRepeatFirstPoint],LET(isRepeat,IF(ISOMITTED(isRepeatFirstPoint),FALSE,isRepeatFirstPoint),xa,b,ya,h,xb,b,yb,h-tf,xc,tw,yc,h-tf,xd,tw,yd,0,xe,0,ye,0,xf,0,yf,h,rowA,HSTACK(xa,ya),rowB,HSTACK(xb,yb),rowC,HSTACK(xc,yc),rowD,HSTACK(xd,yd),rowE,HSTACK(xe,ye),rowF,HSTACK(xf,yf),pts,VSTACK(rowF,rowE,rowD,rowC,rowB,rowA),IF(isRepeat,VSTACK(pts,rowF),pts)))",
+  "comment": "Returns vertices of an angle section, not an angle in degrees and not an I section. Argument order is h, b, tf, tw, then optional isRepeatFirstPoint. h is the vertical leg length, b the outstanding leg length, tf the outstanding-leg thickness, and tw the vertical-leg thickness. The heel is at the origin, the vertical leg lies on x = 0, and the outstanding leg runs along the top to x = b. Vertex order starts at the top of the heel and runs around the profile. isRepeatFirstPoint defaults to FALSE; TRUE appends the first vertex again. Non-numeric sizes return #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

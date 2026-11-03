@@ -1,7 +1,7 @@
 {
   "name": "RotateShape",
-  "formula": "=LAMBDA(shapeArr,deg,[center],LET(center, IF(ISOMITTED(center), {ref}Prop_Centroid(shapeArr), center), output, {ref}ForEachRow(shapeArr, LAMBDA(point, {ref}RotatePoint(VALUE(point), deg, INDEX(center, 1, 1), INDEX(center, 1, 2)))), output))",
-  "comment": "To Rotate a 2D shape about certain point. Default rotate about the centroid of the shape. Last Update at 2025-09-05. ",
+  "formula": "=LAMBDA(shapeArr,deg,[center],LET(center,IF(ISOMITTED(center),{ref}Prop_Centroid(shapeArr),center),output,{ref}ForEachRow(shapeArr,LAMBDA(point,{ref}RotatePoint(VALUE(point),deg,INDEX(center,1,1),INDEX(center,1,2)))),output))",
+  "comment": "Rotates each vertex of an n×2 shape counterclockwise by deg degrees. shapeArr is column 1 x and column 2 y, in row order. center is an optional 1×2 row (x, y). If center is omitted, the shape rotates about its centroid. A zero-area shape then returns #DIV/0!. A row that is not two numbers returns #VALUE! or #REF!. Last Update at 2026-11-03.",
   "children": [
     "Prop_Centroid",
     "ForEachRow",

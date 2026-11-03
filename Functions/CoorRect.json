@@ -1,7 +1,7 @@
 {
   "name": "CoorRect",
-  "formula": "=LAMBDA(h,b,[isRepeatFirstPoint],LET(isRepeat, IF(ISOMITTED(isRepeatFirstPoint), FALSE, isRepeatFirstPoint), xa, -b / 2, ya, h / 2, xb, b / 2, yb, h / 2, xc, b / 2, yc, -h / 2, xd, -b / 2, yd, -h / 2, rowA, HSTACK(xa, ya), rowB, HSTACK(xb, yb), rowC, HSTACK(xc, yc), rowD, HSTACK(xd, yd), output, IF(isRepeat, VSTACK(rowD, rowC, rowB, rowA, rowD), VSTACK(rowD, rowC, rowB, rowA)), output))",
-  "comment": "",
+  "formula": "=LAMBDA(h,b,[isRepeatFirstPoint],LET(isRepeat,IF(ISOMITTED(isRepeatFirstPoint),FALSE,isRepeatFirstPoint),xa,-b/2,ya,-h/2,xb,b/2,yb,-h/2,xc,b/2,yc,h/2,xd,-b/2,yd,h/2,rowA,HSTACK(xa,ya),rowB,HSTACK(xb,yb),rowC,HSTACK(xc,yc),rowD,HSTACK(xd,yd),output,IF(isRepeat,VSTACK(rowA,rowB,rowC,rowD,rowA),VSTACK(rowA,rowB,rowC,rowD)),output))",
+  "comment": "Returns vertices of a rectangle of height h and width b, centered on the origin. Argument order is h, then b, then optional isRepeatFirstPoint. Vertex order is bottom-left, bottom-right, top-right, top-left. isRepeatFirstPoint defaults to FALSE; TRUE appends the first vertex again. Non-numeric h or b returns #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

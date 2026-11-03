@@ -1,7 +1,7 @@
 {
   "name": "GetMHInfoFromPipeSch",
-  "formula": "=LAMBDA(CMH,USMH,DSMH,USIL,DSIL,PipeDia,PipeMat,LET(InletInfo,HSTACK(DSMH,DSIL,PipeDia,PipeMat,USMH),InletOutput,IFERROR(FILTER(InletInfo,CHOOSECOLS(InletInfo,1)=CMH),EXPAND(\"-\",1,COLUMNS(InletInfo),\"-\")),OutletInfo,HSTACK(USMH,USIL,PipeDia,PipeMat,DSMH),OutletOutput,IFERROR(FILTER(OutletInfo,CHOOSECOLS(OutletInfo,1)=CMH),EXPAND(\"-\",1,COLUMNS(InletInfo),\"-\")),tempArr,'Useful Excel Formula 20240620.xlsm'!{ref}ReplaceErrInRange(HSTACK(DROP(InletOutput,,1),DROP(OutletOutput,,1)),\"-\"),'Useful Excel Formula 20240620.xlsm'!{ref}ReplaceErrInRange(HSTACK(CMH,tempArr))))",
-  "comment": "Extract a Manhole Information from pipe schedule. ",
+  "formula": "=LAMBDA(CMH,USMH,DSMH,USIL,DSIL,PipeDia,PipeMat,LET(InletInfo,HSTACK(DSMH,DSIL,PipeDia,PipeMat,USMH),InletOutput,IFERROR(FILTER(InletInfo,CHOOSECOLS(InletInfo,1)=CMH),EXPAND(\"-\",1,COLUMNS(InletInfo),\"-\")),OutletInfo,HSTACK(USMH,USIL,PipeDia,PipeMat,DSMH),OutletOutput,IFERROR(FILTER(OutletInfo,CHOOSECOLS(OutletInfo,1)=CMH),EXPAND(\"-\",1,COLUMNS(OutletInfo),\"-\")),tempArr,{ref}ReplaceErrInRange(HSTACK(DROP(InletOutput,,1),DROP(OutletOutput,,1)),\"-\"),{ref}ReplaceErrInRange(HSTACK(EXPAND(CMH,ROWS(tempArr),1,CMH),tempArr),\"-\")))",
+  "comment": "Returns one row per pipe connected to a manhole. Arguments: CMH, USMH, DSMH, USIL, DSIL, PipeDia, PipeMat. Each pipe argument is a column of the same length. An inlet is a pipe whose downstream manhole is CMH. An outlet is a pipe whose upstream manhole is CMH. The nine values are CMH, inlet invert, inlet diameter, inlet material, inlet from manhole, outlet invert, outlet diameter, outlet material, and outlet to manhole. A missing side is \"-\". Extra rows repeat CMH. Omitting CMH returns #VALUE!. Last Update at 2026-11-03.",
   "children": [
     "ReplaceErrInRange"
   ],

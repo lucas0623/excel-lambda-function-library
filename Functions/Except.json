@@ -1,7 +1,7 @@
 {
   "name": "Except",
-  "formula": "=LAMBDA(list1,list2,FILTER(list1, ISNA(XMATCH(list1, list2)), \"All Items in list1 exists in list2\"))",
-  "comment": "Find all items in list1 that do not exist in list2. All items are compared as text.",
+  "formula": "=LAMBDA(list1,list2,FILTER(list1,ISNA(XMATCH(list1,list2)),\"All Items in list1 exists in list2\"))",
+  "comment": "Returns items of list1 that are absent from list2, in list1 order. Arguments: list1, list2. Match is exact and case-insensitive. If none remain, returns All Items in list1 exists in list2. An error in list1 is returned. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

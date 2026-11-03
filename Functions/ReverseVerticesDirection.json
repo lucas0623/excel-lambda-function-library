@@ -1,7 +1,7 @@
 {
   "name": "ReverseVerticesDirection",
   "formula": "=LAMBDA(vertices,LET(n, ROWS(vertices), DROP(REDUCE(0, SEQUENCE(n), LAMBDA(acc,i, VSTACK(acc, CHOOSEROWS(vertices, n - i + 1)))), 1)))",
-  "comment": "To reverse the direction of vertices (clockwise/ anticlockwise). Last update at 2024-07-05.",
+  "comment": "Reverses the row order of a vertex list, swapping clockwise and counterclockwise. vertices is an n×2 array of (x, y) rows. One row is returned unchanged. Omitting vertices returns #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

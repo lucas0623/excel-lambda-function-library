@@ -53,7 +53,8 @@ Functions are grouped by category below.
 | Function | Description |
 |---|---|
 | `Dist` | Distance between two points (x1,y1,x2,y2) |
-| `AngleBetween3Points` | Angle formed at the middle of three points |
+| `AngleBetween3Points` | Interior angle at the middle of three points, 0 to 180 degrees |
+| `AdjustPolarAngle` | Wrap a degree angle into [0, 360) |
 | `AngleBetweenLineAndX` | Angle between a line and the X-axis |
 | `CoorAngle` | Angle of a line defined by two coordinate pairs |
 | `PolarToXYCoor` | Convert polar coordinates to Cartesian (x,y) |
@@ -80,12 +81,12 @@ Functions are grouped by category below.
 | `IsAnyEdgeIntersect` | Check if any edges between two polygons intersect |
 | `isPolyAInPolyB` | Check if polygon A is entirely within polygon B |
 | `isClockwise` | Check if polygon vertices are ordered clockwise |
-| `IntersectionOfTwoLines` | Find the intersection point of two lines |
-| `TwoLinesIntersection` | Intersection of two lines (alternate form) |
-| `TwoLinesIntersection2` | Intersection of two lines (alternate form 2) |
+| `IntersectionOfTwoLines` | Intersection of a segment and a finite-slope line |
+| `TwoLinesIntersection` | Intersection of two segments |
+| `SegmentSlopeIntersection` | Intersection of a segment and y = mx + C |
 | `IsTwoLinesIntersect` | Check if two line segments intersect |
-| `PolyAndLineIntersection` | Find intersection points of a polygon and a line |
-| `PolyAndLineIntersection2` | Polygon–line intersection (alternate form) |
+| `PolyAndLineIntersection` | Intersection points of a polygon and a segment |
+| `PolySlopeIntersection` | Intersection points of a polygon and y = mx + C |
 | `InsertPolyAndLineIntersection` | Insert intersection points into polygon vertices |
 | `InsertPolysIntersection` | Insert mutual intersection points into two polygons |
 | `IntersectionAreaAndLine` | Compute intersection of an area polygon and a line |

@@ -1,7 +1,7 @@
 {
   "name": "Inner",
-  "formula": "=LAMBDA(list1,list2,FILTER(list1, ISNUMBER(XMATCH(list1, list2))))",
-  "comment": "To find the common values from 2 lists.",
+  "formula": "=LAMBDA(list1,list2,FILTER(list1,ISNUMBER(XMATCH(list1,list2))))",
+  "comment": "Returns values of list1 that also occur in list2, in list1 order. Arguments: list1, list2. Match is exact and case-insensitive. No shared value returns #CALC!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

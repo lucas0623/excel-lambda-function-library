@@ -1,7 +1,7 @@
 {
   "name": "s2k_loadCaseDefHeader",
   "formula": "=LAMBDA(CONCAT(\"Table: \", CHAR(34), \"LOAD CASE DEFINITIONS\", CHAR(34)))",
-  "comment": "Create table header text regarding load case definition data in SAP2000 $2k format. Last Update at 2024-07-11.",
+  "comment": "Returns the .s2k table header Table: \"LOAD CASE DEFINITIONS\". No arguments. The formula has no error branch. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

@@ -1,7 +1,7 @@
 {
   "name": "PolyAndLineIntersection",
-  "formula": "=LAMBDA(vertices,xp,yp,xq,yq,LET(n, ROWS(vertices), iterations, SEQUENCE(n, 1, 1, 1), intersections, DROP(REDUCE(0, iterations, LAMBDA(a,i, LET(xi, INDEX(vertices, i, 1), yi, INDEX(vertices, i, 2), xj, INDEX(vertices, IF(i = n, 1, i + 1), 1), yj, INDEX(vertices, IF(i = n, 1, i + 1), 2), intersection, {ref}TwoLinesIntersection(xi, yi, xj, yj, xp, yp, xq, yq), IF(NOT(ISNA(intersection)), IF(AND(xi = INDEX(intersection, 1, 1), yi = INDEX(intersection, 1, 2)), a, VSTACK(a, intersection)), a)))), 1), sortedIntersectPts, SORTBY(intersections, CHOOSECOLS(intersections, 1), 1, CHOOSECOLS(intersections, 2), 1), sortedIntersectPts))",
-  "comment": "Return the intersection points of an polygon and a line. Last update at 2024-06-23.",
+  "formula": "=LAMBDA(vertices,xp,yp,xq,yq,LET(n,ROWS(vertices),raw,REDUCE(0,SEQUENCE(n),LAMBDA(a,i,LET(xi,INDEX(vertices,i,1),yi,INDEX(vertices,i,2),next,IF(i=n,1,i+1),xj,INDEX(vertices,next,1),yj,INDEX(vertices,next,2),hit,{ref}TwoLinesIntersection(xi,yi,xj,yj,xp,yp,xq,yq),x,INDEX(hit,1,1),y,INDEX(hit,1,2),IF(ISNA(x),a,IF(AND(x=xi,y=yi),a,VSTACK(a,hit)))))),IF(ROWS(raw)=1,NA(),LET(pts,DROP(raw,1),SORTBY(pts,CHOOSECOLS(pts,1),1,CHOOSECOLS(pts,2),1)))))",
+  "comment": "Intersection points of a closed polygon and a segment. vertices is an n by 2 array of (x, y) rows in order; the last vertex connects to the first. The segment is P(xp, yp) to Q(xq, yq). Returns the points sorted by x, then by y. A hit exactly at the first vertex of an edge is omitted, so a shared vertex is returned once. No intersection returns #N/A. Fewer than two columns returns #REF!. Non-numeric coordinates return #VALUE!. Last Update at 2026-11-03.",
   "children": [
     "TwoLinesIntersection"
   ],

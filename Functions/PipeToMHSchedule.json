@@ -1,7 +1,7 @@
 {
   "name": "PipeToMHSchedule",
-  "formula": "=LAMBDA(CMH,USMH,DSMH,USIL,DSIL,PipeDia,PipeMat,REDUCE(HSTACK(\"MH\",\"Inlet I.L.\",\"Inlet Pipe Dia\",\"Inlet Pipe Material\",\"Inlet From MH\",\"Outlet DSIL\",\"Outlet Pipe Dia\",\"Outlet Pipe Material\",\"Outlet To MH\"),CMH,LAMBDA(a,b,VSTACK(a,'Useful Excel Formula 20240620.xlsm'!{ref}GetMHInfoFromPipeSch(b,USMH,DSMH,USIL,DSIL,PipeDia,PipeMat)))))",
-  "comment": "To Convert Pipe Schedule to Manhole Schedule",
+  "formula": "=LAMBDA(CMH,USMH,DSMH,USIL,DSIL,PipeDia,PipeMat,REDUCE(HSTACK(\"MH\",\"Inlet I.L.\",\"Inlet Pipe Dia\",\"Inlet Pipe Material\",\"Inlet From MH\",\"Outlet I.L.\",\"Outlet Pipe Dia\",\"Outlet Pipe Material\",\"Outlet To MH\"),CMH,LAMBDA(a,b,VSTACK(a,{ref}GetMHInfoFromPipeSch(b,USMH,DSMH,USIL,DSIL,PipeDia,PipeMat)))))",
+  "comment": "Returns a manhole schedule from a pipe schedule. Arguments: CMH, USMH, DSMH, USIL, DSIL, PipeDia, PipeMat. CMH is the column of manholes to list. The other arguments are the pipe-schedule columns. The first row is the header. Each following block is GetMHInfoFromPipeSch for that manhole. Omitting CMH returns #VALUE!. Last Update at 2026-11-03.",
   "children": [
     "GetMHInfoFromPipeSch"
   ],

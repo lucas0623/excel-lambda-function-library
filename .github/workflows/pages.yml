@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - "README.md"
       - "Documentation/**"
       - "Examples/**"
       - "Z_System/Attachment/**"

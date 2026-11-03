@@ -63,13 +63,12 @@ for (const file of walk(attachments)) {
   copyFile(file, path.join(dest, "Z_System", "Attachment", base))
 }
 
-fs.writeFileSync(
-  path.join(dest, "index.md"),
-  `---
-title: Documentation
-unlisted: true
+const readme = fs.readFileSync(path.join(vault, "README.md"), "utf8").replace(/^\uFEFF/, "")
+const homepage = readme.startsWith("---")
+  ? readme
+  : `---
+title: Lambda Function Library
 ---
 
-Open a note in Documentation for the formula, figures, and example workbook.
-`,
-)
+${readme}`
+fs.writeFileSync(path.join(dest, "index.md"), homepage)

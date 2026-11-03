@@ -1,7 +1,7 @@
 {
   "name": "SplitPolyByLine",
-  "formula": "=LAMBDA(vertices,xp,yp,xq,yq,LET(originShapeArr, vertices, Intersects, {ref}PolyAndLineIntersection(originShapeArr, xp, yp, xq, yq), numOfIntersections, ROWS(Intersects), iterations, SEQUENCE(numOfIntersections / 2), output, IF(numOfIntersections = 2, {ref}SplitPolyIntoTwoPolys(originShapeArr, xp, yp, xq, yq), {ref}SplitPolysIteration(originShapeArr, Intersects)), output))",
-  "comment": "Split a shape (defined by array of points) by a line. Last Update at 2024-06-23. Return an array of the shapes, each entity in the array contains the points of that shape.",
+  "formula": "=LAMBDA(vertices,xp,yp,xq,yq,LET(originShapeArr, vertices, Intersects, {ref}PolyAndLineIntersection(originShapeArr, xp, yp, xq, yq), numOfIntersections, ROWS(Intersects), output, IF(numOfIntersections = 2, {ref}SplitPolyIntoTwoPolys(originShapeArr, xp, yp, xq, yq), {ref}SplitPolysIteration(originShapeArr, Intersects)), output))",
+  "comment": "Splits a closed polygon by a line segment. vertices is an n×2 array of (x, y) rows in order; the last vertex connects to the first. The segment is (xp, yp) to (xq, yq). Two intersections return two polygons. Four or more are paired in sorted order by SplitPolysIteration. Each result row is a strict ARRAYTOTEXT of (x, y) rows. No intersection returns #N/A. Fewer than two columns returns #REF!. Last Update at 2026-11-03.",
   "children": [
     "PolyAndLineIntersection",
     "SplitPolyIntoTwoPolys",

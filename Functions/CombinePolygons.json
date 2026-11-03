@@ -1,31 +1,31 @@
 {
   "name": "CombinePolygons",
-  "formula": "=LAMBDA(verticesArrText,[count],LET(i, IF(ISOMITTED(count), 1, count), n, ROWS(verticesArrText), cVerticesText, INDEX(verticesArrText, i, 1), otherVertices, {ref}RemoveRow(verticesArrText, i), verticesArrText_updated, {ref}Loop_CombinePolygons(cVerticesText, otherVertices), isCombined, ROWS(verticesArrText_updated) < n, output, IF(OR(i = n, ROWS(verticesArrText_updated) = 1), verticesArrText_updated, IF(isCombined, CombinePolygons(verticesArrText_updated, 1), CombinePolygons(verticesArrText, i + 1))), output))",
-  "comment": "To combine multiple polygons. Last update at 2024-07-06.",
+  "formula": "=LAMBDA(verticesArrText,[count],LET(i, IF(ISOMITTED(count), 1, count), n, ROWS(verticesArrText), cVerticesText, INDEX(verticesArrText, i, 1), otherVertices, {ref}RemoveRow(verticesArrText, i), verticesArrText_updated, {ref}Loop_CombinePolygons(cVerticesText, otherVertices), isCombined, ROWS(verticesArrText_updated) < n, output, IF(OR(i = n, ROWS(verticesArrText_updated) = 1), verticesArrText_updated, IF(isCombined, {ref}CombinePolygons(verticesArrText_updated, 1), {ref}CombinePolygons(verticesArrText, i + 1))), output))",
+  "comment": "Combines a column of polygons into as few outlines as their overlaps allow. verticesArrText is a column of strict ARRAYTOTEXT strings, each an n×2 list of (x, y) rows. count is optional and is the 1-based polygon to try next; omit it to start at 1. Overlapping polygons become one union string. Separate polygons stay on their own rows. A string shorter than 2 characters returns #VALUE!. Last Update at 2026-11-03.",
   "children": [
-    "Loop_CombinePolygons",
-    "RemoveRow"
+    "RemoveRow",
+    "Loop_CombinePolygons"
   ],
   "allChildren": [
-    "Loop_CombinePolygons",
     "RemoveRow",
-    "CombineTwoPolygons",
+    "Loop_CombinePolygons",
     "TextToArray",
-    "CleanUpContinuousIntersections",
-    "GetVerticesBetweenIntersections",
-    "InsertPolysIntersection",
+    "CombineTwoPolygons",
+    "IsPolysIntersect",
     "IsAllPointsInPoly",
     "isClockwise",
-    "IsPointInPoly",
-    "IsPolysIntersect",
     "ReverseVerticesDirection",
-    "InsertPolyAndLineIntersection",
-    "PolyAndLineIntersection",
-    "IsPointOnPolyEdge",
+    "CleanUpContinuousIntersections",
+    "InsertPolysIntersection",
+    "GetVerticesBetweenIntersections",
+    "IsPointInPoly",
     "IsAnyEdgeIntersect",
     "IsAnyPointInPoly",
+    "InsertPolyAndLineIntersection",
+    "IsPointOnPolyEdge",
+    "IsPolyAndLineIntersect",
     "TwoLinesIntersection",
     "isPointOnLine",
-    "IsPolyAndLineIntersect"
+    "PolyAndLineIntersection"
   ]
 }

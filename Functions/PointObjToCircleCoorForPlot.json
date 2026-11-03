@@ -1,7 +1,7 @@
 {
   "name": "PointObjToCircleCoorForPlot",
-  "formula": "=LAMBDA(xCoorArr,yCoorArr,diaArr,numOfPointsPerCircle,VALUE(DROP(REDUCE(0,SEQUENCE(ROWS(xCoorArr)),LAMBDA(a,i,LET(x,CHOOSEROWS(xCoorArr,i),y,CHOOSEROWS(yCoorArr,i),Dia,CHOOSEROWS(diaArr,i),circleCoor,{ref}CoorOfCircle(Dia/2,x,y,numOfPointsPerCircle),VSTACK(a,circleCoor,TAKE(circleCoor,1),\"\")))),1)))",
-  "comment": "",
+  "formula": "=LAMBDA(xCoorArr,yCoorArr,diaArr,numOfPointsPerCircle,LET(emptyRow,MAKEARRAY(1,2,LAMBDA(r,c,NA())),DROP(REDUCE(0,SEQUENCE(ROWS(xCoorArr)),LAMBDA(a,i,LET(x,CHOOSEROWS(xCoorArr,i),y,CHOOSEROWS(yCoorArr,i),Dia,CHOOSEROWS(diaArr,i),circleCoor,{ref}CoorOfCircle(Dia/2,x,y,numOfPointsPerCircle),VSTACK(a,circleCoor,TAKE(circleCoor,1),emptyRow)))),1)))",
+  "comment": "Returns one closed circle per point, stacked for an XY scatter. Argument order is xCoorArr, yCoorArr, diaArr, numOfPointsPerCircle. diaArr is the diameter, so the radius is dia/2. Point k is at k*360/n degrees, k = 1 to n, counterclockwise from the positive x-axis. The last unique point is on the positive x-axis, then the first point is repeated to close the circle. An #N/A row separates circles. A non-numeric argument returns #VALUE!. Last Update at 2026-11-03.",
   "children": [
     "CoorOfCircle"
   ],

@@ -1,6 +1,6 @@
 # Library review tracker
 
-152 functions in `Functions/`. 111 are AI Reviewed. The order below is the suggested review order: shared leaves first, then the functions that call them. Finish a group before starting the next.
+152 functions in `Functions/`. 151 are AI Reviewed. The order below is the suggested review order: shared leaves first, then the functions that call them. Finish a group before starting the next.
 
 Method: `.cursor/skills/lfm-function-review/SKILL.md`. A tick here matches `AI Reviewed: true` on the note and a section in [[ReviewResult]]. A line marked `stopped:` is an open question, not a tick. The review moves on after three failed rounds, after the same failure survives two formula edits, or when asked to stop review.
 
@@ -28,14 +28,14 @@ Continue the batch that produced [[Angle Functions.xlsx]].
 
 ## 2. Lines
 
-- [ ] TwoLinesIntersection
-- [ ] TwoLinesIntersection2
-- [ ] IntersectionOfTwoLines
-- [ ] isPointOnLine
-- [ ] IsTwoLinesIntersect
-- [ ] PolyAndLineIntersection
-- [ ] PolyAndLineIntersection2
-- [ ] IntersectionAreaAndLine
+- [x] TwoLinesIntersection
+- [x] SegmentSlopeIntersection
+- [x] IntersectionOfTwoLines
+- [x] isPointOnLine
+- [x] IsTwoLinesIntersect
+- [x] PolyAndLineIntersection
+- [x] PolySlopeIntersection
+- [x] IntersectionAreaAndLine
 
 ## 3. Point in polygon
 
@@ -51,22 +51,20 @@ Continue the batch that produced [[Angle Functions.xlsx]].
 
 ## 4. Polygon editing
 
-These call the line and polygon tests above, plus `TextToArray` and `RemoveRow` from group 7. Review group 7's leaves `TextToArray` and `RemoveRow` before this group if a failure is ambiguous.
-
-- [ ] InsertPolyAndLineIntersection
-- [ ] InsertPolysIntersection
-- [ ] GetVerticesBetweenIntersections
-- [ ] CleanUpContinuousIntersections
-- [ ] ReverseVerticesDirection
-- [ ] SplitPolyIntoTwoPolys
-- [ ] SplitPolysIteration
-- [ ] SplitPolyByLine
-- [ ] CombineTwoPolygons
-- [ ] CombinePolygons
-- [ ] Loop_CombinePolygons
-- [ ] OverlappedPolygons
-- [ ] CreateHatch
-- [ ] GridMesh
+- [x] InsertPolyAndLineIntersection
+- [x] InsertPolysIntersection
+- [x] GetVerticesBetweenIntersections
+- [x] CleanUpContinuousIntersections
+- [x] ReverseVerticesDirection
+- [x] SplitPolyIntoTwoPolys
+- [x] SplitPolysIteration
+- [x] SplitPolyByLine
+- [x] CombineTwoPolygons
+- [x] CombinePolygons
+- [x] Loop_CombinePolygons
+- [x] OverlappedPolygons
+- [x] CreateHatch
+- [x] GridMesh
 
 ## 5. Section properties and shapes
 
@@ -95,14 +93,14 @@ These call the line and polygon tests above, plus `TextToArray` and `RemoveRow` 
 
 ## 6. Bolts and plotting
 
-- [ ] CreateBoltCoor_4Bolts
-- [ ] CreateBoltCoor_6Bolts_2x3
-- [ ] CreateBoltCoor_6Bolts_3x2
-- [ ] CreateBoltCoor_8Bolts_3x3
-- [ ] PointObjToBoltEleForPlot
-- [ ] PointObjToCircleCoorForPlot
-- [ ] PointObjToHexagonCoorForPlot
-- [ ] ConvertLineDataForPlot — draft
+- [x] CreateBoltCoor_4Bolts
+- [x] CreateBoltCoor_6Bolts_2x3
+- [x] CreateBoltCoor_6Bolts_3x2
+- [x] CreateBoltCoor_8Bolts_3x3
+- [x] PointObjToBoltEleForPlot
+- [x] PointObjToCircleCoorForPlot
+- [x] PointObjToHexagonCoorForPlot
+- [x] ConvertLineDataForPlot
 
 ## 7. Loops, arrays, and sheets
 
@@ -139,16 +137,16 @@ These call the line and polygon tests above, plus `TextToArray` and `RemoveRow` 
 
 ## 9. Civil, drainage, and strength
 
-- [ ] CalSoilPressure
-- [ ] SolveLevels
-- [ ] PipeToMHSchedule
-- [ ] GetMHInfoFromPipeSch
-- [ ] find_root
-- [ ] RcBeamAsRequired_HK2013
-- [ ] StrengthAnaylsis.RectSection.RectStressBlock
-- [ ] StrengthAnaylsis.T.RectStressBlock
-- [ ] ConvertRebarDataToDesignSectionFormat
-- [ ] SetGraphLimit
+- [x] CalSoilPressure
+- [x] SolveLevels
+- [x] PipeToMHSchedule
+- [x] GetMHInfoFromPipeSch
+- [x] find_root
+- [x] RcBeamAsRequired_HK2013
+- [x] StrengthAnalysis.RectSection.RectStressBlock
+- [x] StrengthAnalysis.T.RectStressBlock
+- [x] ConvertRebarDataToDesignSectionFormat
+- [x] SetGraphLimit
 
 ## 10. SAP2000 `.s2k`
 

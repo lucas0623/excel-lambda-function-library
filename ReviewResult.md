@@ -795,3 +795,425 @@ Arc length of the same parabola. The expected value is the worksheet antiderivat
 ## Batch
 
 [[Section Properties.xlsx]] sheets `example` and `test`: 120 passed, 0 failed. No function in this group was stopped. `CoorAngle` stays an angle section. `CoorOfCircle` stays the same polyline as `CoorCircle`.
+
+## TwoLinesIntersection
+
+- Date: 2026-11-03
+- Note: [[TwoLinesIntersection]]
+- Example file: [[Lines.xlsx]]
+- Library: comment updated. Formula unchanged.
+- Excel: 5 passed, 0 failed
+
+The name stays. The result is the point where segment I `(xi, yi)` to J `(xj, yj)` meets segment P `(xp, yp)` to Q `(xq, yq)`, including an endpoint. Parallel segments, collinear segments, and a crossing that misses either segment return `#N/A`. Text returns `#VALUE!`. `(0, 0)→(2, 2)` and `(0, 2)→(2, 0)` return `(1, 1)`.
+
+## SegmentSlopeIntersection
+
+- Date: 2026-11-03
+- Note: [[SegmentSlopeIntersection]]
+- Example file: [[Lines.xlsx]]
+- Library: updated. Renamed from `TwoLinesIntersection2`.
+- Excel: 6 passed, 0 failed
+
+`TwoLinesIntersection2` → `SegmentSlopeIntersection`. The old name is an alias on the note. The "2" did not say that the second line is `y = mx + C`. A vertical line is `m = #N/A`, or an absolute slope greater than 1E15, and `C` is that line's x coordinate.
+
+The old formula never reached its general intersection, and it treated an x coordinate of 0 as no hit. `(0, 0)→(2, 2)` and `y = -x + 2` return `(1, 1)`. A hit on `x = 0` returns `(0, 1)`. A vertical line `x = 1` returns `(1, 0)`. Parallel lines return `#N/A`. Text returns `#VALUE!`.
+
+## IntersectionOfTwoLines
+
+- Date: 2026-11-03
+- Note: [[IntersectionOfTwoLines]]
+- Example file: [[Lines.xlsx]]
+- Library: updated
+- Excel: 4 passed, 0 failed
+
+The name stays. This is a segment against `y = mx + C` with a finite slope and exact arithmetic. It used to return the text `x,y` and `#DIV/0!` when the slopes matched. It now returns a 1×2 point, and parallel or collinear input returns `#N/A`. A vertical segment uses `x = xi`. `(0, 0)→(2, 2)` and `y = -x + 2` return `(1, 1)`. The vertical segment `(1, 0)→(1, 2)` and `y = 0` return `(1, 0)`. Text returns `#VALUE!`.
+
+## isPointOnLine
+
+- Date: 2026-11-03
+- Note: [[isPointOnLine]]
+- Example file: [[Lines.xlsx]]
+- Library: comment updated. Formula unchanged.
+- Excel: 7 passed, 0 failed
+
+The name stays. TRUE when `(x, y)` lies on segment I to J, including either endpoint. The tolerance is 1E-10. A point on the infinite line but past the segment is FALSE. `(2, 1)` on `(0, 0)→(4, 2)` is TRUE. `(6, 3)` is FALSE. `(2, 0)` is FALSE. Horizontal and vertical midpoints are TRUE. Text returns `#VALUE!`.
+
+## IsTwoLinesIntersect
+
+- Date: 2026-11-03
+- Note: [[IsTwoLinesIntersect]]
+- Example file: [[Lines.xlsx]]
+- Library: updated. `children` is `TwoLinesIntersection`.
+- Excel: 4 passed, 0 failed
+
+The name stays. The previous formula used `ISERR`. `ISERR` does not see `#N/A`, so a miss was reported as TRUE. It now returns FALSE when [[TwoLinesIntersection]] returns `#N/A`, and it passes `#VALUE!` through. The crossing pair is TRUE. An endpoint touch is TRUE. Parallel segments are FALSE. Text returns `#VALUE!`.
+
+## PolyAndLineIntersection
+
+- Date: 2026-11-03
+- Note: [[PolyAndLineIntersection]]
+- Example file: [[Lines.xlsx]]
+- Library: updated. `children` is `TwoLinesIntersection`.
+- Excel: 5 passed, 0 failed
+
+The name stays. `vertices` is an n×2 range in order, and the last vertex connects to the first. Hits are sorted by x, then by y. A hit exactly at the first vertex of an edge is omitted, so a shared vertex is returned once. The square `(0, 0), (2, 0), (2, 2), (0, 2)` and the segment `(-1, 1)→(3, 1)` return `(0, 1)` and `(2, 1)`. The segment through the corners returns `(0, 0)` and `(2, 2)`. A miss returns `#N/A`. One column returns `#REF!`. Text returns `#VALUE!`.
+
+## PolySlopeIntersection
+
+- Date: 2026-11-03
+- Note: [[PolySlopeIntersection]]
+- Example file: [[Lines.xlsx]]
+- Library: updated. Renamed from `PolyAndLineIntersection2`. `children` is `SegmentSlopeIntersection`.
+- Excel: 6 passed, 0 failed
+
+`PolyAndLineIntersection2` → `PolySlopeIntersection`. The old name is an alias on the note. The "2" did not say that the line is `y = mx + C`. The previous formula treated an x coordinate of 0 as no intersection. [[CreateHatch]] now calls `PolySlopeIntersection`. That was the only library formula that called the old name. The same square and `y = 1` return `(0, 1)` and `(2, 1)`. `y = x` returns `(0, 0)` and `(2, 2)`. The vertical line `x = 1` returns `(1, 0)` and `(1, 2)`. A miss returns `#N/A`. One column returns `#REF!`. Text returns `#VALUE!`.
+
+## IntersectionAreaAndLine
+
+- Date: 2026-11-03
+- Note: [[IntersectionAreaAndLine]]
+- Example file: [[Lines.xlsx]]
+- Library: updated. `children` is `PolySlopeIntersection`.
+- Excel: 5 passed, 0 failed
+
+The name stays. "Area" means the polygon region, and the result is the intersection points, not a numeric area. The previous formula mapped each edge through the text form of `IntersectionOfTwoLines`. It now calls [[PolySlopeIntersection]], so the points are numeric and a shared vertex is returned once. The square and `y = 1` return `(0, 1)` and `(2, 1)`. `y = x` returns `(0, 0)` and `(2, 2)`. A miss returns `#N/A`. One column returns `#REF!`. Text returns `#VALUE!`.
+
+## Batch
+
+[[Lines.xlsx]] sheets `example` and `test`: 42 passed, 0 failed. No function in this group was stopped. `TwoLinesIntersection2` → `SegmentSlopeIntersection`. `PolyAndLineIntersection2` → `PolySlopeIntersection`.
+
+## InsertPolyAndLineIntersection
+
+- Date: 2026-11-03
+- Note: [[InsertPolyAndLineIntersection]]
+- Example file: [[Polygon Editing.xlsx]]
+- Library: updated. Names are `x & "," & y`. Fewer than two columns returns `#REF!`. `children` stays `TwoLinesIntersection`.
+- Excel: 5 passed, 0 failed
+
+The name stays. On the square (0, 0), (4, 0), (4, 4), (0, 4), the segment (−1, 2) to (5, 2) inserts (4, 2) and (0, 2). The diagonal through the corners marks (0, 0) and (4, 4) and does not add a row. A segment that misses returns the four vertices with FALSE flags. A one-column list returns `#REF!`. Text returns `#VALUE!`.
+
+## InsertPolysIntersection
+
+- Date: 2026-11-03
+- Note: [[InsertPolysIntersection]]
+- Example file: [[Polygon Editing.xlsx]]
+- Library: updated. The unused `PolyAndLineIntersection` child is gone. `children` is `InsertPolyAndLineIntersection`.
+- Excel: 3 passed, 0 failed
+
+The name stays. Square A (0, 0), (2, 0), (2, 2), (0, 2) and square B (1, 1), (3, 1), (3, 3), (1, 3) insert (2, 1) and (1, 2) into A. A separate square leaves A unchanged. A one-column list returns `#REF!`.
+
+## GetVerticesBetweenIntersections
+
+- Date: 2026-11-03
+- Note: [[GetVerticesBetweenIntersections]]
+- Example file: [[Polygon Editing.xlsx]]
+- Library: comment updated. Formula unchanged.
+- Excel: 3 passed, 0 failed
+
+The name stays. Between the names `0,0` and `4,2` the only row is (4, 0). The walk from the last name `0,2` to `4,0` wraps and returns (0, 0). An unknown name returns `#N/A`.
+
+## CleanUpContinuousIntersections
+
+- Date: 2026-11-03
+- Note: [[CleanUpContinuousIntersections]]
+- Example file: [[Polygon Editing.xlsx]]
+- Library: updated. Fewer than three columns returns `#REF!`.
+- Excel: 3 passed, 0 failed
+
+The name stays. FALSE, TRUE, TRUE, TRUE, FALSE becomes FALSE, TRUE, FALSE, TRUE, FALSE. Two consecutive TRUE flags stay TRUE. Two columns used to return `#CALC!`. They now return `#REF!`.
+
+## ReverseVerticesDirection
+
+- Date: 2026-11-03
+- Note: [[ReverseVerticesDirection]]
+- Example file: [[Polygon Editing.xlsx]]
+- Library: comment updated. Formula unchanged.
+- Excel: 3 passed, 0 failed
+
+The name stays. (0, 0), (4, 0), (4, 4), (0, 4) reverses to (0, 4), (4, 4), (4, 0), (0, 0). One row is unchanged. Omitting the argument returns `#VALUE!`.
+
+## SplitPolyIntoTwoPolys
+
+- Date: 2026-11-03
+- Note: [[SplitPolyIntoTwoPolys]]
+- Example file: [[Polygon Editing.xlsx]]
+- Library: updated. Each piece is `(x, y)` only. The intersection flag and the name are dropped.
+- Excel: 3 passed, 0 failed
+
+The name stays. The cut `y = 2` returns `{4,2;4,4;0,4;0,2}` and `{0,0;4,0;4,2;0,2}`. The diagonal through the corners returns the two triangles `{0,0;4,0;4,4}` and `{0,0;4,4;0,4}`. A miss returns `#N/A`.
+
+## SplitPolysIteration
+
+- Date: 2026-11-03
+- Note: [[SplitPolysIteration]]
+- Example file: [[Polygon Editing.xlsx]]
+- Library: updated. The cut count is `ROWS(intersections) / 2`. The previous expression `ROWS(intersections / 2)` counted rows, not pairs.
+- Excel: 3 passed, 0 failed
+
+The name stays. The U (0, 0), (3, 0), (3, 3), (2, 3), (2, 1), (1, 1), (1, 3), (0, 3), cut by the pairs (0, 2)–(1, 2) and (2, 2)–(3, 2), returns the left cap, the right cap, and the base. One pair on the square matches [[SplitPolyIntoTwoPolys]]. A pair that cannot be read leaves the piece unchanged. Omitting `intersections` returns `#VALUE!`.
+
+## SplitPolyByLine
+
+- Date: 2026-11-03
+- Note: [[SplitPolyByLine]]
+- Example file: [[Polygon Editing.xlsx]]
+- Library: comment updated. Formula unchanged. Two hits still call [[SplitPolyIntoTwoPolys]]. Four hits call the corrected [[SplitPolysIteration]].
+- Excel: 3 passed, 0 failed
+
+The name stays. The square cut by `y = 2` returns the same two rectangles. The U cut by `y = 2` returns the same three pieces, with [[PolyAndLineIntersection]] supplying the pairs in x order. A miss returns `#N/A`.
+
+## CombineTwoPolygons
+
+- Date: 2026-11-03
+- Note: [[CombineTwoPolygons]]
+- Example file: [[Polygon Editing.xlsx]]
+- Library: comment updated. Formula unchanged.
+- Excel: 5 passed, 0 failed
+
+The name stays. The squares (0, 0), (2, 0), (2, 2), (0, 2) and (1, 1), (3, 1), (3, 3), (1, 3) union to `{2,1;3,1;3,3;1,3;1,2;0,2;0,0;2,0}`. An inner square, clockwise or not, returns the outer square. Separate squares return two text rows. A one-column list returns `#REF!`.
+
+## CombinePolygons
+
+- Date: 2026-11-03
+- Note: [[CombinePolygons]]
+- Example file: [[Polygon Editing.xlsx]]
+- Library: updated. The recursive calls are `{ref}CombinePolygons(`.
+- Excel: 3 passed, 0 failed
+
+The name stays. The two overlapping squares become the same union string. Adding a square at x = 10 leaves that square on its own row. A one-character string returns `#VALUE!`.
+
+## Loop_CombinePolygons
+
+- Date: 2026-11-03
+- Note: [[Loop_CombinePolygons]]
+- Example file: [[Polygon Editing.xlsx]]
+- Library: updated. The recursive call is `{ref}Loop_CombinePolygons(`. `children` no longer lists `CombinePolygons`.
+- Excel: 3 passed, 0 failed
+
+The name stays. One overlapping polygon returns the union. When the first polygon misses and the second overlaps, the result is the union and then the polygon that missed. The string `"x"` returns `#VALUE!`.
+
+## OverlappedPolygons
+
+- Date: 2026-11-03
+- Note: [[OverlappedPolygons]]
+- Example file: [[Polygon Editing.xlsx]]
+- Library: comment updated. The previous comment described the union. The formula still returns the overlap. Formula unchanged.
+- Excel: 4 passed, 0 failed
+
+The name stays. The same overlapping squares overlap as `{2,1;2,2;1,2;1,1}`. An inner square is returned as itself. A clockwise inner square is reversed to `{2,1;2,2;1,2;1,1}`. Separate squares return `#N/A`.
+
+## CreateHatch
+
+- Date: 2026-11-03
+- Note: [[CreateHatch]]
+- Example file: [[Polygon Editing.xlsx]]
+- Library: updated. A vertical angle passes `#N/A` as the slope to [[PolySlopeIntersection]]. `children` stays `PolySlopeIntersection`.
+- Excel: 3 passed, 0 failed
+
+The name stays. One horizontal line on the square (0, 0), (2, 0), (2, 2), (0, 2) is (0, 1), (2, 1), then `#N/A`. One vertical line is (1, 0), (1, 2), then `#N/A`. A one-column list returns `#REF!`.
+
+## GridMesh
+
+- Date: 2026-11-03
+- Note: [[GridMesh]]
+- Example file: [[Polygon Editing.xlsx]]
+- Library: comment updated. Formula unchanged.
+- Excel: 4 passed, 0 failed
+
+The name stays. The square (0, 0), (4, 0), (4, 4), (0, 4) with spacing 4 is the one cell `{0,0;4,0;4,4;0,4}`. Custom lines x = 0, 2, 4 and y = 0, 4 return two rectangles. The triangle (0, 0), (4, 0), (2, 4) is clipped to `{0,0;4,0;2,4}`. Spacing 0 returns `#DIV/0!`.
+
+## Batch
+
+[[Polygon Editing.xlsx]] sheets `example` and `test`: 48 passed, 0 failed. No function in this group was stopped. No renames.
+
+## CreateBoltCoor_4Bolts
+
+- Date: 2026-11-03
+- Note: [[CreateBoltCoor_4Bolts]]
+- Example file: [[Bolts and Plotting.xlsx]]
+- Library: comment updated. Formula unchanged.
+- Excel: 7 passed, 0 failed
+
+Four centers, top-left, top-right, bottom-left, bottom-right. Pitch 4 by 2 at center (10, 3) is (8, 4), (12, 4), (8, 2), (12, 2). An omitted center is the origin. Zero pitch sits on the center. Text returns `#VALUE!`.
+
+## CreateBoltCoor_6Bolts_2x3
+
+- Date: 2026-11-03
+- Note: [[CreateBoltCoor_6Bolts_2x3]]
+- Example file: [[Bolts and Plotting.xlsx]]
+- Library: comment updated. Formula unchanged.
+- Excel: 7 passed, 0 failed
+
+Two columns and three rows, left to right from the top. Pitch 4 by 2 at the origin starts at (−2, 2). The middle row is y = 0. Bolt 6 is (2, −2). Center (1, 1) moves bolt 1 to y = 3. Text returns `#VALUE!`.
+
+## CreateBoltCoor_6Bolts_3x2
+
+- Date: 2026-11-03
+- Note: [[CreateBoltCoor_6Bolts_3x2]]
+- Example file: [[Bolts and Plotting.xlsx]]
+- Library: comment updated. Formula unchanged.
+- Excel: 6 passed, 0 failed
+
+Three columns and two rows. Pitch 4 by 2 at the origin starts at (−4, 1). Bolt 3 is the top-right. Bolt 4 is the bottom-left. Center (10, 0) makes the first x 6. Text returns `#VALUE!`.
+
+## CreateBoltCoor_8Bolts_3x3
+
+- Date: 2026-11-03
+- Note: [[CreateBoltCoor_8Bolts_3x3]]
+- Example file: [[Bolts and Plotting.xlsx]]
+- Library: comment updated. Formula unchanged.
+- Excel: 9 passed, 0 failed
+
+A 3 by 3 grid with the center omitted. Pitch 4 by 2 at the origin: bolt 4 is (−4, 0), bolt 5 is (4, 0), and the result has 8 rows. Zero pitch returns the center. Text returns `#VALUE!`.
+
+## PointObjToBoltEleForPlot
+
+- Date: 2026-11-03
+- Note: [[PointObjToBoltEleForPlot]]
+- Example file: [[Bolts and Plotting.xlsx]]
+- Library: updated. `RotateCoor` was not changed.
+- Excel: 15 passed, 0 failed
+
+Positive `Deg` rotates each elevation counterclockwise about the bolt center, matching `RotatePoint`. That reverses the old clockwise plot. An omitted degree used to return `#VALUE!`; it now means no rotation, the same as 0. Diameter 2 and length 10 start at (−1, −5). At 90° that corner is (5, −1) and the top nut moves from (−1.5, 5) to (−5, −1.5). At −90° the first corner is (−5, 1). The `#N/A` separator stays `#N/A`. A second bolt's first x is 9. Text returns `#VALUE!`.
+
+## PointObjToCircleCoorForPlot
+
+- Date: 2026-11-03
+- Note: [[PointObjToCircleCoorForPlot]]
+- Example file: [[Bolts and Plotting.xlsx]]
+- Library: updated. `CoorOfCircle` was not changed.
+- Excel: 10 passed, 0 failed
+
+`diaArr` is the diameter. Four points on diameter 2 are (0, 1), (−1, 0), (0, −1), (1, 0), then the first point again, then `#N/A`. The old break was a blank that `VALUE` turned into `#VALUE!`. Zero diameter stays on the center. A second circle's first y is 1. Text returns `#VALUE!`.
+
+## PointObjToHexagonCoorForPlot
+
+- Date: 2026-11-03
+- Note: [[PointObjToHexagonCoorForPlot]]
+- Example file: [[Bolts and Plotting.xlsx]]
+- Library: updated. `CoorHexagon` was not changed.
+- Excel: 10 passed, 0 failed
+
+`diaArr` is the vertex-to-vertex diameter. Diameter 2 starts at (1, 0); the next y is \(\sqrt{3}/2\). The first vertex is repeated, then `#N/A`. The old break was a blank that `VALUE` turned into `#VALUE!`. Zero diameter at (3, 4) stays at x = 3. Diameter 2 there starts at x = 4. Text returns `#VALUE!`.
+
+## ConvertLineDataForPlot
+
+- Date: 2026-11-03
+- Note: [[ConvertLineDataForPlot]]
+- Example file: [[Bolts and Plotting.xlsx]]
+- Library: updated
+- Excel: 11 passed, 0 failed
+
+Each row `x1, y1, x2, y2` becomes those two points and an `#N/A` row. `(0, 0)`–`(1, 0)` is those points plus `#N/A`. A second segment starts on row 4. A zero-length segment still emits both endpoints. A row that is not four numbers now returns `#VALUE!`.
+
+## Batch
+
+[[Bolts and Plotting.xlsx]] sheets `example` and `test`: 75 passed, 0 failed. No function in this group was stopped. No renames. Positive degrees on `PointObjToBoltEleForPlot` rotate counterclockwise. `RotateCoor` was not changed.
+
+## CalSoilPressure
+
+- Date: 2026-11-03
+- Note: [[CalSoilPressure]]
+- Example file: [[Civil Drainage Strength.xlsx]]
+- Library: updated. The bottom stress uses the water height after it is clamped to the soil height. `K` is accepted and is not applied.
+- Excel: 4 passed, 0 failed
+
+Soil 5 m and water 2 m, with the defaults, returns stresses 57 and 75 and forces 85.5, 132, and 217.5. A dry wall of length 2 m returns 288 and no force below the water table. Water above the soil returns stress 0 at the top. Text returns `#VALUE!`.
+
+## SolveLevels
+
+- Date: 2026-11-03
+- Note: [[SolveLevels]]
+- Example file: [[Civil Drainage Strength.xlsx]]
+- Library: updated. Equal levels return `"-"` for the fall. Text is no longer turned into `"-"`.
+- Excel: 7 passed, 0 failed
+
+Length 40 m from 10.5 to 10 is fall 80. Supplying the other pair of the three inputs returns the same levels. Three inputs, or length alone, returns `"Please Input 2 out of 3 Items"`. Text returns `#VALUE!`.
+
+## GetMHInfoFromPipeSch
+
+- Date: 2026-11-03
+- Note: [[GetMHInfoFromPipeSch]]
+- Example file: [[Civil Drainage Strength.xlsx]]
+- Library: updated. The pad call is `{ref}ReplaceErrInRange(`.
+- Excel: 4 passed, 0 failed
+
+`MH2` returns two inlet rows and one outlet. A missing side is `"-"`. An unknown manhole is one dashed row. Omitting the manhole returns `#VALUE!`.
+
+## PipeToMHSchedule
+
+- Date: 2026-11-03
+- Note: [[PipeToMHSchedule]]
+- Example file: [[Civil Drainage Strength.xlsx]]
+- Library: updated. The call is `{ref}GetMHInfoFromPipeSch(`. The outlet header is `Outlet I.L.`.
+- Excel: 3 passed, 0 failed
+
+`MH1`, `MH2`, and `MH3` return a header and four data rows. A manhole that is not in the pipe table is a dashed row under the header. Omitting the manhole list returns `#VALUE!`.
+
+## find_root
+
+- Date: 2026-11-03
+- Note: [[find_root]]
+- Example file: [[Civil Drainage Strength.xlsx]]
+- Library: updated. Text returns `#VALUE!` instead of `"No roots found"`.
+- Excel: 4 passed, 0 failed
+
+The polyline through `(0, −1)`, `(1, 1)`, `(2, −1)`, and `(3, 1)` crosses 0 at 0.5, 1.5, and 2.5. A vertex on the target is returned once. No crossing returns `"No roots found"`. Text returns `#VALUE!`.
+
+## RcBeamAsRequired_HK2013
+
+- Date: 2026-11-03
+- Note: [[RcBeamAsRequired_HK2013]]
+- Example file: [[Civil Drainage Strength.xlsx]]
+- Library: comment updated. Formula unchanged.
+- Excel: 6 passed, 0 failed
+
+Clause 6.1.2.4, equations 6.7 to 6.16, with redistribution not above 10%. Moment 144 kNm on a 300 by 400 section, `fcu` 30 and `fy` 500, is singly reinforced: `K'` 0.156, `K` 0.100, `z` 349.071 mm, `As` 948.329 mm². `K = K'` gives no compression steel. `K = 0.2` is doubly reinforced at `0.87 fy`. A zero width returns `#DIV/0!`. Text returns `#VALUE!`.
+
+## StrengthAnalysis.RectSection.RectStressBlock
+
+- Date: 2026-11-03
+- Note: [[StrengthAnalysis.RectSection.RectStressBlock]]
+- Example file: [[Civil Drainage Strength.xlsx]]
+- Library: updated. The stress-block depth is `MIN(λx, sectionH)`, and the concrete force uses that depth times the width.
+- Excel: 4 passed, 0 failed
+
+`StrengthAnaylsis.RectSection.RectStressBlock` → `StrengthAnalysis.RectSection.RectStressBlock`. No library caller used the old name.
+
+The 600 by 300 example, `x` 300 and `λ` 0.8, returns 419.2 kNm and 1440 kN. A neutral axis below the section is capped at the section height and returns 0 kNm and 845 kN. Hogging returns −419.2 kNm. `x = 0` returns `#DIV/0!`.
+
+## StrengthAnalysis.T.RectStressBlock
+
+- Date: 2026-11-03
+- Note: [[StrengthAnalysis.T.RectStressBlock]]
+- Example file: [[Civil Drainage Strength.xlsx]]
+- Library: updated. The compression piece is the polygon fragment with the higher centroid. The centroid names are `polyCy1` and `polyCy2`, because `cy1` and `cy2` are cell addresses and Excel rejected the defined name.
+- Excel: 4 passed, 0 failed
+
+`StrengthAnaylsis.T.RectStressBlock` → `StrengthAnalysis.T.RectStressBlock`. No library caller used the old name.
+
+The sample T, block depth 150 mm, returns 299.545 kNm and 1000 kN. A rectangle cut below its base matches the capped rectangular result, 0 kNm and 845 kN. Hogging on the 300 by 600 rectangle returns −419.2 kNm and 1440 kN. `x = 0` returns `#DIV/0!`.
+
+## ConvertRebarDataToDesignSectionFormat
+
+- Date: 2026-11-03
+- Note: [[ConvertRebarDataToDesignSectionFormat]]
+- Example file: [[Civil Drainage Strength.xlsx]]
+- Library: comment updated. Formula unchanged.
+- Excel: 3 passed, 0 failed
+
+The first station is dropped. A bar is active on `(start, end]`. Top names use a comma and the other lists use a plus. Torsion is omitted. The example stations 3 and 6 return `3T20` with `3T16`, then `2T25` with `3T16` and `T10-150`. Omitting the layers returns `#VALUE!`.
+
+## SetGraphLimit
+
+- Date: 2026-11-03
+- Note: [[SetGraphLimit]]
+- Example file: [[Civil Drainage Strength.xlsx]]
+- Library: comment updated. Formula unchanged.
+- Excel: 4 passed, 0 failed
+
+X from 0 to 10 and Y from 0 to 4, padded by 1, returns `(−1, −4)` and `(11, 8)`. Equal extents stay square. The short side is expanded equally. Text padding returns `#VALUE!`.
+
+## Batch
+
+[[Civil Drainage Strength.xlsx]] sheets `example` and `test`: 43 passed, 0 failed. No function in this group was stopped. `StrengthAnaylsis.RectSection.RectStressBlock` → `StrengthAnalysis.RectSection.RectStressBlock`. `StrengthAnaylsis.T.RectStressBlock` → `StrengthAnalysis.T.RectStressBlock`.

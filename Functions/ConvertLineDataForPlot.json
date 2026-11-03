@@ -1,7 +1,7 @@
 {
   "name": "ConvertLineDataForPlot",
-  "formula": "=LAMBDA(lineData,LET(arr, lineData, emptyRow, MAKEARRAY(1, 2, LAMBDA(r,c, NA())), numRows, ROWS(arr), DROP(REDUCE(0, SEQUENCE(numRows), LAMBDA(a,i, VSTACK(a, LET(cRow, CHOOSEROWS(arr, i), VSTACK(WRAPROWS(cRow, 2), emptyRow))))), 1)))",
-  "comment": "Converts a table of line segments (one per row in format [x1,y1,x2,y2]) into a stacked 2-column array of points [x,y] suitable for plotting multiple disjoint lines as a single Excel chart series. Inserts NA rows between segments to prevent unwanted connec",
+  "formula": "=LAMBDA(lineData,LET(arr,lineData,emptyRow,MAKEARRAY(1,2,LAMBDA(r,c,NA())),numRows,ROWS(arr),bad,OR(COLUMNS(arr)<>4,COUNT(arr)<>numRows*4),IF(bad,VALUE(\"x\"),DROP(REDUCE(0,SEQUENCE(numRows),LAMBDA(a,i,VSTACK(a,LET(cRow,CHOOSEROWS(arr,i),VSTACK(WRAPROWS(cRow,2),emptyRow))))),1))))",
+  "comment": "Returns plot points for disjoint segments. Each input row is x1, y1, x2, y2, in that order. Each segment becomes those two points, then an #N/A row so a chart does not join the next segment. A row that is not four numbers returns #VALUE!. Last Update at 2026-11-03.",
   "children": [],
   "allChildren": []
 }

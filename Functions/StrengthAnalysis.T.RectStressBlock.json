@@ -1,0 +1,23 @@
+{
+  "name": "StrengthAnalysis.T.RectStressBlock",
+  "formula": "=LAMBDA(sectionCoor,fcd,εcu,Ec,rebarAreaArr,rebarDepthArr,fyd,Es,λ,neutralAxisDepth,isSaggingCapacity,LET(sectionCoorArr,IF(isSaggingCapacity,sectionCoor,{ref}RotateShape(sectionCoor,180)),x,neutralAxisDepth,concArea,{ref}Prop_Area(sectionCoorArr),topEdgeCoor,MAX(CHOOSECOLS(sectionCoorArr,2)),botEdgeCoor,MIN(CHOOSECOLS(sectionCoorArr,2)),leftEdgeCoor,MIN(CHOOSECOLS(sectionCoorArr,1)),rightEdgeCoor,MAX(CHOOSECOLS(sectionCoorArr,1)),concCy,topEdgeCoor-INDEX({ref}Prop_Centroid(sectionCoorArr),1,2),sectionH,topEdgeCoor-botEdgeCoor,rebarDepthArr,IF(isSaggingCapacity,rebarDepthArr,sectionH-rebarDepthArr),yc,(SUMPRODUCT(rebarDepthArr,rebarAreaArr)*(Es/Ec)+concArea*concCy)/(SUM(rebarAreaArr)*(Es/Ec)+concArea),εsArr,εcu*(x-rebarDepthArr)/x,εsLimit,fyd/Es,rebarStressArr,MAP(εsArr,LAMBDA(εs,IFS(εs<-εsLimit,-fyd,εs>εsLimit,fyd,TRUE,εs*Es))),FsArr,rebarStressArr*rebarAreaArr/1000,Fs,SUM(FsArr),splitedPolys,{ref}SplitPolyIntoTwoPolys(sectionCoorArr,leftEdgeCoor-100,topEdgeCoor-λ*x,rightEdgeCoor+100,topEdgeCoor-λ*x),text1,IFERROR(INDEX(splitedPolys,1,1),\"\"),text2,IFERROR(INDEX(splitedPolys,2,1),\"\"),polyCy1,IFERROR(INDEX({ref}Prop_Centroid(VALUE(TAKE({ref}TextToArray(text1),,2))),1,2),-1E99),polyCy2,IFERROR(INDEX({ref}Prop_Centroid(VALUE(TAKE({ref}TextToArray(text2),,2))),1,2),-1E99),chosenText,IF(polyCy1>=polyCy2,text1,text2),topPolyArea,IFERROR({ref}Prop_Area(VALUE(TAKE({ref}TextToArray(chosenText),,2))),concArea),topPolyCentroid,IFERROR(INDEX({ref}Prop_Centroid(VALUE(TAKE({ref}TextToArray(chosenText),,2))),1,2),INDEX({ref}Prop_Centroid(sectionCoorArr),1,2)),Fc,MIN(topPolyArea,concArea)*fcd/1000,N,Fs+Fc,M,SUM(FsArr*(yc-rebarDepthArr)/1000)+Fc*(yc-(topEdgeCoor-topPolyCentroid))/1000,HSTACK(IF(isSaggingCapacity,M,-M),N)))",
+  "comment": "Returns the ultimate moment and axial force of a polygon section under a rectangular stress block. Arguments: sectionCoor, fcd, εcu, Ec, rebarAreaArr, rebarDepthArr, fyd, Es, λ, neutralAxisDepth, isSaggingCapacity. sectionCoor is an n×2 array, x then y, with y upward and no repeated closing vertex. Units match StrengthAnalysis.RectSection.RectStressBlock. Depths are from the top. Hogging rotates the section 180 degrees and returns a negative moment. The compression block is the part of the section from the top down to λ times the neutral-axis depth. Steel stress is Es times strain, limited to ±fyd. Moment is about the transformed centroid, in kNm. Axial force is in kN, compression positive. The result is a 1×2 row, moment then axial. A neutral-axis depth of 0 returns #DIV/0!. Text or a polygon with fewer than two columns returns #VALUE!. Last Update at 2026-11-03.",
+  "children": [
+    "RotateShape",
+    "Prop_Area",
+    "Prop_Centroid",
+    "SplitPolyIntoTwoPolys",
+    "TextToArray"
+  ],
+  "allChildren": [
+    "RotateShape",
+    "Prop_Area",
+    "Prop_Centroid",
+    "SplitPolyIntoTwoPolys",
+    "TextToArray",
+    "ForEachRow",
+    "RotatePoint",
+    "InsertPolyAndLineIntersection",
+    "TwoLinesIntersection"
+  ]
+}

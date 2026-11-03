@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# Prop_Area function
+## Overview
 
 Returns the positive area of a simple polygon.
 

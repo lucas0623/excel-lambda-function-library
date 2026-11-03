@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# CoorPFC function
+## Overview
 
 Returns the vertices of a parallel flange channel.
 

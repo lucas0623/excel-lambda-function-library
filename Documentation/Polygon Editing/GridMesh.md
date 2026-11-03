@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Polygon Editing.xlsx]]"
 ---
 
-# GridMesh function
+## Overview
 
 Meshes a polygon into grid cells.
 

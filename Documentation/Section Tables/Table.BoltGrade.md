@@ -2,7 +2,7 @@
 AI Reviewed: true
 ---
 
-# Table.BoltGrade
+## Overview
 
 This was a comment review. The function was not calculated.
 

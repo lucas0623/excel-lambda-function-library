@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# MaxChar function
+## Overview
 
 Returns the character with the largest Unicode code in `cell_range`.
 

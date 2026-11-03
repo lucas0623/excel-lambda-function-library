@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# CoorI function
+## Overview
 
 Returns the vertices of an I section centered on the origin.
 

@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# NextDiff function
+## Overview
 
 Returns each non-blank run and the row of its first cell.
 

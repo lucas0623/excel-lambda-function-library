@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Polygon Editing.xlsx]]"
 ---
 
-# SplitPolyByLine function
+## Overview
 
 Splits a closed polygon by a line segment.
 

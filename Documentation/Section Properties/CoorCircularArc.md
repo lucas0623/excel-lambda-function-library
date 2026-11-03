@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# CoorCircularArc function
+## Overview
 
 Returns n points on a circular arc centered at `(x0, y0)` with radius `r`.
 

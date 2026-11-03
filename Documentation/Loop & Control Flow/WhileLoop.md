@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# WhileLoop function
+## Overview
 
 Returns the first value for which `conditionFunc` is TRUE.
 

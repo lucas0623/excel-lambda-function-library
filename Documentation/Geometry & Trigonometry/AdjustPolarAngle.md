@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Angle Functions.xlsx]]"
 ---
 
-# AdjustPolarAngle function
+## Overview
 
 Wraps an angle in degrees into the half-open range **[0, 360)**.
 

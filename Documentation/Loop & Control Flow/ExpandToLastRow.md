@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# ExpandToLastRow function
+## Overview
 
 Returns rows from `refCell` down to the blank in its first column.
 

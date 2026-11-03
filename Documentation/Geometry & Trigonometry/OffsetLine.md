@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Geometry Family.xlsx]]"
 ---
 
-# OffsetLine function
+## Overview
 
 Returns a parallel copy of a segment, shifted to the left of its direction.
 

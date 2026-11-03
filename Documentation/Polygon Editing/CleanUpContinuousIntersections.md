@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Polygon Editing.xlsx]]"
 ---
 
-# CleanUpContinuousIntersections function
+## Overview
 
 Clears intersection flags that sit in the middle of a run of three or more TRUE values.
 

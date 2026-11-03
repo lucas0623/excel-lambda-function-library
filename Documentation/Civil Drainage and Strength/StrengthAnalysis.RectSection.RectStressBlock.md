@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Civil Drainage Strength.xlsx]]"
 ---
 
-# StrengthAnalysis.RectSection.RectStressBlock function
+## Overview
 
 Returns the ultimate moment and axial force of a rectangular section under a rectangular stress block.
 

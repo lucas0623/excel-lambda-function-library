@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Point in Polygon.xlsx]]"
 ---
 
-# IsPolyAndLineIntersect function
+## Overview
 
 Returns TRUE when a segment meets a polygon, including a segment that lies along an edge.
 

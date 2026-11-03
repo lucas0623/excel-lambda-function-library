@@ -8,7 +8,7 @@ AI Reviewed: true
 example: "[[Civil Drainage Strength.xlsx]]"
 ---
 
-# SetGraphLimit function
+## Overview
 
 Returns two corners of a square axis window.
 

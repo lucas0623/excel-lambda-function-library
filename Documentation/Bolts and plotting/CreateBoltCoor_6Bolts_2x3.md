@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Bolts and Plotting.xlsx]]"
 ---
 
-# CreateBoltCoor_6Bolts_2x3 function
+## Overview
 
 Returns the centers of six bolts in 2 columns and 3 rows.
 

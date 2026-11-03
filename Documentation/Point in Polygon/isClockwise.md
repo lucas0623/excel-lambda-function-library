@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Point in Polygon.xlsx]]"
 ---
 
-# isClockwise function
+## Overview
 
 Returns TRUE when the vertices of a polygon run clockwise.
 

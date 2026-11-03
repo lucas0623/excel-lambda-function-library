@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Polygon Editing.xlsx]]"
 ---
 
-# InsertPolysIntersection function
+## Overview
 
 Inserts every intersection of polygon B into polygon A.
 

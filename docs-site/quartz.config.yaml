@@ -257,6 +257,7 @@ plugins:
     options:
       includeAll: false
       includedProperties:
+        - created
         - description
         - tags
         - aliases

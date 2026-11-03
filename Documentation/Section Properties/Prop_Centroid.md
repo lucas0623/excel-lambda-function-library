@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# Prop_Centroid function
+## Overview
 
 Returns the centroid as a 1×2 row `(Cx, Cy)`.
 

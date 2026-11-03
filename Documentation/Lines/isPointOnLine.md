@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Lines.xlsx]]"
 ---
 
-# isPointOnLine function
+## Overview
 
 Returns TRUE when a point lies on a line segment.
 

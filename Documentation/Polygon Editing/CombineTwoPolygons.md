@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Polygon Editing.xlsx]]"
 ---
 
-# CombineTwoPolygons function
+## Overview
 
 Returns the union of two polygons.
 

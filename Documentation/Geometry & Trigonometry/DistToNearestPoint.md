@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Geometry Family.xlsx]]"
 ---
 
-# DistToNearestPoint function
+## Overview
 
 Returns the Euclidean distance from a query to the nearest point in a list.
 

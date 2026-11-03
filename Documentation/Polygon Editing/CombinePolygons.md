@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Polygon Editing.xlsx]]"
 ---
 
-# CombinePolygons function
+## Overview
 
 Combines a column of polygons into as few outlines as their overlaps allow.
 

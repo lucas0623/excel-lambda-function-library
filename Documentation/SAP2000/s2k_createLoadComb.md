@@ -8,7 +8,7 @@ aliases:
 AI Reviewed: true
 ---
 
-# s2k_createLoadComb function
+## Overview
 
 Returns the name and type line for one load combination in a SAP2000 `.s2k` file.
 

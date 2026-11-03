@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Bolts and Plotting.xlsx]]"
 ---
 
-# PointObjToHexagonCoorForPlot function
+## Overview
 
 Returns one closed hexagon per point, stacked for an XY scatter.
 

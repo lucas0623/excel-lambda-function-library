@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# RotateShape function
+## Overview
 
 Rotates each vertex of an n×2 shape counterclockwise by `deg` degrees.
 

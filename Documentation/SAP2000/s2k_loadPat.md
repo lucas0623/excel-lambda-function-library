@@ -8,7 +8,7 @@ aliases:
 AI Reviewed: true
 ---
 
-# s2k_loadPat function
+## Overview
 
 Returns one load-pattern definition record for a SAP2000 `.s2k` file.
 

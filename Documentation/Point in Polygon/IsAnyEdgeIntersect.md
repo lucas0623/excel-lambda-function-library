@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Point in Polygon.xlsx]]"
 ---
 
-# IsAnyEdgeIntersect function
+## Overview
 
 Returns TRUE when an edge of polygon A meets an edge of polygon B.
 

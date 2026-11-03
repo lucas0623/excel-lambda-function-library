@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# ForLoop function
+## Overview
 
 Returns `func` at each step from `start` through the last value not past `end`.
 

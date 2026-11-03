@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Polygon Editing.xlsx]]"
 ---
 
-# OverlappedPolygons function
+## Overview
 
 Returns the overlap of two polygons as one strict `ARRAYTOTEXT` of `(x, y)` rows.
 

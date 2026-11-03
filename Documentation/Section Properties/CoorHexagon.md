@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# CoorHexagon function
+## Overview
 
 Returns 6 vertices of a hexagon centered at `(x0, y0)`.
 

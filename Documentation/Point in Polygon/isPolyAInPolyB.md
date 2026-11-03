@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Point in Polygon.xlsx]]"
 ---
 
-# isPolyAInPolyB function
+## Overview
 
 Returns TRUE when polygon A lies inside polygon B, including the boundary.
 

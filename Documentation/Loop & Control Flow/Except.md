@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# Except function
+## Overview
 
 Returns items of `list1` that are absent from `list2`, in `list1` order.
 

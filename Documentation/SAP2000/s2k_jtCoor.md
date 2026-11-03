@@ -8,7 +8,7 @@ aliases:
 AI Reviewed: true
 ---
 
-# s2k_jtCoor function
+## Overview
 
 Returns one joint-coordinate record for a SAP2000 `.s2k` file.
 

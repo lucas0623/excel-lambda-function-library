@@ -8,7 +8,7 @@ aliases:
 AI Reviewed: true
 ---
 
-# s2k_FrameDistributedLoad function
+## Overview
 
 Returns one distributed frame-load record for each frame name in `Frames`.
 

@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Geometry Family.xlsx]]"
 ---
 
-# SolveTriangle function
+## Overview
 
 Solves one triangle from two sides and the included angle.
 

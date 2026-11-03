@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# CoorBoltEle function
+## Overview
 
 Returns the elevation of a bolt and its nuts as an n×2 array.
 

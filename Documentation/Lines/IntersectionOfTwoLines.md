@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Lines.xlsx]]"
 ---
 
-# IntersectionOfTwoLines function
+## Overview
 
 Returns the point where a segment meets the infinite line `y = mx + C`.
 

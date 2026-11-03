@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# CoorRect function
+## Overview
 
 Returns the vertices of a rectangle of height `h` and width `b`, centered on the origin.
 

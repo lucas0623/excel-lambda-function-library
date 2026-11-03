@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# Prop_PlasticCentroidCpx function
+## Overview
 
 Returns the x coordinate of the plastic centroid for bending about the y-axis with no axial force.
 

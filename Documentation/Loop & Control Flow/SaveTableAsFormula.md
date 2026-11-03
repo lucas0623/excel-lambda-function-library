@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# SaveTableAsFormula function
+## Overview
 
 Returns a `VSTACK` and `HSTACK` formula that rebuilds `array`.
 

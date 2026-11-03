@@ -8,7 +8,7 @@ aliases:
 AI Reviewed: true
 ---
 
-# s2k_loadCombHeader function
+## Overview
 
 Returns the load-combination table header for a SAP2000 `.s2k` file.
 

@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Point in Polygon.xlsx]]"
 ---
 
-# IsAllPointsInPoly function
+## Overview
 
 Returns TRUE when every point lies inside a polygon.
 

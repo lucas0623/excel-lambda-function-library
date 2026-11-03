@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Bolts and Plotting.xlsx]]"
 ---
 
-# PointObjToBoltEleForPlot function
+## Overview
 
 Returns one bolt elevation per point, stacked for an XY scatter.
 

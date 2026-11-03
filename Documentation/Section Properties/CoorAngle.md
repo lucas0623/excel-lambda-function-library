@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# CoorAngle function
+## Overview
 
 Returns the vertices of an angle section.
 

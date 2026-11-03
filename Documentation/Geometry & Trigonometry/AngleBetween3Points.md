@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Angle Functions.xlsx]]"
 ---
 
-# AngleBetween3Points function
+## Overview
 
 Returns the interior angle, in degrees, at the middle point.
 

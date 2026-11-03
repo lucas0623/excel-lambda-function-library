@@ -8,7 +8,7 @@ aliases:
 AI Reviewed: true
 ---
 
-# s2k_staticLoadCaseHeader function
+## Overview
 
 Returns the static load-assignment table header for a SAP2000 `.s2k` file.
 

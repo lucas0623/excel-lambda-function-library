@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# Inner function
+## Overview
 
 Returns values of `list1` that also occur in `list2`, in `list1` order.
 

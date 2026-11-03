@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# ReplaceErrInRange function
+## Overview
 
 Returns `arr` with every Excel error replaced.
 

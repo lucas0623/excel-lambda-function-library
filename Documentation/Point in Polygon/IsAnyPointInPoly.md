@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Point in Polygon.xlsx]]"
 ---
 
-# IsAnyPointInPoly function
+## Overview
 
 Returns TRUE when at least one point lies inside a polygon.
 

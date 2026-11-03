@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# Prop_Cy function
+## Overview
 
 Returns the y coordinate of the centroid.
 

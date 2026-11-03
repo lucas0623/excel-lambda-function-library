@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Polygon Editing.xlsx]]"
 ---
 
-# SplitPolyIntoTwoPolys function
+## Overview
 
 Splits one polygon at the intersections of a segment.
 

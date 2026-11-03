@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Geometry Family.xlsx]]"
 ---
 
-# AngleBetweenLineAndX function
+## Overview
 
 Returns the angle, in degrees, between the line through two points and the x-axis.
 

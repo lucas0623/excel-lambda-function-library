@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Polygon Editing.xlsx]]"
 ---
 
-# SplitPolysIteration function
+## Overview
 
 Splits a polygon once for each pair of intersection points.
 

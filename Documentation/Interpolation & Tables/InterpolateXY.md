@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Interpolation.xlsx]]"
 ---
 
-# InterpolateXY function
+## Overview
 
 Returns the y on the straight line through two points at a given x.
 

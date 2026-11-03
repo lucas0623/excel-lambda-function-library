@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# MultipleTextToArray function
+## Overview
 
 Stacks strict `ARRAYTOTEXT` strings and places a row of `#N/A` between the blocks.
 

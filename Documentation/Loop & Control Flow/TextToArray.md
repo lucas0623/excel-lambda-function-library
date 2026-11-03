@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# TextToArray function
+## Overview
 
 Returns the array inside an `ARRAYTOTEXT` strict string.
 

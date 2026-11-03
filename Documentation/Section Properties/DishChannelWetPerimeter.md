@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# DishChannelWetPerimeter function
+## Overview
 
 Returns the wetted perimeter of a parabolic dish channel, the arc length of the parabola through (0, 0), `(Width/2, -Height)`, and `(Width, 0)`.
 

@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Point in Polygon.xlsx]]"
 ---
 
-# IsPointOnPolyEdge function
+## Overview
 
 Returns TRUE when a point lies on an edge of a polygon, including a vertex.
 

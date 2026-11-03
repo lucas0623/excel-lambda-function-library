@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Interpolation.xlsx]]"
 ---
 
-# InterpolateXYTable function
+## Overview
 
 Returns the linear y at `x_value` from a sorted column of x and a matching column of y.
 

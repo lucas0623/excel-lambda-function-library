@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Geometry Family.xlsx]]"
 ---
 
-# RotatePoint function
+## Overview
 
 Rotates one point counterclockwise about a center.
 

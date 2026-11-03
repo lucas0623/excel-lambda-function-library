@@ -8,7 +8,7 @@ aliases:
 AI Reviewed: true
 ---
 
-# s2k_addLoadCaseToLoadComb function
+## Overview
 
 Returns one combination item: a case name and a scale factor, for a SAP2000 `.s2k` file.
 

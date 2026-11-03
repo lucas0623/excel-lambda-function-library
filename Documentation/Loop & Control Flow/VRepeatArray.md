@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# VRepeatArray function
+## Overview
 
 Returns `arr` stacked vertically `NumOfRepeat` times.
 

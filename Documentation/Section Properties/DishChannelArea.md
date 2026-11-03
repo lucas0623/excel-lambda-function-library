@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# DishChannelArea function
+## Overview
 
 Returns the cross-section area of a parabolic dish channel.
 

@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Lines.xlsx]]"
 ---
 
-# IntersectionAreaAndLine function
+## Overview
 
 Returns the points where a closed polygon meets the line `y = mx + c`.
 

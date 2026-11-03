@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Bolts and Plotting.xlsx]]"
 ---
 
-# PointObjToCircleCoorForPlot function
+## Overview
 
 Returns one closed circle per point, stacked for an XY scatter.
 

@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Polygon Editing.xlsx]]"
 ---
 
-# Loop_CombinePolygons function
+## Overview
 
 Tries to union one polygon with each polygon in a column.
 

@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# CoorNut function
+## Overview
 
 Returns the side elevation of a nut centered on the origin.
 

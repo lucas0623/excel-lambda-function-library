@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Polygon Editing.xlsx]]"
 ---
 
-# ReverseVerticesDirection function
+## Overview
 
 Reverses the row order of a vertex list, which swaps clockwise and counterclockwise.
 

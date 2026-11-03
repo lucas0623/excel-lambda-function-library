@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# GroupByAddress function
+## Overview
 
 Returns the key, first row, last row, and address for each group.
 

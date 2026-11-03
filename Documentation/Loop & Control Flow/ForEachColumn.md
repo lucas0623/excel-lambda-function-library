@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# ForEachColumn function
+## Overview
 
 Stacks `func` for each column of `arr`.
 

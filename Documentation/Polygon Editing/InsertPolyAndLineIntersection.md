@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Polygon Editing.xlsx]]"
 ---
 
-# InsertPolyAndLineIntersection function
+## Overview
 
 Inserts the points where a line segment meets a closed polygon into the vertex list.
 

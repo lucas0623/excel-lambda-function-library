@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Geometry Family.xlsx]]"
 ---
 
-# TranslateCoor function
+## Overview
 
 Adds a shift to every row of a coordinate array.
 

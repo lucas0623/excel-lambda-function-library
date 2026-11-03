@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Geometry Family.xlsx]]"
 ---
 
-# FindNearestPoint function
+## Overview
 
 Returns the name of the point closest to a query.
 

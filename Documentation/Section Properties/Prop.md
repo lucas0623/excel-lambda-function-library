@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# Prop function
+## Overview
 
 Returns elastic section properties of a simple polygon about its centroid, as a 16×3 array of name, value, and unit.
 

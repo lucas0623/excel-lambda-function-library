@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Bolts and Plotting.xlsx]]"
 ---
 
-# ConvertLineDataForPlot function
+## Overview
 
 Returns plot points for disjoint line segments.
 

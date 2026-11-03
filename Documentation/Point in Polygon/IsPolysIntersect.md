@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Point in Polygon.xlsx]]"
 ---
 
-# IsPolysIntersect function
+## Overview
 
 Returns TRUE when two polygons meet or one lies inside the other.
 

@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Bolts and Plotting.xlsx]]"
 ---
 
-# CreateBoltCoor_8Bolts_3x3 function
+## Overview
 
 Returns eight bolt centers on a 3 by 3 grid. The center bolt is omitted.
 

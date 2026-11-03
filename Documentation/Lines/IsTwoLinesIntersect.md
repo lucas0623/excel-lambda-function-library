@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Lines.xlsx]]"
 ---
 
-# IsTwoLinesIntersect function
+## Overview
 
 Returns TRUE when two line segments meet.
 

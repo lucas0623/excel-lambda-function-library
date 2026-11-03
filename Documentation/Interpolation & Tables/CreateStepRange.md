@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Interpolation.xlsx]]"
 ---
 
-# CreateStepRange function
+## Overview
 
 Returns a column of evenly spaced numbers from `start` through `end`, both ends included.
 

@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Bolts and Plotting.xlsx]]"
 ---
 
-# CreateBoltCoor_4Bolts function
+## Overview
 
 Returns the centers of four bolts on a 2 by 2 grid.
 

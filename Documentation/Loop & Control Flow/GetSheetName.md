@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# GetSheetName function
+## Overview
 
 Returns the sheet name of `refCell`.
 

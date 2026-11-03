@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# RemoveRow function
+## Overview
 
 Returns `arr` without the given row.
 

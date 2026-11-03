@@ -8,7 +8,7 @@ aliases:
 AI Reviewed: true
 ---
 
-# s2k_jtCoorHeader function
+## Overview
 
 Returns the joint-coordinate table header for a SAP2000 `.s2k` file.
 

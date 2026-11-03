@@ -2,7 +2,7 @@
 AI Reviewed: true
 ---
 
-# Table.ChineseCH.YBC
+## Overview
 
 This was a comment review. The function was not calculated.
 

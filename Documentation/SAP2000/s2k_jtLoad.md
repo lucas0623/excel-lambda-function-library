@@ -8,7 +8,7 @@ aliases:
 AI Reviewed: true
 ---
 
-# s2k_jtLoad function
+## Overview
 
 Returns one joint-force record for a SAP2000 `.s2k` file.
 

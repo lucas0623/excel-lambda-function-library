@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# MinChar function
+## Overview
 
 Returns the character with the smallest Unicode code in `cell_range`.
 

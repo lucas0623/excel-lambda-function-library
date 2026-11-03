@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Civil Drainage Strength.xlsx]]"
 ---
 
-# GetMHInfoFromPipeSch function
+## Overview
 
 Returns one row for each pipe connected to a manhole.
 

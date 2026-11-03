@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Geometry Family.xlsx]]"
 ---
 
-# Dist function
+## Overview
 
 Returns the Euclidean distance between two points.
 

@@ -8,7 +8,7 @@ aliases:
 AI Reviewed: true
 ---
 
-# s2k_FrameDistributedLoadHeader function
+## Overview
 
 Returns the distributed frame-load table header for a SAP2000 `.s2k` file.
 

@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Polygon Editing.xlsx]]"
 ---
 
-# GetVerticesBetweenIntersections function
+## Overview
 
 Returns the vertices strictly between two named rows of an intersection list.
 

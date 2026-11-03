@@ -8,7 +8,7 @@ aliases:
 AI Reviewed: true
 ---
 
-# s2k_staticLoadCase function
+## Overview
 
 Returns one static load-case assignment for a SAP2000 `.s2k` file. The case name and the load pattern name are the same text.
 

@@ -10,7 +10,7 @@ AI Reviewed: true
 example: "[[Lines.xlsx]]"
 ---
 
-# SegmentSlopeIntersection function
+## Overview
 
 Returns the point where a segment meets the infinite line `y = mx + C`.
 

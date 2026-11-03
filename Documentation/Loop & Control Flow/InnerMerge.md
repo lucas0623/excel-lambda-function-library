@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# InnerMerge function
+## Overview
 
 Inner-joins two tables on `keyName`.
 

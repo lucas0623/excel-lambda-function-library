@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# Reverse function
+## Overview
 
 Returns the elements of `array` in reverse order as one column.
 

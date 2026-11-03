@@ -10,7 +10,7 @@ AI Reviewed: true
 example: "[[Lines.xlsx]]"
 ---
 
-# PolySlopeIntersection function
+## Overview
 
 Returns the points where a closed polygon meets the line `y = mx + C`.
 

@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Geometry Family.xlsx]]"
 ---
 
-# OffsetPoint function
+## Overview
 
 Returns a point reached by walking along a segment and then stepping to its left.
 

@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Civil Drainage Strength.xlsx]]"
 ---
 
-# find_root function
+## Overview
 
 Returns the x values where a polyline crosses `target_y`.
 

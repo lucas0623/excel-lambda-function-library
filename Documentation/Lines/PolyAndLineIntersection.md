@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Lines.xlsx]]"
 ---
 
-# PolyAndLineIntersection function
+## Overview
 
 Returns the points where a closed polygon meets a line segment.
 

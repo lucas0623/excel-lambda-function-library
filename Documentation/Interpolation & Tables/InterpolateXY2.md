@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Interpolation.xlsx]]"
 ---
 
-# InterpolateXY2 function
+## Overview
 
 Returns the point at distance `rLen` from I toward J.
 

@@ -8,7 +8,7 @@ aliases:
 AI Reviewed: true
 ---
 
-# s2k_loadCaseDef function
+## Overview
 
 Returns one linear-static load-case definition for a SAP2000 `.s2k` file.
 

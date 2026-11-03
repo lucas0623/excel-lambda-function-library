@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Lines.xlsx]]"
 ---
 
-# TwoLinesIntersection function
+## Overview
 
 Returns the point where two line segments meet.
 

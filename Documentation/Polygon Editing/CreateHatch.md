@@ -9,7 +9,7 @@ AI Reviewed: true
 example: "[[Polygon Editing.xlsx]]"
 ---
 
-# CreateHatch function
+## Overview
 
 Returns hatch segments for a closed polygon, with a blank row between segments so a scatter chart breaks the line.
 

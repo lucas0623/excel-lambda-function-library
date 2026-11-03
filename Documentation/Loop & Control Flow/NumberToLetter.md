@@ -7,7 +7,7 @@ AI Reviewed: true
 example: "[[Loops Arrays Sheets.xlsx]]"
 ---
 
-# NumberToLetter function
+## Overview
 
 Returns the Excel column letter for column number `n`.
 

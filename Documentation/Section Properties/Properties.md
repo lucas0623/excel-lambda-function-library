@@ -6,7 +6,7 @@ AI Reviewed: true
 example: "[[Section Properties.xlsx]]"
 ---
 
-# Properties function
+## Overview
 
 Returns elastic and plastic section properties of a simple polygon as a 27×3 array of name, value, and unit.
 

@@ -15,6 +15,8 @@ Current coverage includes geometry (e.g., Dist, AngleBetween3Points, FindNearest
 
 Imported functions persist in your workbook and work in any Excel version supporting LAMBDA (Excel 365/2021+). No permanent installation required—just sideload the add-in for testing and development! 🚀
 
+A Cursor agent can use the same `Functions` folder through [lfm-mcp](https://github.com/lucas0623/lfm-mcp). Install steps are in that repository. Point `--library` at the `Functions` folder of your clone.
+
 
 
 ---
@@ -37,6 +39,10 @@ Imported functions persist in your workbook and work in any Excel version suppor
 - **Open the published website.** Read the same notes in the browser: [Lambda Function Library](https://lucas0623.github.io/excel-lambda-function-library).
 
 <img width="1156" height="1292" alt="Documentation open in Obsidian" src="https://github.com/user-attachments/assets/3c224d49-9478-47c4-82b0-af27c86ae22a" />
+
+**4. Use the library from Cursor**
+
+Install [lfm-mcp](https://github.com/lucas0623/lfm-mcp) and set its library path to the `Functions` folder of this clone. The agent can then read the functions and import them into a workbook with desktop Excel.
 
 ---
 

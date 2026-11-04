@@ -1,0 +1,11 @@
+{
+  "name": "Shell.QuadTangent",
+  "formula": "=LAMBDA(nodes,dN,LET(m,{ref}Shell.Rows3(nodes),HSTACK(INDEX(MMULT(dN,INDEX(m,0,1)),1),INDEX(MMULT(dN,INDEX(m,0,2)),1),INDEX(MMULT(dN,INDEX(m,0,3)),1))))",
+  "comment": "Returns one row of dx, dy, dz for shape-function derivatives dN. nodes is 4 rows of x, y, z. dN is one row of four derivatives. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Rows3"
+  ],
+  "allChildren": [
+    "Shell.Rows3"
+  ]
+}

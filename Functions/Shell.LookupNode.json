@@ -1,0 +1,7 @@
+{
+  "name": "Shell.LookupNode",
+  "formula": "=LAMBDA(nodeXYZ,nid,HSTACK(XLOOKUP(nid,INDEX(nodeXYZ,0,1),INDEX(nodeXYZ,0,2)),XLOOKUP(nid,INDEX(nodeXYZ,0,1),INDEX(nodeXYZ,0,3)),XLOOKUP(nid,INDEX(nodeXYZ,0,1),INDEX(nodeXYZ,0,4))))",
+  "comment": "Returns node coordinates as one row x, y, z. Arguments: nodeXYZ rows are nodeId, x, y, z; nid is the node id. A missing id returns #N/A. Last Update at 2026-11-04.",
+  "children": [],
+  "allChildren": []
+}

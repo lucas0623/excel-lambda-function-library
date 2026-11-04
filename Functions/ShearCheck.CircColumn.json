@@ -1,0 +1,11 @@
+{
+  "name": "ShearCheck.CircColumn",
+  "formula": "=LAMBDA(R,rs,Vforce,Nforce,Mmoment,fcu,Asc,linkDia,sv,isSpiral,fyv,gammaShear,LET(geom,{ref}ShearGeom.CircColumn(R,rs),alpha,INDEX(geom,1,1),d,INDEX(geom,1,2),bvd,INDEX(geom,1,3),vStress,IF(bvd<=0,NA(),Vforce/bvd),rho,MIN(3,100*(Asc/2)/bvd),dFac,MAX(1,400/d),fTerm,(MIN(fcu,80)/25)^(1/3),vc,0.79*rho^(1/3)*dFac^(1/4)*fTerm/gammaShear,vhOverM,IF(Nforce<=0,0,IF(Mmoment<=0,1,MIN(1,Vforce*(2*R)/Mmoment))),vcPrime,vc+IF(Nforce>0,0.6*(Nforce/(PI()*R*R))*vhOverM,0),vLimit,MIN(0.8*SQRT(fcu),7),spiralFactor,IF(isSpiral,1-0.225*sv/R,1),AsvReq,IF(OR(vStress<=vcPrime,spiralFactor<=0),IF(spiralFactor<=0,NA(),0),2*R*sv*(vStress-vcPrime)/(0.87*fyv*spiralFactor)),AsvProv,2*PI()*linkDia*linkDia/4,HSTACK(alpha,d,bvd,vStress,vc,vcPrime,vLimit,AsvReq,AsvProv)))",
+  "comment": "Circular column shear to clauses 6.1.2.5 and 6.2.1.4(e). Vforce and Nforce are in N, Mmoment is in N.mm, lengths in mm, stresses in MPa. isSpiral is TRUE for equation 6.58c and FALSE for 6.58b. gammaShear is 1.25 from Table 6.3. Returns alpha, d, bvd, v, vc, vc prime, vMax, Asv required, Asv provided. Asv is twice the link bar area.",
+  "children": [
+    "ShearGeom.CircColumn"
+  ],
+  "allChildren": [
+    "ShearGeom.CircColumn"
+  ]
+}

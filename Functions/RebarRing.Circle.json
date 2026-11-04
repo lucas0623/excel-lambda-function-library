@@ -1,0 +1,13 @@
+{
+  "name": "RebarRing.Circle",
+  "formula": "=LAMBDA(nBars,rs,phi0_deg,{ref}ForLoop_MAKEARRAY(1,nBars,LAMBDA(i,{ref}PolarToXYCoor(rs,phi0_deg+(i-1)*360/nBars))))",
+  "comment": "n equal bars on a circle of radius rs. phi0_deg is the first bar, measured from +x and increasing counterclockwise. Returns an n by 2 array of x, y.",
+  "children": [
+    "ForLoop_MAKEARRAY",
+    "PolarToXYCoor"
+  ],
+  "allChildren": [
+    "ForLoop_MAKEARRAY",
+    "PolarToXYCoor"
+  ]
+}

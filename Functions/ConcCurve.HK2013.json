@@ -1,0 +1,7 @@
+{
+  "name": "ConcCurve.HK2013",
+  "formula": "=LAMBDA(fcu,gamma,LET(fc,0.67*fcu/gamma,Ec,(3.46*SQRT(fcu/gamma)+3.21)*1000,eps0,2*fc/Ec,epscu,IF(fcu<=60,0.0035,0.0035-0.00006*(fcu-60)),HSTACK(fc,Ec,eps0,epscu)))",
+  "comment": "Figure 3.8 design curve. fcu and fc in MPa, gamma is the concrete partial factor. Returns fc, Ec in MPa, eps0, epscu.",
+  "children": [],
+  "allChildren": []
+}

@@ -1,0 +1,27 @@
+{
+  "name": "SolveNA.Circle",
+  "formula": "=LAMBDA(NEd,R,alpha,nBars,rs,phi0_deg,AsEach,fcu,gamma,fyd,Es,[nStrip],[nScan],LET(nStripUse,IF(ISOMITTED(nStrip),40,nStrip),nScanUse,IF(ISOMITTED(nScan),31,nScan),xMin,R/50,xMax,8*R,xs,{ref}CreateStepRange(xMin,xMax,nScanUse),NM,{ref}ForLoop_MAKEARRAY(1,nScanUse,LAMBDA(i,{ref}SectionResultant.Circle(R,INDEX(xs,i,1),alpha,nBars,rs,phi0_deg,AsEach,fcu,gamma,fyd,Es,nStripUse))),Ncol,INDEX(NM,,1),Mcol,INDEX(NM,,2),root,{ref}find_root(NEd,xs,Ncol),xHit,IFERROR(IF(ISNUMBER(INDEX(root,1)),INDEX(root,1),NA()),NA()),atX,IF(ISNUMBER(xHit),{ref}SectionResultant.Circle(R,xHit,alpha,nBars,rs,phi0_deg,AsEach,fcu,gamma,fyd,Es,nStripUse),HSTACK(NA(),NA())),HSTACK(xHit,INDEX(atX,1,1),INDEX(atX,1,2),INDEX(Ncol,nScanUse,1),INDEX(Mcol,nScanUse,1))))",
+  "comment": "Neutral-axis depth that matches NEd, then the moment at that depth. Forces in N and N.mm, lengths in mm. Returns x, N, M, N at the top of the scan, and M at the top of the scan. Missing root returns NA for x, N and M.",
+  "children": [
+    "CreateStepRange",
+    "ForLoop_MAKEARRAY",
+    "SectionResultant.Circle",
+    "find_root"
+  ],
+  "allChildren": [
+    "CreateStepRange",
+    "ForLoop_MAKEARRAY",
+    "SectionResultant.Circle",
+    "find_root",
+    "ConcCurve.HK2013",
+    "ConcResultant.Circle",
+    "RebarRing.Circle",
+    "RebarResultant.Circle",
+    "ConcStrip.Circle",
+    "PolarToXYCoor",
+    "StrainAtDepth",
+    "SteelStress.Bilinear",
+    "ConcStress.ParabolaRect",
+    "CircleChordWidth"
+  ]
+}

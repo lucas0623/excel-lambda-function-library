@@ -1,0 +1,7 @@
+{
+  "name": "TorsionLinks.Circle",
+  "formula": "=LAMBDA(T,rl,fy,fyv,sv,LET(Ao,PI()*rl*rl,ratio,IF(Ao<=0,NA(),T/(0.8*Ao*0.87*fyv)),AsvReq,ratio*sv,AsLong,ratio*(fyv/fy)*PI()*rl,HSTACK(Ao,AsvReq,AsLong)))",
+  "comment": "Torsion reinforcement adapted from clause 6.3.6. x1 y1 is replaced by the area inside the link centreline. T in N.mm, rl in mm, stresses in MPa. Returns enclosed area, required Asv over the spacing sv, and additional longitudinal steel. Asv is twice one link bar.",
+  "children": [],
+  "allChildren": []
+}

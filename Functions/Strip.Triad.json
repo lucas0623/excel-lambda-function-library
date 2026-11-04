@@ -1,0 +1,20 @@
+{
+  "name": "Strip.Triad",
+  "formula": "=LAMBDA(tangent,normal,[e2Prev],LET(unitT,{ref}Strip.UnitVec(tangent),latDir,{ref}Strip.E2Raw(tangent,normal),IF(OR(ISNA(INDEX(unitT,1,1)),ISNA(INDEX(latDir,1,1))),NA(),LET(latFin,IF(ISOMITTED(e2Prev),latDir,{ref}Strip.AlignE2(latDir,e2Prev)),axis3,{ref}Shell.VecCross(unitT,latFin),HSTACK(unitT,latFin,axis3)))))",
+  "comment": "Returns strip frame as one row t, e2, e3 (9 numbers). Arguments: tangent, normal, e2Prev. e2 = unit(normal x tangent), optionally continuity-flipped. e3 = t x e2. Degenerate frame returns #N/A. Last Update at 2026-11-04.",
+  "children": [
+    "Strip.UnitVec",
+    "Strip.E2Raw",
+    "Strip.AlignE2",
+    "Shell.VecCross"
+  ],
+  "allChildren": [
+    "Strip.UnitVec",
+    "Strip.E2Raw",
+    "Strip.AlignE2",
+    "Shell.VecCross",
+    "Shell.Row3",
+    "Shell.VecLen",
+    "Shell.VecDot"
+  ]
+}

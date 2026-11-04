@@ -1,0 +1,7 @@
+{
+  "name": "SteelStress.Bilinear",
+  "formula": "=LAMBDA(eps,fyd,Es,IF(eps>=0,MIN(Es*eps,fyd),MAX(Es*eps,-fyd)))",
+  "comment": "Figure 3.9 bilinear steel stress in MPa. Compression strain and stress are positive. The plateau is plus or minus fyd.",
+  "children": [],
+  "allChildren": []
+}

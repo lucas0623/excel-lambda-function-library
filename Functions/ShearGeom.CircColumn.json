@@ -1,0 +1,7 @@
+{
+  "name": "ShearGeom.CircColumn",
+  "formula": "=LAMBDA(R,rs,LET(sRatio,MIN(1,2*rs/(PI()*R)),alpha,ASIN(sRatio),d,R*(1+SIN(alpha)),bvd,R*R*(PI()/2+alpha+SIN(alpha)*COS(alpha)),HSTACK(alpha,d,bvd)))",
+  "comment": "Clause 6.2.1.4(e) shear geometry. R and rs in mm. Returns alpha in radians, effective depth d in mm, and bvd in mm2 from equation 6.58a.",
+  "children": [],
+  "allChildren": []
+}

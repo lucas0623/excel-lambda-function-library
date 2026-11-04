@@ -1,0 +1,7 @@
+{
+  "name": "Shell.Clamp11",
+  "formula": "=LAMBDA(t,MEDIAN(-1,t,1))",
+  "comment": "Clamps a number to the closed interval from -1 to 1. Argument t is the number. Text returns #VALUE!. Last Update at 2026-11-04.",
+  "children": [],
+  "allChildren": []
+}

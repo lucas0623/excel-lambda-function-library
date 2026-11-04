@@ -1,0 +1,7 @@
+{
+  "name": "ConcStress.ParabolaRect",
+  "formula": "=LAMBDA(eps,fc,Ec,eps0,epscu,IF(eps<=0,0,IF(eps<eps0,Ec*eps*(1-eps/(2*eps0)),fc)))",
+  "comment": "Parabola-rectangle stress in MPa. Compression strain is positive. Ed in the parabola is Ec, the initial modulus. Stress is fc from eps0 to epscu, and 0 in tension.",
+  "children": [],
+  "allChildren": []
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Shell.VecLen",
+  "formula": "=LAMBDA(a,SQRT({ref}Shell.VecDot(a,a)))",
+  "comment": "Returns the Euclidean length of a 3D vector. Argument a is a point or vector. A vector that is not 3D returns #N/A. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.VecDot"
+  ],
+  "allChildren": [
+    "Shell.VecDot",
+    "Shell.Row3"
+  ]
+}

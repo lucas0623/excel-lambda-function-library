@@ -1,0 +1,25 @@
+{
+  "name": "Strip.ElemNormal",
+  "formula": "=LAMBDA(nodes,LET(m,{ref}Shell.Rows3(nodes),count,ROWS(m),IF(count=3,{ref}Shell.PlaneNormal({ref}Shell.Node(m,1),{ref}Shell.Node(m,2),{ref}Shell.Node(m,3)),IF(count=4,{ref}Shell.VecCross({ref}Shell.QuadTangent(m,{ref}Shell.QuadDNdXi(0,0)),{ref}Shell.QuadTangent(m,{ref}Shell.QuadDNdEta(0,0))),NA()))))",
+  "comment": "Returns an unnormalized shell normal as one row. Triangle uses PlaneNormal. Quad uses the cross of center tangents. Other node counts return #N/A. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Rows3",
+    "Shell.PlaneNormal",
+    "Shell.Node",
+    "Shell.VecCross",
+    "Shell.QuadTangent",
+    "Shell.QuadDNdXi",
+    "Shell.QuadDNdEta"
+  ],
+  "allChildren": [
+    "Shell.Rows3",
+    "Shell.PlaneNormal",
+    "Shell.Node",
+    "Shell.VecCross",
+    "Shell.QuadTangent",
+    "Shell.QuadDNdXi",
+    "Shell.QuadDNdEta",
+    "Shell.VecSub",
+    "Shell.Row3"
+  ]
+}

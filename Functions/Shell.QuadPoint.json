@@ -1,0 +1,13 @@
+{
+  "name": "Shell.QuadPoint",
+  "formula": "=LAMBDA(nodes,xi,eta,LET(m,{ref}Shell.Rows3(nodes),n,{ref}Shell.QuadN(xi,eta),HSTACK(INDEX(MMULT(n,INDEX(m,0,1)),1),INDEX(MMULT(n,INDEX(m,0,2)),1),INDEX(MMULT(n,INDEX(m,0,3)),1))))",
+  "comment": "Returns the bilinear image of natural coordinates xi and eta as one row of x, y, z. nodes is 4 rows of x, y, z. A shape other than 4 by 3 returns an NA error. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Rows3",
+    "Shell.QuadN"
+  ],
+  "allChildren": [
+    "Shell.Rows3",
+    "Shell.QuadN"
+  ]
+}

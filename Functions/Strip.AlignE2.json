@@ -1,0 +1,13 @@
+{
+  "name": "Strip.AlignE2",
+  "formula": "=LAMBDA(e2Raw,[e2Prev],LET(raw,{ref}Shell.Row3(e2Raw),IF(ISOMITTED(e2Prev),raw,LET(prev,{ref}Shell.Row3(e2Prev),IF(OR(NOT(ISNUMBER(INDEX(prev,1,1))),{ref}Shell.VecDot(prev,raw)>=0),raw,-1*raw)))))",
+  "comment": "Returns e2Raw, or -e2Raw when e2Prev is supplied and the dot product is negative. Arguments: e2Raw, e2Prev. Continuity flip for strip width direction. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Row3",
+    "Shell.VecDot"
+  ],
+  "allChildren": [
+    "Shell.Row3",
+    "Shell.VecDot"
+  ]
+}

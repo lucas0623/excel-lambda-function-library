@@ -1,0 +1,11 @@
+{
+  "name": "Shell.PointInAABB",
+  "formula": "=LAMBDA(point,aabb,[tol],LET(p,{ref}Shell.Row3(point),t,IF(ISOMITTED(tol),0,tol),box,aabb,IF(OR(NOT(ISNUMBER(INDEX(p,1,1))),COLUMNS(box)<6,NOT(ISNUMBER(INDEX(box,1,1)))),FALSE,AND(INDEX(p,1,1)>=INDEX(box,1,1)-t,INDEX(p,1,1)<=INDEX(box,1,2)+t,INDEX(p,1,2)>=INDEX(box,1,3)-t,INDEX(p,1,2)<=INDEX(box,1,4)+t,INDEX(p,1,3)>=INDEX(box,1,5)-t,INDEX(p,1,3)<=INDEX(box,1,6)+t))))",
+  "comment": "Returns TRUE when point lies inside or on the axis-aligned box. Arguments: point, aabb, tol. aabb is one row xmin, xmax, ymin, ymax, zmin, zmax. tol defaults to 0 and expands the box. A bad point or box returns FALSE. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Row3"
+  ],
+  "allChildren": [
+    "Shell.Row3"
+  ]
+}

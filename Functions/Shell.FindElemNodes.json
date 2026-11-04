@@ -1,0 +1,11 @@
+{
+  "name": "Shell.FindElemNodes",
+  "formula": "=LAMBDA(elemRow,nodeXYZ,LET(idA,INDEX(elemRow,1,2),idB,INDEX(elemRow,1,3),idC,INDEX(elemRow,1,4),idD,IF(COLUMNS(elemRow)>4,INDEX(elemRow,1,5),0),IF(OR(NOT(ISNUMBER(idD)),idD=0),VSTACK({ref}Shell.LookupNode(nodeXYZ,idA),{ref}Shell.LookupNode(nodeXYZ,idB),{ref}Shell.LookupNode(nodeXYZ,idC)),VSTACK({ref}Shell.LookupNode(nodeXYZ,idA),{ref}Shell.LookupNode(nodeXYZ,idB),{ref}Shell.LookupNode(nodeXYZ,idC),{ref}Shell.LookupNode(nodeXYZ,idD)))))",
+  "comment": "Returns the node coordinates of one connectivity row as 3 or 4 rows of x, y, z. Arguments: elemRow is elemId, n1, n2, n3, optional n4; nodeXYZ rows are nodeId, x, y, z. Blank or 0 in n4 means a triangle. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.LookupNode"
+  ],
+  "allChildren": [
+    "Shell.LookupNode"
+  ]
+}

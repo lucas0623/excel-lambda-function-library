@@ -1,0 +1,24 @@
+{
+  "name": "SectionResultant.Circle",
+  "formula": "=LAMBDA(R,x,alpha,nBars,rs,phi0_deg,AsEach,fcu,gamma,fyd,Es,[n],LET(nStrip,IF(ISOMITTED(n),60,n),curve,{ref}ConcCurve.HK2013(fcu,gamma),fc,INDEX(curve,1,1),Ec,INDEX(curve,1,2),eps0,INDEX(curve,1,3),epscu,INDEX(curve,1,4),conc,{ref}ConcResultant.Circle(R,x,epscu,fc,Ec,eps0,epscu,nStrip),bars,{ref}RebarRing.Circle(nBars,rs,phi0_deg),steel,{ref}RebarResultant.Circle(bars,AsEach,alpha,R,x,fc,Ec,eps0,epscu,fyd,Es),HSTACK(INDEX(conc,1,1)+INDEX(steel,1,1),INDEX(conc,1,2)+INDEX(steel,1,2))))",
+  "comment": "Axial force and moment of a circular reinforced section at one neutral-axis depth. Lengths in mm, fcu and fyd in MPa, Es in MPa. alpha is the compression-face angle in radians. Returns N in N and M in N.mm. n is the number of concrete strips.",
+  "children": [
+    "ConcCurve.HK2013",
+    "ConcResultant.Circle",
+    "RebarRing.Circle",
+    "RebarResultant.Circle"
+  ],
+  "allChildren": [
+    "ConcCurve.HK2013",
+    "ConcResultant.Circle",
+    "RebarRing.Circle",
+    "RebarResultant.Circle",
+    "ForLoop_MAKEARRAY",
+    "ConcStrip.Circle",
+    "PolarToXYCoor",
+    "StrainAtDepth",
+    "SteelStress.Bilinear",
+    "ConcStress.ParabolaRect",
+    "CircleChordWidth"
+  ]
+}

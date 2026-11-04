@@ -1,0 +1,7 @@
+{
+  "name": "Shell.Row3",
+  "formula": "=LAMBDA(p,LET(r,ROWS(p),c,COLUMNS(p),IF(AND(r=1,c=3),p,IF(AND(r=3,c=1),TRANSPOSE(p),NA()))))",
+  "comment": "Returns a point as one row of x, y, z. Argument p is 1 by 3 or 3 by 1. Any other shape returns #N/A. Last Update at 2026-11-04.",
+  "children": [],
+  "allChildren": []
+}

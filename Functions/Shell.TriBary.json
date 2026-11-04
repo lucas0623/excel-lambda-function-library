@@ -1,0 +1,22 @@
+{
+  "name": "Shell.TriBary",
+  "formula": "=LAMBDA(nodes,point,LET(m,{ref}Shell.Rows3(nodes),p,{ref}Shell.Row3(point),node1,{ref}Shell.Node(m,1),edge1,{ref}Shell.VecSub({ref}Shell.Node(m,2),node1),edge2,{ref}Shell.VecSub({ref}Shell.Node(m,3),node1),rel,{ref}Shell.VecSub(p,node1),gram11,{ref}Shell.VecDot(edge1,edge1),gram12,{ref}Shell.VecDot(edge1,edge2),gram22,{ref}Shell.VecDot(edge2,edge2),force1,{ref}Shell.VecDot(edge1,rel),force2,{ref}Shell.VecDot(edge2,rel),det,gram11*gram22-gram12*gram12,lim,(0.000000000001*{ref}Shell.CharLength(m)^2)^2,IF(OR(NOT(ISNUMBER(det)),det<=lim),NA(),LET(coef2,(gram22*force1-gram12*force2)/det,coef3,(gram11*force2-gram12*force1)/det,HSTACK(1-coef2-coef3,coef2,coef3)))))",
+  "comment": "Returns the barycentric weights of point on the triangle, as one row w1, w2, w3. nodes is 3 rows of x, y, z. The weights are the in-plane coordinates and sum to 1. This does not test the plane. A degenerate triangle returns an NA error. Last Update at 202",
+  "children": [
+    "Shell.Rows3",
+    "Shell.Row3",
+    "Shell.Node",
+    "Shell.VecSub",
+    "Shell.VecDot",
+    "Shell.CharLength"
+  ],
+  "allChildren": [
+    "Shell.Rows3",
+    "Shell.Row3",
+    "Shell.Node",
+    "Shell.VecSub",
+    "Shell.VecDot",
+    "Shell.CharLength",
+    "Shell.VecLen"
+  ]
+}

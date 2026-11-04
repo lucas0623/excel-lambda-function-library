@@ -1,0 +1,7 @@
+{
+  "name": "Shell.WeightsInside",
+  "formula": "=LAMBDA(w,[eps],LET(e,IF(ISOMITTED(eps),0.00000001,eps),AND(MIN(w)>=-e,MAX(w)<=1+e)))",
+  "comment": "Returns TRUE when every weight is inside 0 to 1, within eps. Arguments: w, eps. eps defaults to 1E-8. A small negative weight from roundoff is accepted. Text returns #VALUE!. Last Update at 2026-11-04.",
+  "children": [],
+  "allChildren": []
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Strip.LookupFM",
+  "formula": "=LAMBDA(nodeFM,nid,XLOOKUP(nid,INDEX(nodeFM,0,1),DROP(nodeFM,,1)))",
+  "comment": "Returns one row Fxx, Fyy, Fzz, Mxx, Myy, Mzz for node id nid from nodeFM. nodeFM rows are nodeId then six force components. A missing id returns #N/A. Last Update at 2026-11-04.",
+  "children": [],
+  "allChildren": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Shell.Node",
+  "formula": "=LAMBDA(nodes,i,CHOOSEROWS({ref}Shell.Rows3(nodes),i))",
+  "comment": "Returns node i as one row of x, y, z. nodes is one row per node. i is the 1-based row. A missing row returns #REF!. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Rows3"
+  ],
+  "allChildren": [
+    "Shell.Rows3"
+  ]
+}

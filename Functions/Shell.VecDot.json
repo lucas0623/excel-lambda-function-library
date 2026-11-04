@@ -1,0 +1,11 @@
+{
+  "name": "Shell.VecDot",
+  "formula": "=LAMBDA(a,b,LET(ra,{ref}Shell.Row3(a),rb,{ref}Shell.Row3(b),SUMPRODUCT(ra,rb)))",
+  "comment": "Returns the dot product of two 3D vectors. Arguments a and b are points or vectors. A vector that is not 3D returns #N/A. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Row3"
+  ],
+  "allChildren": [
+    "Shell.Row3"
+  ]
+}

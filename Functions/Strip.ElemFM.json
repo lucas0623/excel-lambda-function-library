@@ -1,0 +1,11 @@
+{
+  "name": "Strip.ElemFM",
+  "formula": "=LAMBDA(elemRow,nodeFM,LET(idA,INDEX(elemRow,1,2),idB,INDEX(elemRow,1,3),idC,INDEX(elemRow,1,4),idD,IF(COLUMNS(elemRow)>4,INDEX(elemRow,1,5),0),IF(OR(NOT(ISNUMBER(idD)),idD=0),VSTACK({ref}Strip.LookupFM(nodeFM,idA),{ref}Strip.LookupFM(nodeFM,idB),{ref}Strip.LookupFM(nodeFM,idC)),VSTACK({ref}Strip.LookupFM(nodeFM,idA),{ref}Strip.LookupFM(nodeFM,idB),{ref}Strip.LookupFM(nodeFM,idC),{ref}Strip.LookupFM(nodeFM,idD)))))",
+  "comment": "Returns nodal force rows for one connectivity row as 3 or 4 by 6. Arguments: elemRow, nodeFM. Blank or 0 n4 means a triangle. Last Update at 2026-11-04.",
+  "children": [
+    "Strip.LookupFM"
+  ],
+  "allChildren": [
+    "Strip.LookupFM"
+  ]
+}

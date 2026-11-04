@@ -1,0 +1,7 @@
+{
+  "name": "Shell.AsColumn",
+  "formula": "=LAMBDA(values,IF(COLUMNS(values)=1,values,IF(ROWS(values)=1,TRANSPOSE(values),NA())))",
+  "comment": "Returns values as one column. A column is kept. A single row is transposed. A block with several rows and columns returns #N/A. Last Update at 2026-11-04.",
+  "children": [],
+  "allChildren": []
+}

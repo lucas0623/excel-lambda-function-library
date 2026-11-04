@@ -1,0 +1,24 @@
+{
+  "name": "Shell.IsQuadWarped",
+  "formula": "=LAMBDA(nodes,[tol],LET(m,{ref}Shell.Rows3(nodes),t,IF(ISOMITTED(tol),{ref}Shell.SurfTol(m),tol),node1,{ref}Shell.Node(m,1),node2,{ref}Shell.Node(m,2),node3,{ref}Shell.Node(m,3),node4,{ref}Shell.Node(m,4),dist123,{ref}Shell.PointPlaneDist(node4,node1,node2,node3),dist124,{ref}Shell.PointPlaneDist(node3,node1,node2,node4),IF(ISNUMBER(dist123),ABS(dist123)>t,IF(ISNUMBER(dist124),ABS(dist124)>t,NA()))))",
+  "comment": "Returns TRUE when the four nodes are not coplanar. nodes is 4 rows of x, y, z. tol defaults to 1E-6 times the longest edge. The check is the distance of node 4 from the plane of nodes 1, 2, and 3, or of node 3 from the plane of nodes 1, 2, and 4 when the ",
+  "children": [
+    "Shell.Rows3",
+    "Shell.SurfTol",
+    "Shell.Node",
+    "Shell.PointPlaneDist"
+  ],
+  "allChildren": [
+    "Shell.Rows3",
+    "Shell.SurfTol",
+    "Shell.Node",
+    "Shell.PointPlaneDist",
+    "Shell.CharLength",
+    "Shell.PlaneNormal",
+    "Shell.VecLen",
+    "Shell.VecSub",
+    "Shell.VecDot",
+    "Shell.VecCross",
+    "Shell.Row3"
+  ]
+}

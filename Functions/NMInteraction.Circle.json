@@ -1,0 +1,25 @@
+{
+  "name": "NMInteraction.Circle",
+  "formula": "=LAMBDA(R,alpha,nBars,rs,phi0_deg,AsEach,fcu,gamma,fyd,Es,[nStrip],[nScan],LET(ns,IF(ISOMITTED(nStrip),40,nStrip),nsc,IF(ISOMITTED(nScan),21,nScan),xs,{ref}CreateStepRange(R/50,8*R,nsc),NM,{ref}ForLoop_MAKEARRAY(1,nsc,LAMBDA(i,{ref}SectionResultant.Circle(R,INDEX(xs,i,1),alpha,nBars,rs,phi0_deg,AsEach,fcu,gamma,fyd,Es,ns))),HSTACK(xs,NM)))",
+  "comment": "Scan of neutral-axis depth. Returns columns x in mm, N in N, and M in N.mm. The scan runs from R/50 to 8R.",
+  "children": [
+    "CreateStepRange",
+    "ForLoop_MAKEARRAY",
+    "SectionResultant.Circle"
+  ],
+  "allChildren": [
+    "CreateStepRange",
+    "ForLoop_MAKEARRAY",
+    "SectionResultant.Circle",
+    "ConcCurve.HK2013",
+    "ConcResultant.Circle",
+    "RebarRing.Circle",
+    "RebarResultant.Circle",
+    "ConcStrip.Circle",
+    "PolarToXYCoor",
+    "StrainAtDepth",
+    "SteelStress.Bilinear",
+    "ConcStress.ParabolaRect",
+    "CircleChordWidth"
+  ]
+}

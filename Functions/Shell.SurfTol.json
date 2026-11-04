@@ -1,0 +1,17 @@
+{
+  "name": "Shell.SurfTol",
+  "formula": "=LAMBDA(nodes,LET(L,{ref}Shell.CharLength(nodes),IF(NOT(ISNUMBER(L)),NA(),IF(L=0,0,0.000001*L))))",
+  "comment": "Returns the surface tolerance, 1E-6 times the longest boundary edge. nodes is one row per node. A zero-length element returns 0. Any other node count returns #N/A. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.CharLength"
+  ],
+  "allChildren": [
+    "Shell.CharLength",
+    "Shell.Rows3",
+    "Shell.VecLen",
+    "Shell.VecSub",
+    "Shell.Node",
+    "Shell.VecDot",
+    "Shell.Row3"
+  ]
+}

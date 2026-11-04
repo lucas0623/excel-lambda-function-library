@@ -1,0 +1,7 @@
+{
+  "name": "Shell.QuadN",
+  "formula": "=LAMBDA(xi,eta,HSTACK(0.25*(1-xi)*(1-eta),0.25*(1+xi)*(1-eta),0.25*(1+xi)*(1+eta),0.25*(1-xi)*(1+eta)))",
+  "comment": "Returns the four bilinear shape functions at natural coordinates xi and eta, as one row. Node order is (-1,-1), (1,-1), (1,1), (-1,1). The four weights sum to 1. Text returns #VALUE!. Last Update at 2026-11-04.",
+  "children": [],
+  "allChildren": []
+}

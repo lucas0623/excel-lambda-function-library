@@ -1,0 +1,19 @@
+{
+  "name": "Shell.CharLength",
+  "formula": "=LAMBDA(nodes,LET(m,{ref}Shell.Rows3(nodes),n,ROWS(m),IF(n=3,MAX({ref}Shell.VecLen({ref}Shell.VecSub({ref}Shell.Node(m,2),{ref}Shell.Node(m,1))),{ref}Shell.VecLen({ref}Shell.VecSub({ref}Shell.Node(m,3),{ref}Shell.Node(m,2))),{ref}Shell.VecLen({ref}Shell.VecSub({ref}Shell.Node(m,1),{ref}Shell.Node(m,3)))),IF(n=4,MAX({ref}Shell.VecLen({ref}Shell.VecSub({ref}Shell.Node(m,2),{ref}Shell.Node(m,1))),{ref}Shell.VecLen({ref}Shell.VecSub({ref}Shell.Node(m,3),{ref}Shell.Node(m,2))),{ref}Shell.VecLen({ref}Shell.VecSub({ref}Shell.Node(m,4),{ref}Shell.Node(m,3))),{ref}Shell.VecLen({ref}Shell.VecSub({ref}Shell.Node(m,1),{ref}Shell.Node(m,4)))),NA()))))",
+  "comment": "Returns the longest boundary edge of a triangle or a quad. nodes is one row per node, x, y, z. Three nodes use the three edges. Four nodes use the four boundary edges. Any other count returns #N/A. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Rows3",
+    "Shell.VecLen",
+    "Shell.VecSub",
+    "Shell.Node"
+  ],
+  "allChildren": [
+    "Shell.Rows3",
+    "Shell.VecLen",
+    "Shell.VecSub",
+    "Shell.Node",
+    "Shell.VecDot",
+    "Shell.Row3"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "TorsionStress.Circle",
+  "formula": "=LAMBDA(T,D,IF(D<=0,NA(),16*T/(PI()*D*D*D)))",
+  "comment": "Plastic torsional shear stress of a solid circle, in MPa. T is in N.mm and D is the overall diameter in mm. vt = 16T / (pi D^3).",
+  "children": [],
+  "allChildren": []
+}

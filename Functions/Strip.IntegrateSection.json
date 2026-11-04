@@ -1,0 +1,14 @@
+{
+  "name": "Strip.IntegrateSection",
+  "formula": "=LAMBDA(samplesFM,latDir,width,nWidth,LET(lat,{ref}Shell.Row3(latDir),count,nWidth,du,width/(count-1),half,width/2,REDUCE(HSTACK(0,0,0,0,0,0,0),SEQUENCE(count-1),LAMBDA(state,i,state+{ref}Strip.SegContrib(samplesFM,lat,half,du,i)))))",
+  "comment": "",
+  "children": [
+    "Shell.Row3",
+    "Strip.SegContrib"
+  ],
+  "allChildren": [
+    "Shell.Row3",
+    "Strip.SegContrib",
+    "Shell.VecCross"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Shell.TriContains",
+  "formula": "=LAMBDA(point,nodes,[tol],LET(m,{ref}Shell.Rows3(nodes),p,{ref}Shell.Row3(point),onPlane,IF(ISOMITTED(tol),{ref}Shell.IsPointOnPlane(p,{ref}Shell.Node(m,1),{ref}Shell.Node(m,2),{ref}Shell.Node(m,3)),{ref}Shell.IsPointOnPlane(p,{ref}Shell.Node(m,1),{ref}Shell.Node(m,2),{ref}Shell.Node(m,3),tol)),w,IF(onPlane,{ref}Shell.TriBary(m,p),NA()),IF(ISNUMBER(INDEX(w,1,1)),{ref}Shell.WeightsInside(w),FALSE)))",
+  "comment": "Returns TRUE when point lies on a 3-node shell triangle. Arguments: point, nodes, tol. nodes is 3 rows of x, y, z. tol defaults to 1E-6 times the longest edge. A point off the plane, outside the edges, or a collapsed triangle returns FALSE. Last Update at",
+  "children": [
+    "Shell.Rows3",
+    "Shell.Row3",
+    "Shell.IsPointOnPlane",
+    "Shell.Node",
+    "Shell.TriBary",
+    "Shell.WeightsInside"
+  ],
+  "allChildren": [
+    "Shell.Rows3",
+    "Shell.Row3",
+    "Shell.IsPointOnPlane",
+    "Shell.Node",
+    "Shell.TriBary",
+    "Shell.WeightsInside",
+    "Shell.SurfTol",
+    "Shell.PointPlaneDist",
+    "Shell.VecSub",
+    "Shell.VecDot",
+    "Shell.CharLength",
+    "Shell.PlaneNormal",
+    "Shell.VecLen",
+    "Shell.VecCross"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Strip.E2Raw",
+  "formula": "=LAMBDA(tangent,normal,LET(unitT,{ref}Strip.UnitVec(tangent),unitN,{ref}Strip.UnitVec(normal),IF(OR(ISNA(INDEX(unitT,1,1)),ISNA(INDEX(unitN,1,1))),NA(),{ref}Strip.UnitVec({ref}Shell.VecCross(unitN,unitT)))))",
+  "comment": "Returns unit width direction e2 = unit(normal x tangent). Degenerate returns #N/A. Last Update at 2026-11-04.",
+  "children": [
+    "Strip.UnitVec",
+    "Shell.VecCross"
+  ],
+  "allChildren": [
+    "Strip.UnitVec",
+    "Shell.VecCross",
+    "Shell.Row3",
+    "Shell.VecLen",
+    "Shell.VecDot"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Strip.UnitVec",
+  "formula": "=LAMBDA(vec,LET(v,{ref}Shell.Row3(vec),len,{ref}Shell.VecLen(v),IF(OR(NOT(ISNUMBER(len)),len=0),NA(),v/len)))",
+  "comment": "Returns the unit vector of vec as one row. A zero vector returns #N/A. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Row3",
+    "Shell.VecLen"
+  ],
+  "allChildren": [
+    "Shell.Row3",
+    "Shell.VecLen",
+    "Shell.VecDot"
+  ]
+}

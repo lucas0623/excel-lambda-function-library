@@ -1,0 +1,11 @@
+{
+  "name": "Strip.MissRow",
+  "formula": "=LAMBDA(stationRow,latPrev,hasPrev,LET(distS,INDEX(stationRow,1,1),org,HSTACK(INDEX(stationRow,1,2),INDEX(stationRow,1,3),INDEX(stationRow,1,4)),latOut,IF(hasPrev=1,{ref}Shell.Row3(latPrev),HSTACK(0,0,0)),HSTACK(distS,org,0,0,0,0,0,0,0,latOut)))",
+  "comment": "Returns a zero-force station row with trailing e2 when the centerline misses the mesh. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Row3"
+  ],
+  "allChildren": [
+    "Shell.Row3"
+  ]
+}

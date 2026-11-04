@@ -1,0 +1,7 @@
+{
+  "name": "Shell.QuadDNdEta",
+  "formula": "=LAMBDA(xi,eta,HSTACK(-0.25*(1-xi),-0.25*(1+xi),0.25*(1+xi),0.25*(1-xi))+0*eta)",
+  "comment": "Returns the derivatives of the four bilinear shape functions with respect to eta, as one row. xi is used. eta is accepted so the call matches Shell.QuadN. Text returns #VALUE!. Last Update at 2026-11-04.",
+  "children": [],
+  "allChildren": []
+}

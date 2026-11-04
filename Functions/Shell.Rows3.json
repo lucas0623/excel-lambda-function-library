@@ -1,0 +1,7 @@
+{
+  "name": "Shell.Rows3",
+  "formula": "=LAMBDA(nodes,LET(r,ROWS(nodes),c,COLUMNS(nodes),IF(c=3,nodes,IF(r=3,TRANSPOSE(nodes),NA()))))",
+  "comment": "Returns nodes as one row per node and columns x, y, z. A 3-column array is kept. An array with 3 rows and another column count is transposed. Any other shape returns #N/A. Last Update at 2026-11-04.",
+  "children": [],
+  "allChildren": []
+}

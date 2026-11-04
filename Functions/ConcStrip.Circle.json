@@ -1,0 +1,15 @@
+{
+  "name": "ConcStrip.Circle",
+  "formula": "=LAMBDA(R,eta,dEta,epsTop,x,fc,Ec,eps0,epscu,LET(eps,{ref}StrainAtDepth(epsTop,x,eta),sig,{ref}ConcStress.ParabolaRect(eps,fc,Ec,eps0,epscu),b,{ref}CircleChordWidth(R,eta),dF,sig*b*dEta,HSTACK(dF,dF*(R-eta))))",
+  "comment": "One midpoint strip of a circular concrete section. Lengths in mm, stress in MPa. Returns dF in N and dM in N.mm about the centre, positive toward the compression face.",
+  "children": [
+    "StrainAtDepth",
+    "ConcStress.ParabolaRect",
+    "CircleChordWidth"
+  ],
+  "allChildren": [
+    "StrainAtDepth",
+    "ConcStress.ParabolaRect",
+    "CircleChordWidth"
+  ]
+}

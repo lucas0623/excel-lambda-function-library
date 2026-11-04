@@ -1,0 +1,23 @@
+{
+  "name": "Shell.IsPointOnPlane",
+  "formula": "=LAMBDA(point,a,b,c,[tol],LET(t,IF(ISOMITTED(tol),{ref}Shell.SurfTol(VSTACK({ref}Shell.Row3(a),{ref}Shell.Row3(b),{ref}Shell.Row3(c))),tol),d,{ref}Shell.PointPlaneDist(point,a,b,c),IF(NOT(ISNUMBER(d)),FALSE,ABS(d)<=t)))",
+  "comment": "Returns TRUE when point lies on the plane through a, b, and c. Arguments: point, a, b, c, tol. tol defaults to 1E-6 times the longest edge of triangle a, b, c. A degenerate plane returns FALSE. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.SurfTol",
+    "Shell.Row3",
+    "Shell.PointPlaneDist"
+  ],
+  "allChildren": [
+    "Shell.SurfTol",
+    "Shell.Row3",
+    "Shell.PointPlaneDist",
+    "Shell.CharLength",
+    "Shell.PlaneNormal",
+    "Shell.VecLen",
+    "Shell.VecSub",
+    "Shell.VecDot",
+    "Shell.Rows3",
+    "Shell.Node",
+    "Shell.VecCross"
+  ]
+}

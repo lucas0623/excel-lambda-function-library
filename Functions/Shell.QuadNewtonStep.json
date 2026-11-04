@@ -1,0 +1,30 @@
+{
+  "name": "Shell.QuadNewtonStep",
+  "formula": "=LAMBDA(nodes,point,xi,eta,LET(m,{ref}Shell.Rows3(nodes),p,{ref}Shell.Row3(point),surf,{ref}Shell.QuadPoint(m,xi,eta),gap,{ref}Shell.VecSub(surf,p),txi,{ref}Shell.QuadTangent(m,{ref}Shell.QuadDNdXi(xi,eta)),teta,{ref}Shell.QuadTangent(m,{ref}Shell.QuadDNdEta(xi,eta)),gram11,{ref}Shell.VecDot(txi,txi),gram12,{ref}Shell.VecDot(txi,teta),gram22,{ref}Shell.VecDot(teta,teta),force1,{ref}Shell.VecDot(txi,gap),force2,{ref}Shell.VecDot(teta,gap),det,gram11*gram22-gram12*gram12,lim,(0.000000000001*{ref}Shell.CharLength(m)^2)^2,IF(OR(NOT(ISNUMBER(det)),ABS(det)<=lim),NA(),HSTACK(xi-(gram22*force1-gram12*force2)/det,eta-(gram11*force2-gram12*force1)/det))))",
+  "comment": "Returns one Newton step for the inverse bilinear map, as one row xi, eta. nodes is 4 rows of x, y, z. The step minimizes the 3D distance from the surface to point. A singular tangent returns an NA error. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Rows3",
+    "Shell.Row3",
+    "Shell.QuadPoint",
+    "Shell.VecSub",
+    "Shell.QuadTangent",
+    "Shell.QuadDNdXi",
+    "Shell.QuadDNdEta",
+    "Shell.VecDot",
+    "Shell.CharLength"
+  ],
+  "allChildren": [
+    "Shell.Rows3",
+    "Shell.Row3",
+    "Shell.QuadPoint",
+    "Shell.VecSub",
+    "Shell.QuadTangent",
+    "Shell.QuadDNdXi",
+    "Shell.QuadDNdEta",
+    "Shell.VecDot",
+    "Shell.CharLength",
+    "Shell.QuadN",
+    "Shell.VecLen",
+    "Shell.Node"
+  ]
+}

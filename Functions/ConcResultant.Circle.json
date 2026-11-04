@@ -1,0 +1,16 @@
+{
+  "name": "ConcResultant.Circle",
+  "formula": "=LAMBDA(R,x,epsTop,fc,Ec,eps0,epscu,[n],LET(nStrip,IF(ISOMITTED(n),60,n),etaMax,MIN(x,2*R),dEta,IF(OR(etaMax<=0,nStrip<=0),0,etaMax/nStrip),strips,IF(dEta<=0,HSTACK(0,0),{ref}ForLoop_MAKEARRAY(1,nStrip,LAMBDA(i,{ref}ConcStrip.Circle(R,(i-0.5)*dEta,dEta,epsTop,x,fc,Ec,eps0,epscu)))),HSTACK(SUM(INDEX(strips,,1)),SUM(INDEX(strips,,2)))))",
+  "comment": "Midpoint integral of concrete force on a circle. Lengths in mm. Returns Fc in N and Mc in N.mm. n defaults to 60. etaMax is min(x, 2R).",
+  "children": [
+    "ForLoop_MAKEARRAY",
+    "ConcStrip.Circle"
+  ],
+  "allChildren": [
+    "ForLoop_MAKEARRAY",
+    "ConcStrip.Circle",
+    "StrainAtDepth",
+    "ConcStress.ParabolaRect",
+    "CircleChordWidth"
+  ]
+}

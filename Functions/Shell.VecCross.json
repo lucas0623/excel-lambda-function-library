@@ -1,0 +1,11 @@
+{
+  "name": "Shell.VecCross",
+  "formula": "=LAMBDA(a,b,LET(ra,{ref}Shell.Row3(a),rb,{ref}Shell.Row3(b),ax,INDEX(ra,1,1),ay,INDEX(ra,1,2),az,INDEX(ra,1,3),bx,INDEX(rb,1,1),by,INDEX(rb,1,2),bz,INDEX(rb,1,3),HSTACK(ay*bz-az*by,az*bx-ax*bz,ax*by-ay*bx)))",
+  "comment": "Returns the cross product of two 3D vectors as one row of x, y, z. Arguments a and b are points or vectors. A vector that is not 3D returns #N/A. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Row3"
+  ],
+  "allChildren": [
+    "Shell.Row3"
+  ]
+}

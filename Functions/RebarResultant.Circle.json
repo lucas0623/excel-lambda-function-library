@@ -1,0 +1,17 @@
+{
+  "name": "RebarResultant.Circle",
+  "formula": "=LAMBDA(barXY,AsEach,alpha,R,x,fc,Ec,eps0,epscu,fyd,Es,LET(nBars,ROWS(barXY),rows,{ref}ForLoop_MAKEARRAY(1,nBars,LAMBDA(i,LET(xb,INDEX(barXY,i,1),yb,INDEX(barXY,i,2),s,xb*COS(alpha)+yb*SIN(alpha),eta,R-s,eps,{ref}StrainAtDepth(epscu,x,eta),sigS,{ref}SteelStress.Bilinear(eps,fyd,Es),sigC,{ref}ConcStress.ParabolaRect(eps,fc,Ec,eps0,epscu),Fs,(sigS-sigC)*AsEach,HSTACK(Fs,Fs*s)))),HSTACK(SUM(INDEX(rows,,1)),SUM(INDEX(rows,,2)))))",
+  "comment": "Bar forces on a circular section. barXY is n by 2. alpha is the compression-face angle in radians from +x. Each bar force is (steel stress minus concrete stress) times As, in N. Returns sum of forces and sum of moments about the centre.",
+  "children": [
+    "ForLoop_MAKEARRAY",
+    "StrainAtDepth",
+    "SteelStress.Bilinear",
+    "ConcStress.ParabolaRect"
+  ],
+  "allChildren": [
+    "ForLoop_MAKEARRAY",
+    "StrainAtDepth",
+    "SteelStress.Bilinear",
+    "ConcStress.ParabolaRect"
+  ]
+}

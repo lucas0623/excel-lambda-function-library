@@ -1,0 +1,27 @@
+{
+  "name": "Shell.IsQuadValid",
+  "formula": "=LAMBDA(nodes,IFERROR(LET(m,{ref}Shell.Rows3(nodes),tx,{ref}Shell.QuadTangent(m,{ref}Shell.QuadDNdXi(0,0)),te,{ref}Shell.QuadTangent(m,{ref}Shell.QuadDNdEta(0,0)),area,{ref}Shell.VecLen({ref}Shell.VecCross(tx,te)),L,{ref}Shell.CharLength(m),AND(ROWS(m)=4,COLUMNS(m)=3,ISNUMBER(area),ISNUMBER(L),L>0,area>0.000000000001*L*L)),FALSE))",
+  "comment": "Returns TRUE when the quad has usable area at its center. nodes is 4 rows of x, y, z. A collapsed or wrong-shaped element returns FALSE. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Rows3",
+    "Shell.QuadTangent",
+    "Shell.QuadDNdXi",
+    "Shell.QuadDNdEta",
+    "Shell.VecLen",
+    "Shell.VecCross",
+    "Shell.CharLength"
+  ],
+  "allChildren": [
+    "Shell.Rows3",
+    "Shell.QuadTangent",
+    "Shell.QuadDNdXi",
+    "Shell.QuadDNdEta",
+    "Shell.VecLen",
+    "Shell.VecCross",
+    "Shell.CharLength",
+    "Shell.VecDot",
+    "Shell.Row3",
+    "Shell.VecSub",
+    "Shell.Node"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Shell.ElemAABB",
+  "formula": "=LAMBDA(nodes,LET(m,{ref}Shell.Rows3(nodes),count,ROWS(m),IF(OR(count<3,count>4,COLUMNS(m)<>3),NA(),HSTACK(MIN(INDEX(m,0,1)),MAX(INDEX(m,0,1)),MIN(INDEX(m,0,2)),MAX(INDEX(m,0,2)),MIN(INDEX(m,0,3)),MAX(INDEX(m,0,3))))))",
+  "comment": "Returns the axis-aligned box of a triangle or quad as one row xmin, xmax, ymin, ymax, zmin, zmax. nodes is 3 or 4 rows of x, y, z. Any other count returns #N/A. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Rows3"
+  ],
+  "allChildren": [
+    "Shell.Rows3"
+  ]
+}

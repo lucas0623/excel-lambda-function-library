@@ -1,0 +1,31 @@
+{
+  "name": "SHELL_TRI",
+  "formula": "=LAMBDA(nodes,values,point,LET(m,{ref}Shell.Rows3(nodes),v,{ref}Shell.AsColumn(values),p,{ref}Shell.Row3(point),onPlane,{ref}Shell.IsPointOnPlane(p,{ref}Shell.Node(m,1),{ref}Shell.Node(m,2),{ref}Shell.Node(m,3)),w,IF(onPlane,{ref}Shell.TriBary(m,p),NA()),inside,IF(ISNUMBER(INDEX(w,1,1)),{ref}Shell.WeightsInside(w),FALSE),IF(AND(inside,ROWS(m)=3,ROWS(v)=3),INDEX(MMULT(w,v),1),NA())))",
+  "comment": "Returns the scalar at a point on a 3-node shell triangle. Arguments: nodes, values, point. nodes is 3 rows of x, y, z. values is one number per node. point is x, y, z. Weights are barycentric. A point off the plane, outside the edges, or on a collapsed triangle returns an NA error. The plane tolerance is 1E-6 times the longest edge. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Rows3",
+    "Shell.AsColumn",
+    "Shell.Row3",
+    "Shell.IsPointOnPlane",
+    "Shell.Node",
+    "Shell.TriBary",
+    "Shell.WeightsInside"
+  ],
+  "allChildren": [
+    "Shell.Rows3",
+    "Shell.AsColumn",
+    "Shell.Row3",
+    "Shell.IsPointOnPlane",
+    "Shell.Node",
+    "Shell.TriBary",
+    "Shell.WeightsInside",
+    "Shell.SurfTol",
+    "Shell.PointPlaneDist",
+    "Shell.VecSub",
+    "Shell.VecDot",
+    "Shell.CharLength",
+    "Shell.PlaneNormal",
+    "Shell.VecLen",
+    "Shell.VecCross"
+  ]
+}

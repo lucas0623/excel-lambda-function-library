@@ -1,0 +1,7 @@
+{
+  "name": "StrainAtDepth",
+  "formula": "=LAMBDA(epsTop,x,eta,IF(x=0,NA(),epsTop*(x-eta)/x))",
+  "comment": "Linear strain at depth eta from the compression face. epsTop is the strain at eta 0. x is the neutral-axis depth.",
+  "children": [],
+  "allChildren": []
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Strip.Interp6",
+  "formula": "=LAMBDA(point,nodes,values6,LET(m,{ref}Shell.Rows3(nodes),p,{ref}Shell.Row3(point),count,ROWS(m),IF(count=3,LET(w,{ref}Shell.TriBary(m,p),IF(OR(NOT(ISNUMBER(INDEX(w,1,1))),NOT({ref}Shell.WeightsInside(w))),NA(),MMULT(w,values6))),IF(count=4,LET(nat,{ref}Shell.QuadNatural(m,p),xi,INDEX(nat,1,1),eta,INDEX(nat,1,2),IF(OR(NOT(ISNUMBER(xi)),NOT(ISNUMBER(eta))),NA(),LET(wTry,{ref}Shell.QuadN(xi,eta),resid,{ref}Shell.QuadResidual(m,p,xi,eta),IF(OR(NOT({ref}Shell.WeightsInside(wTry)),NOT(ISNUMBER(resid)),resid>{ref}Shell.SurfTol(m)),NA(),MMULT(wTry,values6))))),NA()))))",
+  "comment": "Returns interpolated Fxx..Mzz at point on one element as one row of 6. values6 is 3 or 4 rows of nodal components. Outside or collapsed returns #N/A. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.Rows3",
+    "Shell.Row3",
+    "Shell.TriBary",
+    "Shell.WeightsInside",
+    "Shell.QuadNatural",
+    "Shell.QuadN",
+    "Shell.QuadResidual",
+    "Shell.SurfTol"
+  ],
+  "allChildren": [
+    "Shell.Rows3",
+    "Shell.Row3",
+    "Shell.TriBary",
+    "Shell.WeightsInside",
+    "Shell.QuadNatural",
+    "Shell.QuadN",
+    "Shell.QuadResidual",
+    "Shell.SurfTol",
+    "Shell.Node",
+    "Shell.VecSub",
+    "Shell.VecDot",
+    "Shell.CharLength",
+    "Shell.QuadNewtonStep",
+    "Shell.IsQuadValid",
+    "WhileLoop",
+    "Shell.VecLen",
+    "Shell.QuadPoint",
+    "Shell.QuadTangent",
+    "Shell.QuadDNdXi",
+    "Shell.QuadDNdEta",
+    "Shell.VecCross"
+  ]
+}

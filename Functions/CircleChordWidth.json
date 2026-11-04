@@ -1,0 +1,7 @@
+{
+  "name": "CircleChordWidth",
+  "formula": "=LAMBDA(R,eta,2*SQRT(MAX(0,2*R*eta-eta*eta)))",
+  "comment": "Full chord width of a circle, in the same units as R. eta is the depth from the compression face. Width is 0 outside the circle.",
+  "children": [],
+  "allChildren": []
+}

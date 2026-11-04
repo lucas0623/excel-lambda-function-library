@@ -1,0 +1,19 @@
+{
+  "name": "Shell.PointPlaneDist",
+  "formula": "=LAMBDA(point,a,b,c,LET(n,{ref}Shell.PlaneNormal(a,b,c),len,{ref}Shell.VecLen(n),scale,{ref}Shell.VecLen({ref}Shell.VecSub(b,a))+{ref}Shell.VecLen({ref}Shell.VecSub(c,a)),IF(OR(NOT(ISNUMBER(len)),len<=0.000000000001*scale*scale),NA(),{ref}Shell.VecDot({ref}Shell.VecSub(point,a),n)/len)))",
+  "comment": "Returns the signed distance from point to the plane through a, b, and c. Positive is the normal (b-a) cross (c-a). A degenerate plane returns #N/A. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.PlaneNormal",
+    "Shell.VecLen",
+    "Shell.VecSub",
+    "Shell.VecDot"
+  ],
+  "allChildren": [
+    "Shell.PlaneNormal",
+    "Shell.VecLen",
+    "Shell.VecSub",
+    "Shell.VecDot",
+    "Shell.VecCross",
+    "Shell.Row3"
+  ]
+}

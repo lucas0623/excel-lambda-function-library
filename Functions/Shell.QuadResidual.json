@@ -1,0 +1,19 @@
+{
+  "name": "Shell.QuadResidual",
+  "formula": "=LAMBDA(nodes,point,xi,eta,{ref}Shell.VecLen({ref}Shell.VecSub({ref}Shell.QuadPoint(nodes,xi,eta),point)))",
+  "comment": "Returns the distance from point to the bilinear surface point at xi and eta. nodes is 4 rows of x, y, z. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.VecLen",
+    "Shell.VecSub",
+    "Shell.QuadPoint"
+  ],
+  "allChildren": [
+    "Shell.VecLen",
+    "Shell.VecSub",
+    "Shell.QuadPoint",
+    "Shell.VecDot",
+    "Shell.Row3",
+    "Shell.Rows3",
+    "Shell.QuadN"
+  ]
+}

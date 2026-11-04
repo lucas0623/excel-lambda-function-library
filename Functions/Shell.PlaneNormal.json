@@ -1,0 +1,14 @@
+{
+  "name": "Shell.PlaneNormal",
+  "formula": "=LAMBDA(a,b,c,{ref}Shell.VecCross({ref}Shell.VecSub(b,a),{ref}Shell.VecSub(c,a)))",
+  "comment": "Returns the unnormalized normal of the plane through points a, b, and c, as one row. The direction is (b-a) cross (c-a). A point that is not 3D returns #N/A. Last Update at 2026-11-04.",
+  "children": [
+    "Shell.VecCross",
+    "Shell.VecSub"
+  ],
+  "allChildren": [
+    "Shell.VecCross",
+    "Shell.VecSub",
+    "Shell.Row3"
+  ]
+}
